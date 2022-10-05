@@ -1,0 +1,223 @@
+*{ /*configuraçao global */
+    max-height: 100%;
+}
+
+/* fontes */
+
+@font-face {
+    font-family: Poppins;
+    src: url(fontes/Poppins-Regular.ttf);
+  }
+  @font-face {
+    font-family: PoppinsEscuro;
+    src: url(fontes/Poppins-Bold.ttf);
+  }
+  @font-face {
+    font-family: PoppinsClaro;
+    src: url(fontes/Poppins-Light.ttf);
+  }
+  @font-face {
+    font-family: PoppinsBemClaro;
+    src: url(fontes/Poppins-ExtraLight.ttf);
+  }
+
+
+body {
+font-family: Poppins, PoppinsEscuro, PoppinsClaro;
+background-color:#1E1E1E;;
+background-image: linear-gradient(180deg, rgba(37, 36, 34, 0.3) 0%, rgba(51, 51, 51, 0.3) 100%); 
+background-attachment: fixed;
+
+}
+
+/* texto em cima do input */
+
+h1{
+    width: 234px;
+    height: 38px;
+    
+    font-family: 'PoppinsClaro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 38px;
+
+    color: #FFFFFF; 
+  }
+ 
+  /* esqueçeu a senha */
+
+  h3{
+    width: 234px;
+    height: 38px;
+    
+    font-family: 'PoppinsBemClaro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 38px;
+
+    padding-top: 0px;
+    padding-bottom: 100px;
+    padding-left: 165px;
+    padding-right: 30px;
+    position: absolute;
+    cursor: pointer;
+
+    color: #EB5E28; 
+  }
+
+  /* bem vindo */
+
+  h4{
+    width: 234px;
+    height: 38px;
+    
+    font-family: 'PoppinsEscuro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 38px;
+
+    color: #FFFFFF; 
+    position: absolute;
+    left: 55%;
+    bottom: 37%;
+
+  }
+
+  /* botões */
+
+  button{
+    background: #EB5E28;
+    box-shadow: 3px 5px 7px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 60px;
+    padding-bottom: 4px;
+    padding-left: 37px;
+    padding-right: 37px;
+    border: none;
+    width: 40%;
+    cursor: pointer;
+
+
+    position: absolute;
+    color: #FFFFFF; 
+    
+
+  }
+
+  .cadastrar{
+    background: rgba(17, 17, 17, 1);
+    box-shadow: 3px 5px 7px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 60px;
+    padding-bottom: 4px;
+    padding-left: 60px;
+    padding-right: 0px;
+    border: none;
+    width: 14%;
+    cursor: pointer;
+    
+    position: absolute;
+    top: 5%;
+    left: 84%
+    
+
+  }
+
+  .entrar{
+    background: #EB5E28;
+    box-shadow: 3px 5px 7px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 60px;
+    padding-bottom: 4px;
+    padding-left: 37px;
+    padding-right: 37px;
+    border: none;
+    width: 11%;
+    cursor: pointer;
+    display: block;
+    
+    position: absolute;
+    top: 5%;
+    left: 78%
+  }
+
+/* input */
+
+input{
+
+width: 290px;
+height: 35px;
+
+background: rgba(217, 217, 217, 0.2);
+border-radius: 35px;
+border: none;
+
+padding-left: 20px;
+
+color: rgba(255, 252, 242, 0.589);;
+font-size: 17px;
+
+}
+
+/* painel login */
+
+div{
+background-color: #333333;
+
+position: absolute;
+width: 345px;
+height: 450px;
+top: 15%;
+left: 9%;
+
+box-shadow: 0px 109px 337px rgba(0, 0, 0, 0.0815322), 0px 45.5376px 140.791px rgba(0, 0, 0, 0.117129), 0px 24.3466px 75.2734px rgba(0, 0, 0, 0.145), 0px 13.6485px 42.1976px rgba(0, 0, 0, 0.172871), 0px 7.24861px 22.4108px rgba(0, 0, 0, 0.208468), 0px 3.01631px 9.32565px rgba(0, 0, 0, 0.29);
+
+padding-left: 30px;
+border-radius: 20px;
+z-index:1000;
+
+}
+
+/* imagem ondas fundo */
+
+img{
+
+position: absolute;
+bottom: 50%;
+top: 50%;
+left: 0%
+
+}
+
+/* logo livrinho */
+
+.logo {
+
+position: absolute;
+top: 0px;
+left: 95px;
+
+width: 200px;
+height: 150px;
+
+}
+
+/* linhas */
+
+.linha {
+
+  position: absolute;
+  
+  top: 51%;
+  left: 48%;
+
+}
+.linha2 {
+
+  position: absolute;
+      
+  top: 51%;
+  left: 73%;
+    
+}
+  
