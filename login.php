@@ -11,7 +11,8 @@
  
 
 <body>
-
+<img class="fundos" src="imagens/fundo.png">
+<img class="logoIff" src="imagens/IFF.png">
 
 <h4>Bem vindo!</h4>
 
