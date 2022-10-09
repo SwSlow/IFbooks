@@ -27,7 +27,7 @@
 
 <h1>Endereço de email</h1>
 
-<input type="text" placeholder="you@youremail.com">
+<input type="email" placeholder="you@youremail.com">
 
 <h1>Senha</h1>
 
@@ -44,8 +44,10 @@
 
 <!-- botões -->
 
-<button class="cadastrar"><h2>Cadastrar</h2></button>
+<button class="cadastrar" onclick="window.location.href = 'cadastro.php'"><h2>Cadastrar</h2></button>
 <button class="entrar"><h2>Entrar</h2></button> 
+
+
 
 
 <?php

@@ -34,8 +34,6 @@ background-attachment: fixed;
 /* texto em cima do input */
 
 h1{
-    width: 234px;
-    height: 38px;
     
     font-family: 'PoppinsClaro';
     font-style: normal;
@@ -114,34 +112,36 @@ h1{
   }
 
   .cadastrar{
-    background: rgba(17, 17, 17, 1);
+    background: #EB5E28;
     box-shadow: 3px 5px 7px 6px rgba(0, 0, 0, 0.3);
     border-radius: 60px;
     padding-bottom: 4px;
-    padding-left: 60px;
+    padding-left: 20px;
     padding-right: 0px;
     border: none;
-    width: 14%;
+    width: 11%;
     cursor: pointer;
+    z-index: 1000;
+ 
     
     position: absolute;
     top: 5%;
-    left: 84%
+    left: 87%
     
 
   }
 
   .entrar{
-    background: #EB5E28;
+    background: rgba(17, 17, 17, 1); 
     box-shadow: 3px 5px 7px 6px rgba(0, 0, 0, 0.3);
     border-radius: 60px;
     padding-bottom: 4px;
-    padding-left: 37px;
-    padding-right: 37px;
+    padding-left: 0px;
+    padding-right: 48px;
     border: none;
-    width: 11%;
+    width: 14%;
     cursor: pointer;
-    display: block;
+   
     
     position: absolute;
     top: 5%;
@@ -177,16 +177,16 @@ input:focus{
   outline: 0.1px solid rgba(217, 217, 217, 0.2);     /* oranges! yey */
 }
 
-/* painel login */
+/* painel cadastro */
 
 div{
 background-color: #333333;
 
 position: absolute;
-width: 345px;
+width: 720px;
 height: 450px;
-top: 17%;
-left: 10%;
+top: 15%;
+left: 23%;
 
 
 box-shadow: 0px 109px 337px rgba(0, 0, 0, 0.0815322), 0px 45.5376px 140.791px rgba(0, 0, 0, 0.117129), 0px 24.3466px 75.2734px rgba(0, 0, 0, 0.145), 0px 13.6485px 42.1976px rgba(0, 0, 0, 0.172871), 0px 7.24861px 22.4108px rgba(0, 0, 0, 0.208468), 0px 3.01631px 9.32565px rgba(0, 0, 0, 0.29);
