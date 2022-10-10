@@ -18,7 +18,7 @@
 
 <!-- painel login -->
 
-<div>
+<div class="div_login">
 
 <br>
 
@@ -44,8 +44,8 @@
 
 <!-- botões -->
 
-<button class="cadastrar" onclick="window.location.href = 'cadastro.php'"><h2>Cadastrar</h2></button>
-<button class="entrar"><h2>Entrar</h2></button> 
+<button class="cadastrar1" onclick="window.location.href = 'cadastro.php'"><h2>Cadastrar</h2></button>
+<button class="entrar1"><h2>Entrar</h2></button> 
 
 
 

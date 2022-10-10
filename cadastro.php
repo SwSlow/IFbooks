@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<link rel="stylesheet" href="css/styleCad.css"/>
+<link rel="stylesheet" href="css/style.css"/>
 
 </head>
 <meta charset="utf-8"> 
 
 <title>Cadastro</title>    
- 
 
 <body>
 <img class="fundos" src="imagens/fundo.png">
@@ -18,7 +16,7 @@
 
 <!-- painel login -->
 
-<div>
+<div class="div_cadastro">
 
 <br>
 
@@ -30,7 +28,7 @@
 
 <h1>Numero de Matrícula</h1>
 
-<input type="text" placeholder="Num matrícula">
+<input type="text" placeholder="Num_matrícula">
 
 <h1>CPF</h1>
 
@@ -48,11 +46,8 @@
 
 <!-- botões -->
 
-<button class="cadastrar"><h2>Cadastrar</h2></button>
-<button class="entrar" onclick="window.location.href = 'login.php'"><h2>Entrar</h2></button> 
-
-
-
+<button class="entrar2" onclick="window.location.href = 'login.php'"><h2>Entrar</h2></button> 
+<button class="cadastrar2"><h2>Cadastrar</h2></button>
 
 <?php
 

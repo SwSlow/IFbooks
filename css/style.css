@@ -113,7 +113,7 @@ h1{
 
   }
 
-  .cadastrar{
+  .cadastrar1{
     background: rgba(17, 17, 17, 1);
     box-shadow: 3px 5px 7px 6px rgba(0, 0, 0, 0.3);
     border-radius: 60px;
@@ -130,8 +130,27 @@ h1{
     
 
   }
+  .cadastrar2{
+    background: #EB5E28;
+    box-shadow: 3px 5px 7px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 60px;
+    padding-bottom: 4px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    width: 11%;
+    cursor: pointer;
+    z-index: 1000;
+ 
+    
+    position: absolute;
+    top: 5%;
+    left: 87%
+    
 
-  .entrar{
+  }
+
+  .entrar1{
     background: #EB5E28;
     box-shadow: 3px 5px 7px 6px rgba(0, 0, 0, 0.3);
     border-radius: 60px;
@@ -147,8 +166,23 @@ h1{
     top: 5%;
     left: 78%
 
+  }
 
-   
+  .entrar2{
+    background: rgba(17, 17, 17, 1);
+    box-shadow: 3px 5px 7px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 60px;
+    padding-bottom: 4px;
+    padding-left: 37px;
+    padding-right: 37px;
+    border: none;
+    width: 11%;
+    cursor: pointer;
+    display: block;
+    
+    position: absolute;
+    top: 5%;
+    left: 78%
 
   }
 
@@ -179,7 +213,7 @@ input:focus{
 
 /* painel login */
 
-div{
+.div_login{
 background-color: #333333;
 
 position: absolute;
@@ -196,6 +230,25 @@ border-radius: 20px;
 z-index:1000;
 
 }
+
+.div_cadastro{
+  background-color: #333333;
+  
+  position: absolute;
+  width: 720px;
+  height: 450px;
+  top: 15%;
+  left: 23%;
+  
+  
+  box-shadow: 0px 109px 337px rgba(0, 0, 0, 0.0815322), 0px 45.5376px 140.791px rgba(0, 0, 0, 0.117129), 0px 24.3466px 75.2734px rgba(0, 0, 0, 0.145), 0px 13.6485px 42.1976px rgba(0, 0, 0, 0.172871), 0px 7.24861px 22.4108px rgba(0, 0, 0, 0.208468), 0px 3.01631px 9.32565px rgba(0, 0, 0, 0.29);
+  
+  padding-left: 30px;
+  border-radius: 20px;
+  z-index:1000;
+  
+  }
+  
 
 /* imagem ondas fundo */
 
@@ -253,6 +306,16 @@ height: 150px;
 
 .fundos {
 
+  position: relative;
+  top: 2%;
+  right: 2%;
+  left: 2%;
+  width: 1700px;
+  height: 750px;
+}
+
+.onda {
+
   position: absolute;
   top: 2%;
   right: 10%;
@@ -260,7 +323,6 @@ height: 150px;
   width: 1300px;
   height: 90%;
 }
-
 
 /*animações*/
 
