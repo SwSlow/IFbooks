@@ -9,12 +9,15 @@
 
 <title>Login</title>    
  
-
 <body>
 <img class="fundos" src="imagens/fundo.png">
 <img class="logoIff" src="imagens/IFF.png">
 
-<h4>Bem vindo!</h4>
+<div class="bem_vindo">
+    <img class="linha" src="imagens/linha.png">
+    <h4>Bem vindo!</h4>
+    <img class="linha2" src="imagens/linha.png">
+</div>
 
 <!-- painel login -->
 
@@ -39,22 +42,14 @@
 
 </div>
 
-<img class="linha" src="imagens/linha.png">
-<img class="linha2" src="imagens/linha.png">
-
 <!-- botões -->
 
 <button class="cadastrar1" onclick="window.location.href = 'cadastro.php'"><h2>Cadastrar</h2></button>
 <button class="entrar1"><h2>Entrar</h2></button> 
 
-
-
-
 <?php
 
-
 ?>
-
 
 </body>
  

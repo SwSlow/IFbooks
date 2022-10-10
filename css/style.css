@@ -84,7 +84,7 @@ h1{
     color: #FFFFFF; 
     position: absolute;
     left: 55%;
-    bottom: 40%;
+    bottom: 45%;
 
   }
 
@@ -278,9 +278,9 @@ height: 150px;
 
 .linha {
 
-  position: absolute;
+  /* position: absolute; */
   
-  top: 48%;
+  top: 46%;
   left: 48%;
 
 }
@@ -288,8 +288,8 @@ height: 150px;
 
   position: absolute;
       
-  top: 48%;
-  left: 73%;
+  top: 46%;
+  left: 71%;
     
 }
   
@@ -310,8 +310,7 @@ height: 150px;
   top: 2%;
   right: 2%;
   left: 2%;
-  width: 1700px;
-  height: 750px;
+  width: 1720px;
 }
 
 .onda {
