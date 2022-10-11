@@ -8,4 +8,4 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-)'
+)
