@@ -33,6 +33,15 @@ background-attachment: fixed;
 
 /* texto em cima do input */
 
+p{
+  font-family: 'PoppinsEscuro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+
+  color: #EB5E28; 
+}
+
 h1{
     width: 234px;
     height: 38px;

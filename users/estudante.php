@@ -1,9 +1,9 @@
 <?php
     session_start();
-    echo "Usuario: ". $_SESSION['usuarioNome'];    
+    echo "Usuário: ". $_SESSION['usuarioNome'];    
 ?>
 <br>
-<p>Você é um COLOBORADOR</p>
+<p>Você é um ESTUDANTE</p>
 <button onclick="sairAlert()">Sair</button>
 <script>
 function sairAlert() {

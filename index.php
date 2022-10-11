@@ -47,7 +47,8 @@ session_start();
                 <h3>Esqueçeu sua senha?</h3>
             </form>
         </div>
-        <>
+        <br><br>
+        <p>
             <?php
             //Recuperando o valor da variável global, os erro de login.
             if (isset($_SESSION['loginErro'])) {
@@ -61,6 +62,7 @@ session_start();
                 unset($_SESSION['logindeslogado']);
             }
             ?>
+        </p>
     </div>
 
     <!-- botões -->

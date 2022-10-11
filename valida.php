@@ -19,14 +19,13 @@
             $_SESSION['usuarioNome'] = $resultado['nome'];
             $_SESSION['usuarioNiveisAcessoId'] = $resultado['niveis_acesso_id'];
             $_SESSION['usuarioEmail'] = $resultado['email'];
+
             if($_SESSION['usuarioNiveisAcessoId'] == "1"){
-                header("Location: users/administrador.php");
+                header("Location: users/servidor.php");
             }elseif($_SESSION['usuarioNiveisAcessoId'] == "2"){
-                header("Location: users/colaborador.php");
-            }else{
-                header("Location: users/cliente.php");
+                header("Location: users/estudante.php");
             }
-        //Não foi encontrado um usuario na tabela usuário com os mesmos dados digitado no formulário
+
         //redireciona o usuario para a página de login
         }else{    
             //Váriavel global recebendo a mensagem de erro
