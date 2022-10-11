@@ -3,4 +3,11 @@
     echo "Usuario: ". $_SESSION['usuarioNome'];    
 ?>
 <br>
-<a href="sair.php">Sair</a>
+<p>Você é um ADMINISTRADOR</p>
+<button onclick="sairAlert()">Sair</button>
+<script>
+function sairAlert() {
+  location.href="../sair.php";
+  alert("Deslogado com sucesso!")
+}
+</script>

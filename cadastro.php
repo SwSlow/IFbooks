@@ -46,7 +46,7 @@
 
 <!-- botões -->
 
-<button class="entrar2" onclick="window.location.href = 'login.php'"><h2>Entrar</h2></button> 
+<button class="entrar2" onclick="window.location.href = 'index.php'"><h2>Entrar</h2></button> 
 <button class="cadastrar2"><h2>Cadastrar</h2></button>
 
 <?php

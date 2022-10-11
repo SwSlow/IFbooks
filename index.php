@@ -6,7 +6,8 @@ session_start();
 <html>
 
 <head>
-
+    <script src="sweetalert2/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="css/style.css" />
 
 </head>
@@ -46,23 +47,20 @@ session_start();
                 <h3>Esqueçeu sua senha?</h3>
             </form>
         </div>
-        <p>
+        <>
             <?php
             //Recuperando o valor da variável global, os erro de login.
             if (isset($_SESSION['loginErro'])) {
                 echo $_SESSION['loginErro'];
                 unset($_SESSION['loginErro']);
             } ?>
-        </p>
-        <p>
+            
             <?php
             //Recuperando o valor da variável global, deslogado com sucesso.
             if (isset($_SESSION['logindeslogado'])) {
-                echo $_SESSION['logindeslogado'];
                 unset($_SESSION['logindeslogado']);
             }
             ?>
-        </p>
     </div>
 
     <!-- botões -->

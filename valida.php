@@ -20,11 +20,11 @@
             $_SESSION['usuarioNiveisAcessoId'] = $resultado['niveis_acesso_id'];
             $_SESSION['usuarioEmail'] = $resultado['email'];
             if($_SESSION['usuarioNiveisAcessoId'] == "1"){
-                header("Location: administrador.php");
+                header("Location: users/administrador.php");
             }elseif($_SESSION['usuarioNiveisAcessoId'] == "2"){
-                header("Location: colaborador.php");
+                header("Location: users/colaborador.php");
             }else{
-                header("Location: cliente.php");
+                header("Location: users/cliente.php");
             }
         //Não foi encontrado um usuario na tabela usuário com os mesmos dados digitado no formulário
         //redireciona o usuario para a página de login
