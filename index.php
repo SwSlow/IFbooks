@@ -36,8 +36,8 @@ session_start();
         <!-- Criado o formulário para o usuário colocar os dados de acesso.  -->
         <div class="form">
             <form method="post" action="valida.php">
-                <h1>Endereço de email</h1>
-                <input type="email" name="email" placeholder="email@seuemail.com">
+                <h1>Número da Matrícula</h1>
+                <input type="num" name="num_matricula" placeholder="Matrícula">
                 <h1>Senha</h1>
                 <input type="password" name="senha" placeholder="senha">
                 <br><br>

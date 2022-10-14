@@ -1,11 +1,18 @@
-CREATE TABLE IF NOT EXISTS `usuarios` (
+CREATE TABLE  `usuarios` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `nome` varchar(220) NOT NULL,
+    `senha` varchar(50) NOT NULL,
+    `num_matricula` int(11) NOT NULL,
+    `email` varchar(520) NOT NULL,
+    `curso` varchar(520) NOT NULL,
+    `niveis_acesso_id` int(11) NOT NULL,
+    `bibioteca` varchar (520) NOT NULL,
+    `situação` varchar (32) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE IF NOT EXISTS `niveis_acessos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(220) NOT NULL,
-  `email` varchar(520) NOT NULL,
-  `senha` varchar(50) NOT NULL,
-  `situacoe_id` int(11) NOT NULL DEFAULT '0',
-  `niveis_acesso_id` int(11) NOT NULL,
-  `created` datetime NOT NULL,
-  `modified` datetime DEFAULT NULL,
+  `nome` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 )
