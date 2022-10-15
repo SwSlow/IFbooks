@@ -29,6 +29,8 @@ background-color:#1E1E1E;;
 background-image: linear-gradient(180deg, rgba(37, 36, 34, 0.3) 0%, rgba(51, 51, 51, 0.3) 100%); 
 background-attachment: fixed;
 
+
+
 }
 
 /* texto em cima do input */
@@ -217,8 +219,227 @@ font-size: 17px;
 }
 
 input:focus{
-  outline: 0.1px solid rgba(217, 217, 217, 0.2);     /* oranges! yey */
+  outline: 0.1px solid rgba(217, 217, 217, 0.2);    
 }
+
+/* botões seleção */
+
+.formUser{
+
+position: absolute;
+left: 55%;
+top: 36%;
+border-color: #1E1E1E;
+margin: 2px;
+
+border: 2px solid #1f1b1b;
+padding-left: 4px;
+padding-right: 15px;
+border-radius: 20px;
+
+
+}
+
+.formSituacao{
+
+  position: absolute;
+  left: 55%;
+  top: 80%;
+  border-color: #1E1E1E;
+  margin: 2px;
+  
+  border: 2px solid #1f1b1b;
+  padding-left: 4px;
+  padding-right: 15px;
+  border-radius: 20px;
+  
+  
+  }
+
+
+.labelUser{
+  width: 234px;
+  height: 38px;
+  
+  font-family: 'PoppinsClaro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 38px;
+  padding-left: 9px;
+ 
+
+  color: #FFFFFF; 
+  
+}
+
+.labelUser1{
+  width: 234px;
+  height: 38px;
+  
+  font-family: 'PoppinsClaro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 38px;
+  padding-left: 19px;
+ 
+
+  color: #FFFFFF; 
+  
+}
+
+.raioUser{
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  top: 2px;
+  left: -0.5px;
+  position: relative;
+  accent-color: #EB5E28;
+  
+
+}
+
+.raioUser1{
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  top: 2px;
+  left: 10px;
+  position: relative;
+  accent-color: #EB5E28;
+
+  
+
+}
+
+select {
+  
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  -ms-appearance:none;
+  appearance:none;
+  outline:0;
+  box-shadow: none;
+  border:0!important;
+  background: #525c5a;
+  background-image: none;
+  flex: 1;
+  padding: 0 .5em;
+  color:#FFFFFF;
+  cursor:pointer;
+  font-size: 1em;
+
+}
+select::-ms-expand {
+  display: none;
+}
+
+.opNon {
+  color: #1f1b1b;
+}
+
+.cursos {
+  
+  position: absolute;
+  left: 53%;
+  top: 14%;
+
+  display: flex;
+  width: 290px;
+  height: 42px;
+  line-height: 3;
+  box-shadow: 0 7px 32px 0 rgba(37, 8, 8, 0.185);
+  backdrop-filter: blur( 14px );
+  overflow: hidden;
+  border-radius: 25px;
+  
+}
+.cursos::after {
+  content: '\25BC';
+  position: absolute;
+  top: -2px;
+  right: 0;
+  padding: 0 1em;
+  background: #333333;
+  cursor:pointer;
+  pointer-events:none;
+  transition:.25s all ease;
+}
+.cursos:hover::after {
+  color: #EB5E28;
+}
+
+/* select biblioteca */
+
+.BibVinc {
+  
+  position: absolute;
+  left: 53%;
+  top: 58%;
+
+  display: flex;
+  width: 290px;
+  height: 42px;
+  line-height: 3;
+  box-shadow: 0 7px 32px 0 rgba(37, 8, 8, 0.185);
+  backdrop-filter: blur( 14px );
+  overflow: hidden;
+  border-radius: 25px;
+  
+}
+.BibVinc::after {
+  content: '\25BC';
+  position: absolute;
+  top: -2px;
+  right: 0;
+  padding: 0 1em;
+  background: #333333;
+  cursor:pointer;
+  pointer-events:none;
+  transition:.25s all ease;
+}
+.BibVinc:hover::after {
+  color: #EB5E28;
+}
+
+/* posição dos titulos */
+
+.positionCurso{
+
+position: absolute;
+top: 1%;
+left: 53%;
+
+
+}
+
+.positionUserC{
+
+  position: absolute;
+  top: 23%;
+  left: 53%;
+  
+  }
+
+.positionCampus{
+
+  position: absolute;
+  top: 45%;
+  left: 53%;
+    
+  }
+  
+.positionSituacao{
+
+  position: absolute;
+  top: 67%;
+  left: 53%;
+      
+ }
+
+
 
 /* painel login */
 
@@ -228,7 +449,7 @@ background-color: #333333;
 position: absolute;
 width: 345px;
 height: 450px;
-top: 17%;
+top: 15%;
 left: 10%;
 
 
@@ -244,11 +465,12 @@ z-index:1000;
   background-color: #333333;
   
   position: absolute;
-  width: 720px;
+  width: 700px;
   height: 450px;
   top: 15%;
   left: 23%;
-  
+  padding-top: 5px;
+
   
   box-shadow: 0px 109px 337px rgba(0, 0, 0, 0.0815322), 0px 45.5376px 140.791px rgba(0, 0, 0, 0.117129), 0px 24.3466px 75.2734px rgba(0, 0, 0, 0.145), 0px 13.6485px 42.1976px rgba(0, 0, 0, 0.172871), 0px 7.24861px 22.4108px rgba(0, 0, 0, 0.208468), 0px 3.01631px 9.32565px rgba(0, 0, 0, 0.29);
   
@@ -287,9 +509,8 @@ height: 150px;
 
 .linha {
 
-  /* position: absolute; */
   
-  top: 46%;
+  top: 43%;
   left: 48%;
 
 }
@@ -297,8 +518,8 @@ height: 150px;
 
   position: absolute;
       
-  top: 46%;
-  left: 71%;
+  top: 43%;
+  left: 73%;
     
 }
   
@@ -319,7 +540,10 @@ height: 150px;
   top: 2%;
   right: 2%;
   left: 2%;
-  width: 1720px;
+  width: 1300px;
+
+  /* 1300px ou 1720px */
+  
 }
 
 .onda {

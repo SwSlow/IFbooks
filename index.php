@@ -65,7 +65,7 @@ session_start();
         </p>
     </div>
 
-    <!-- botões -->
+    <!-- botões  -->
 
     <button class="cadastrar1" onclick="window.location.href = 'cadastro.php'">
         <h2>Cadastrar</h2>
