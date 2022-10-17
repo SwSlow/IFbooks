@@ -21,7 +21,7 @@
             $_SESSION['num_matricula'] = $resultado['num_matricula'];
             $_SESSION['usuarioEmail'] = $resultado['email'];
             $_SESSION['curso'] = $resultado['curso'];
-            $_SESSION['biblioteca'] = $resultado['biblioteca'];
+            $_SESSION['bibioteca'] = $resultado['bibioteca'];
             $_SESSION['situação'] = $resultado['situação'];
 
 

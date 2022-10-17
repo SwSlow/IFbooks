@@ -55,7 +55,7 @@ session_start();
                 echo $_SESSION['loginErro'];
                 unset($_SESSION['loginErro']);
             } ?>
-            
+
             <?php
             //Recuperando o valor da variável global, deslogado com sucesso.
             if (isset($_SESSION['logindeslogado'])) {

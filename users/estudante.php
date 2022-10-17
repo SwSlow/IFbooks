@@ -4,7 +4,7 @@
     echo "Matrícula: ".$_SESSION['num_matricula'], "<br>"; 
     echo "Email: ".$_SESSION['usuarioEmail'], "<br>"; 
     echo "Curso: ".$_SESSION['curso'], "<br>"; 
-    echo "Biblioteca: ".$_SESSION['biblioteca'], "<br>";
+    echo "Biblioteca: ".$_SESSION['bibioteca'], "<br>";
     echo "Situação: ".$_SESSION['situação'], "<br>"; 
 
 ?>
