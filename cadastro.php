@@ -32,6 +32,12 @@
         <h1>Email Institucional</h1>
         <input type="text" name="email" id="email" placeholder="Email">
 
+        <h1>Senha</h1>
+        <input type="number" name="senha" id="senha" placeholder="Senha">
+
+        <h1>Acesso</h1>
+        <input type="text" name="acesso" id="acesso" placeholder="Acesso">
+
         <h1 class="positionCurso">Curso</h1>
         
         <div class="cursos">
@@ -46,7 +52,7 @@
         <h1 class="positionCampus">Campus</h1>
 
         <div class="BibVinc" id="biblioteca">
-          <select name="biblioteca" id="biblioteca">
+          <select name="biblioteca" id="biblioteca" required>
             <option selected disabled class="opNon">Indique seu campus</option>
             <option value="valor1">Valor 1</option>
             <option value="valor2" >Valor 2</option>
