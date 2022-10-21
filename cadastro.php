@@ -26,7 +26,7 @@ if (isset($_SESSION['cadErro'])) {
   <div class="div_cadastro">
 
     <div class="form">
-      <form method="post" action="cadastra.php">
+      <form method="post" action="cadastroConfig.php">
         <h1>Nome completo</h1>
         <input type="text" name="nome" id="nome" placeholder="Nome completo" required>
 
@@ -45,7 +45,7 @@ if (isset($_SESSION['cadErro'])) {
         <h1 class="positionCurso">Campus</h1>
 
         <div class="cursos">
-          <select name="curso" id="curso" required>
+          <select required name="curso" id="curso">
             <option selected disabled class="opNon">Indique seu curso</option>
             <option value="Técnico em Agropecuária">Técnico em Agropecuária</option>
             <option value="Técnico em Informática">Técnico em Informática</option>

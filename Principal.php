@@ -9,7 +9,7 @@
 </head>
 <meta charset="utf-8">
 
-<title>Página Principal</title>
+<title>| Página Principal</title>
 
 
 
