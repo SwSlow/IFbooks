@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+echo "Id: " . $_SESSION['idUsuario'], "<br>";
 echo "Usuário: " . $_SESSION['nomeUsuario'], "<br>";
 echo "Matrícula: " . $_SESSION['num_matricula'], "<br>";
 echo "Email: " . $_SESSION['usuarioEmail'], "<br>";
@@ -15,6 +17,18 @@ if (!isset($_SESSION["idUsuario"]) || !isset($_SESSION["nomeUsuario"])) {
   $_SESSION['loginErro'] = "<script>alert('Faça login para acessar a página!');</script>";
   exit;
 }
+
+if ($_SESSION["usuarioNiveisAcessoId"] != 1) {
+  $_SESSION['userErro'] = "<script>alert('Acesso negado!');</script>";
+  header("location: estudante.php");
+  exit;
+}
+
+if (isset($_SESSION['userErro'])) {
+  echo $_SESSION['userErro'];
+  unset($_SESSION['userErro']);
+}
+
 ?>
 <br>
 <p>Você é um SERVIDOR</p>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 echo "Id: " . $_SESSION['idUsuario'], "<br>";
 echo "Usuário: " . $_SESSION['nomeUsuario'], "<br>";
 echo "Matrícula: " . $_SESSION['num_matricula'], "<br>";
@@ -15,6 +16,17 @@ if (!isset($_SESSION["idUsuario"]) || !isset($_SESSION["nomeUsuario"])) {
   // Notifica o usuário que não há nenhuma sessão iniciada
   $_SESSION['loginErro'] = "<script>alert('Faça login para acessar a página!');</script>";
   exit;
+}
+
+if ($_SESSION["usuarioNiveisAcessoId"] != 2) {
+  $_SESSION['userErro'] = "<script>alert('Acesso negado!');</script>";
+  header("location: servidor.php");
+  exit;
+}
+
+if (isset($_SESSION['userErro'])) {
+  echo $_SESSION['userErro'];
+  unset($_SESSION['userErro']);
 }
 
 ?>
