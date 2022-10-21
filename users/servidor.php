@@ -9,6 +9,7 @@ echo "Curso: " . $_SESSION['curso'], "<br>";
 echo "Biblioteca: " . $_SESSION['bibioteca'], "<br>";
 echo "Situação: " . $_SESSION['situação'], "<br>";
 
+
 //verifica se há algum usuário logado 
 if (!isset($_SESSION["idUsuario"]) || !isset($_SESSION["nomeUsuario"])) {
   // Usuário não logado! Redireciona para a página de login

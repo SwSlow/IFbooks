@@ -18,16 +18,16 @@ $senha = md5($senha);
                 VALUES('$nome','$matricula','$cpf','$email', '$curso','$biblioteca', '$situacao','$acesso','$user', '$senha')";
 */
 
-$dados = $matricula || $email || $biblioteca || $acesso || $senha || $nome || $cpf || $curso || $situacao || $user;
-
 //verifica se os campos de 
-if (null == ([$dados])) {
+if (null == ([$matricula] || [$cpf])) {
     header("location: cadastro.php");
     $_SESSION['cadErro'] = "<script>alert('Erro ao cadastrar!');</script>";
     exit;
 } else {
 
-    //obtém a matrícula dos usuários
+    "SELECT * FROM usuarios WHERE num_matricula = '$matricula' && cpf = '$cpf'";
+
+    //obtém a matrícuça dos usuários
     $sqlMatricula = "SELECT * FROM usuarios WHERE num_matricula='$matricula'";
     $queryMatricula = mysqli_query($conn, $sqlMatricula);
     $buscaMatricula = mysqli_num_rows($queryMatricula);
