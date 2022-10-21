@@ -24,15 +24,16 @@
 
 body {
   font-family: Poppins, PoppinsEscuro, PoppinsClaro;
-  background-color: #1e1e1e;
-
-  background-image: linear-gradient(
-    180deg,
-    rgba(37, 36, 34, 0.3) 0%,
-    rgba(51, 51, 51, 0.3) 100%
-  );
+  background-color:#1E1E1E;;
+  
+  background-image: linear-gradient(180deg, rgba(37, 36, 34, 0.3) 0%, rgba(51, 51, 51, 0.3) 100%); 
   background-attachment: fixed;
-}
+  overflow-x: hidden;
+  margin: 0px;
+  padding: 0px;
+  
+  
+  }
 
 /* texto em cima do input */
 
@@ -553,13 +554,15 @@ img {
 }
 
 .fundos {
+
   position: relative;
   top: 2%;
   right: 2%;
   left: 2%;
-  width: 1300px;
+  width: 1350px;
 
-  /* 1300px ou 1720px */
+  /* 1300px ou 1720px */
+
 }
 
 .onda {
