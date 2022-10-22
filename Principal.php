@@ -28,14 +28,36 @@ if (!isset($_SESSION["idUsuario"]) || !isset($_SESSION["nomeUsuario"])) {
 <body>
 <header class="cabecalho">
     <img class="logoBib" src="imagens/Logo.png">
+
+    <div class="dropDownIMG">
+
     <img class="UserBib" src="imagens/User.png">
+
+    <div class="dropdownContent">
+
+    <a href="#">LogOff</a>
+    </div>
+    </div>
             <div class="search-box">
             <input class="search-txt" type="text" name="" placeholder="Digite sua pesquisa">
             <a class="search-btn" href="#">
                 <i class="fas fa-search"></i>
              </a>
             </div>
+
+            <div class="dropdown">
+             <button class="dropbtn">Categorias</button>
+             <div class="dropdown-content">
+             <a href="#">Link 1</a>
+             <a href="#">Link 2</a>
+             <a href="#">Link 3</a>
+  </div>
+</div>
+
+
+</div>
 </header>
+
 
 </body>
 
