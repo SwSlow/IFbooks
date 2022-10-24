@@ -1,7 +1,7 @@
-<?php
+    <?php
     session_start(); 
         //Incluindo a conexão com banco de dados   
-    include_once("conexao.php");    
+    include_once("config.php");    
     //O campo usuário e senha preenchido entra no if para validar
     if((isset($_POST['num_matricula'])) && (isset($_POST['senha']))){
         $usuario = mysqli_real_escape_string($conn, $_POST['num_matricula']); //Escapar de caracteres especiais, como aspas, prevenindo SQL injection
@@ -15,8 +15,8 @@
         
         //Encontrado um usuario na tabela usuário com os mesmos dados digitado no formulário
         if(isset($resultado)){
-            $_SESSION['usuarioId'] = $resultado['id'];
-            $_SESSION['usuarioNome'] = $resultado['nome'];
+            $_SESSION['idUsuario'] = $resultado['id'];
+            $_SESSION['nomeUsuario'] = $resultado['nome'];
             $_SESSION['usuarioNiveisAcessoId'] = $resultado['niveis_acesso_id'];
             $_SESSION['num_matricula'] = $resultado['num_matricula'];
             $_SESSION['usuarioEmail'] = $resultado['email'];
@@ -42,4 +42,3 @@
         $_SESSION['loginErro'] = "Usuário ou senha inválido";
         header("Location: index.php");
     }
-?>

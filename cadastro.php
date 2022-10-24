@@ -1,3 +1,11 @@
+<?php
+session_start();
+//Recuperando o valor da variável global, os erro de login.
+if (isset($_SESSION['cadErro'])) {
+  echo $_SESSION['cadErro'];
+  unset($_SESSION['cadErro']);
+} ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -7,7 +15,7 @@
 </head>
 <meta charset="utf-8">
 
-<title>Cadastro</title>
+<title>| Cadastro</title>
 
 <body>
   <img class="fundos" src="imagens/fundo.png">
@@ -18,7 +26,7 @@
   <div class="div_cadastro">
 
     <div class="form">
-      <form method="post" action="cadastra.php">
+      <form method="post" action="cadastroConfig.php">
         <h1>Nome completo</h1>
         <input type="text" name="nome" id="nome" placeholder="Nome completo" required>
 
@@ -29,30 +37,41 @@
         <input type="number" name="cpf" id="cpf" placeholder="CPF" required>
 
         <h1>Email Institucional</h1>
-        <input type="text" name="email" id="email" placeholder="Email" required>
+        <input type="text" name="email" id="email" placeholder="Email">
 
         <h1>Senha</h1>
-        <input type="number" name="senha" id="senha" placeholder="Senha" required>
+        <input type="number" name="senha" id="senha" placeholder="Senha">
 
         <h1 class="positionCurso">Curso</h1>
 
         <div class="cursos">
-          <select name="curso" id="curso" required>
+          <select name="curso" id="curso">
             <option selected disabled class="opNon">Indique seu curso</option>
-            <option value="valor1">Valor 1</option>
-            <option value="valor2">Valor 2</option>
-            <option value="valor3">Valor 3</option>
+            <option value="Técnico em Agropecuária">Técnico em Agropecuária</option>
+            <option value="Técnico em Informática">Técnico em Informática</option>
+            <option value="Técnico em Administração">Técnico em Administração</option>
+            <option value="Graduação em Administração">Graduação em Administração</option>
+            <option value="Graduação em Medicina Veterinária">Graduação em Medicina Veterinária</option>
+            <option value="Graduação em Ciências da Computação">Graduação em Ciências da Computação</option>
+            <option value="Licenciatura em Matemática">Licenciatura em Matemática</option>
           </select>
         </div>
 
-        <h1 class="positionCampus">Campus</h1>
+        <h1 class="positionUserC">Curso</h1>
 
         <div class="BibVinc" id="biblioteca">
           <select name="biblioteca" id="biblioteca" required>
             <option selected disabled class="opNon">Indique seu campus</option>
-            <option value="valor1">Valor 1</option>
-            <option value="valor2">Valor 2</option>
-            <option value="valor3">Valor 3</option>
+            <option value="Campus Frederico Westphalen">Campus Frederico Westphalen</option>
+            <option value="Campus Alegrete">Campus Alegrete</option>
+            <option value="Reitoria(Santa Maria)">Reitoria(Santa Maria)</option>
+            <option value="Campus Jaguari">Campus Jaguari</option>
+            <option value="Campus Júlio de Castilhos">Campus Júlio de Castilhos</option>
+            <option value="Campus Santa Rosa">Campus Santa Rosa</option>
+            <option value="Campus Jaguari">Campus Jaguari</option>
+            <option value="Campus Júlio de Castilhos">Campus Júlio de Castilhos</option>
+            <option value="Campus Panambi">Campus Panambi</option>
+            <option value="Campus Santa Rosa">Campus Santa Rosa</option>
           </select>
         </div>
 
@@ -65,20 +84,22 @@
           <label class="labelUser1" for="regular">Regular</label>
         </div>
 
-        <h1 class="positionUserC">Categoria de usuário</h1>
+        <h1 class="positionCampus">Categoria de usuário</h1>
 
-        <div class="formUser" id="user" required>
+        <div class="formUser" id="user">
           <input class="raioUser" type="radio" id="servidor" name="tipo_user" value="2">
           <label class="labelUser" for="servidor">Servidor</label>
-          <input class="raioUser1" type="radio" id="estudante" name="tipo_user" value="13">
+          <input class="raioUser1" type="radio" id="estudante" name="tipo_acesso" value="2">
           <label class="labelUser1" for="estudante">Estudante</label>
         </div>
-        <br><br><br>
+        <br><br>
 
-        <button type="submit">
+        <button class="butCadastro" type="submit">
           <h2>Cadastrar</h2>
         </button>
       </form>
+
+
 
     </div>
 
