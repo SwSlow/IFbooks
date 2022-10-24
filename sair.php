@@ -1,6 +1,6 @@
 <?php
     session_start();   
-    unset(
+    unset(  
         $_SESSION['idUsuario'],
         $_SESSION['nomeUsuario'],
         $_SESSION['num_matricula'],

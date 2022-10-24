@@ -14,7 +14,7 @@ if (!isset($_SESSION["idUsuario"]) || !isset($_SESSION["nomeUsuario"])) {
 <html>
 
 <head>
-  <link rel="stylesheet" href="css/stylePrincipal.css"/>
+  <link rel="stylesheet" href="css/stylePrincipal.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
 
@@ -26,37 +26,45 @@ if (!isset($_SESSION["idUsuario"]) || !isset($_SESSION["nomeUsuario"])) {
 
 
 <body>
-<header class="cabecalho">
+  <header class="cabecalho">
     <img class="logoBib" src="imagens/Logo.png">
 
     <div class="dropDownIMG">
 
-    <img class="UserBib" src="imagens/User.png">
+      <img class="UserBib" src="imagens/User.png">
 
-    <div class="dropdownContent">
+      <div class="dropdownContent">
 
-    <a href="#">LogOff</a>
+        <a onclick="sairAlert()">LogOff</a>
+        <button onclick="sairAlert()">Sair</button>
+        <script>  
+          function sairAlert() {
+            location.href = "./sair.php";
+            alert("Deslogado com sucesso!")
+          }
+        </script>
+
+      </div>
     </div>
+    <div class="search-box">
+      <input class="search-txt" type="text" name="" placeholder="Digite sua pesquisa">
+      <a class="search-btn" href="#">
+        <i class="fas fa-search"></i>
+      </a>
     </div>
-            <div class="search-box">
-            <input class="search-txt" type="text" name="" placeholder="Digite sua pesquisa">
-            <a class="search-btn" href="#">
-                <i class="fas fa-search"></i>
-             </a>
-            </div>
 
-            <div class="dropdown">
-             <button class="dropbtn">Categorias</button>
-             <div class="dropdown-content">
-             <a href="#">Link 1</a>
-             <a href="#">Link 2</a>
-             <a href="#">Link 3</a>
-  </div>
-</div>
+    <div class="dropdown">
+      <button class="dropbtn">Categorias</button>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>
 
 
-</div>
-</header>
+    </div>
+  </header>
 
 
 </body>

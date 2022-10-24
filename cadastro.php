@@ -26,7 +26,7 @@ if (isset($_SESSION['cadErro'])) {
   <div class="div_cadastro">
 
     <div class="form">
-      <form method="post" action="cadastroConfig.php">
+      <form method="post" action="cadastraConfig.php">
         <h1>Nome completo</h1>
         <input type="text" name="nome" id="nome" placeholder="Nome completo" required>
 
@@ -40,7 +40,7 @@ if (isset($_SESSION['cadErro'])) {
         <input type="text" name="email" id="email" placeholder="Email">
 
         <h1>Senha</h1>
-        <input type="number" name="senha" id="senha" placeholder="Senha">
+        <input type="password" name="senha" id="senha" placeholder="Senha">
 
         <h1 class="positionCurso">Curso</h1>
 
@@ -75,7 +75,7 @@ if (isset($_SESSION['cadErro'])) {
           </select>
         </div>
 
-        <h1 class="positionSituacao">Atual</h1>
+        <h1 class="positionSituacao">Situação</h1>
 
         <div class="formSituacao" id="situacao" required>
           <input class="raioUser" type="radio" id="afastado" name="situacao" value="afastado">

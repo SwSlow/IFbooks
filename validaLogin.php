@@ -26,9 +26,9 @@
 
 
             if($_SESSION['usuarioNiveisAcessoId'] == "1"){
-                header("Location: users/servidor.php");
+                header("Location: ./principal.php");
             }elseif($_SESSION['usuarioNiveisAcessoId'] == "2"){
-                header("Location: users/estudante.php");
+                header("Location: ./principal.php");
             }
 
             //redireciona o usuario para a página de login
