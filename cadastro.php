@@ -20,24 +20,24 @@
     <div class="form">
       <form method="post" action="cadastra.php">
         <h1>Nome completo</h1>
-        <input type="text" name="nome" id="nome" placeholder="Nome completo">
+        <input type="text" name="nome" id="nome" placeholder="Nome completo" required>
 
         <h1>Número matrícula</h1>
-        <input type="number" name="num_matricula" id="num_matricula" placeholder="Matrícula">
+        <input type="number" name="num_matricula" id="num_matricula" placeholder="Matrícula" required>
 
         <h1>CPF</h1>
-        <input type="number" name="cpf" id="cpf" placeholder="CPF">
+        <input type="number" name="cpf" id="cpf" placeholder="CPF" required>
 
         <h1>Email Institucional</h1>
-        <input type="text" name="email" id="email" placeholder="Email">
+        <input type="text" name="email" id="email" placeholder="Email" required>
 
         <h1>Senha</h1>
-        <input type="number" name="senha" id="senha" placeholder="Senha">
+        <input type="number" name="senha" id="senha" placeholder="Senha" required>
 
         <h1 class="positionCurso">Curso</h1>
 
         <div class="cursos">
-          <select name="curso" id="curso">
+          <select name="curso" id="curso" required>
             <option selected disabled class="opNon">Indique seu curso</option>
             <option value="valor1">Valor 1</option>
             <option value="valor2">Valor 2</option>
@@ -58,7 +58,7 @@
 
         <h1 class="positionSituacao">Atual</h1>
 
-        <div class="formSituacao" id="situacao">
+        <div class="formSituacao" id="situacao" required>
           <input class="raioUser" type="radio" id="afastado" name="situacao" value="afastado">
           <label class="labelUser" for="afastado">Afastado</label>
           <input class="raioUser1" type="radio" id="regular" name="situacao" value="regular">
@@ -67,7 +67,7 @@
 
         <h1 class="positionUserC">Categoria de usuário</h1>
 
-        <div class="formUser" id="user">
+        <div class="formUser" id="user" required>
           <input class="raioUser" type="radio" id="servidor" name="tipo_user" value="2">
           <label class="labelUser" for="servidor">Servidor</label>
           <input class="raioUser1" type="radio" id="estudante" name="tipo_user" value="13">
