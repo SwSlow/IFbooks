@@ -8,7 +8,7 @@ $biblioteca = $_POST['biblioteca'];
 $acesso = $_POST['tipo_acesso'];
 $senha = $_POST['senha'];
 $nome = $_POST['nome'];
-$cpf = $_POST['cpf'];
+$cpf = $_POST['num_cpf'];
 $curso = $_POST['curso'];
 $situacao = $_POST['situacao'];
 $user = $_POST['tipo_acesso'];
@@ -20,7 +20,7 @@ $result = "INSERT INTO usuarios(nome,num_matricula,cpf, email, curso, biblioteca
 //verifica se os campos de 
 if (null == ([$matricula] || [$cpf])) {
     header("location: cadastro.php");
-    $_SESSION['cadErro'] = "<script>alert('Erro ao cadastrar!');</script>";
+    $_SESSION['cadErro'] = "<scri>alert('Preencha os campos corretamente');</script>";
     exit;
 } else {
 
@@ -46,7 +46,7 @@ if (null == ([$matricula] || [$cpf])) {
     } else {
 
         //erro caso ja exista um cpf ou matrícula igual
-        $_SESSION['cadErro'] = "<script>alert('Usuário ja cadastrado!');</script>";
+        $_SESSION['cadErro'] = "Usuário ja cadastrado!";
         header("location: cadastro.php");
     }
 }

@@ -34,10 +34,10 @@ session_start();
         <!-- Criado o formulário para o usuário colocar os dados de acesso.  -->
         <div class="form">
             <form method="post" action="validaLogin.php">
-                <h1>Número da Matrícula</h1>
-                <input type="num" name="num_matricula" placeholder="Matrícula">
+                <h1>Matrícula</h1>
+                <input type="text" minlength="7" maxlength="10" name="num_matricula" required>
                 <h1>Senha</h1>
-                <input type="password" name="senha" placeholder="senha">
+                <input type="password" name="senha" required>
                 <br><br>
                 <button type="submit">
                     <h2>Entrar</h2>

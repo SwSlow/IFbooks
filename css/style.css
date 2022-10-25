@@ -56,9 +56,9 @@ h1 {
   font-size: 17px;
   line-height: 38px;
   padding-left: 9px;
-
   color: #ffffff;
 }
+
 
 h5 {
   width: 500px;
@@ -184,7 +184,7 @@ button {
   padding-left: 37px;
   padding-right: 37px;
   border: none;
-  width: 3%;
+  width: 11%;
   cursor: pointer;
   display: block;
 
@@ -201,13 +201,17 @@ button {
   padding-left: 37px;
   padding-right: 37px;
   border: none;
-  width: 11%;
+  width: 12%;
   cursor: pointer;
   display: block;
 
   position: absolute;
   top: 5%;
   left: 78%;
+}
+.erro_cadastro{
+  margin-top: -15px;
+  margin-left: 410px;
 }
 
 /* input rgba(217, 217, 217, 0.2)*/

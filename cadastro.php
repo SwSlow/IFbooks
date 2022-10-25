@@ -1,17 +1,12 @@
 <?php
-session_start();
-//Recuperando o valor da variável global, os erro de login.
-if (isset($_SESSION['cadErro'])) {
-  echo $_SESSION['cadErro'];
-  unset($_SESSION['cadErro']);
-} ?>
+session_start()
+?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
   <link rel="stylesheet" href="css/style.css" />
-
 </head>
 <meta charset="utf-8">
 
@@ -28,19 +23,19 @@ if (isset($_SESSION['cadErro'])) {
     <div class="form">
       <form method="post" action="cadastraConfig.php">
         <h1>Nome completo</h1>
-        <input type="text" name="nome" id="nome" placeholder="Nome completo" required>
+        <input type="text" name="nome" id="nome"required>
 
-        <h1>Número matrícula</h1>
-        <input type="number" name="num_matricula" id="num_matricula" placeholder="Matrícula" required>
+        <h1>Número matrícula </h1>
+        <input type="text" minlength="7" maxlength="10" name="num_matricula" id="num_matricula" placeholder="0123456789" required>
 
         <h1>CPF</h1>
-        <input type="number" name="cpf" id="cpf" placeholder="CPF" required>
+        <input type="text" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" name="num_cpf" id="num_cpf" placeholder="000.000.000-00" required>
 
         <h1>Email Institucional</h1>
-        <input type="text" name="email" id="email" placeholder="Email">
+        <input type="email" name="email" id="email" placeholder="seuemail@email.com">
 
         <h1>Senha</h1>
-        <input type="password" name="senha" id="senha" placeholder="Senha">
+        <input type="password" name="senha" id="senha">
 
         <h1 class="positionCurso">Curso</h1>
 
@@ -77,7 +72,7 @@ if (isset($_SESSION['cadErro'])) {
 
         <h1 class="positionSituacao">Situação</h1>
 
-        <div class="formSituacao" id="situacao" required>
+        <div class="formSituacao" id="situacao">
           <input class="raioUser" type="radio" id="afastado" name="situacao" value="afastado">
           <label class="labelUser" for="afastado">Afastado</label>
           <input class="raioUser1" type="radio" id="regular" name="situacao" value="regular">
@@ -87,7 +82,7 @@ if (isset($_SESSION['cadErro'])) {
         <h1 class="positionCampus">Categoria de usuário</h1>
 
         <div class="formUser" id="user">
-          <input class="raioUser" type="radio" id="servidor" name="tipo_user" value="2">
+          <input class="raioUser" type="radio" id="servidor" name="tipo_acesso" value="1">
           <label class="labelUser" for="servidor">Servidor</label>
           <input class="raioUser1" type="radio" id="estudante" name="tipo_acesso" value="2">
           <label class="labelUser1" for="estudante">Estudante</label>
@@ -97,14 +92,16 @@ if (isset($_SESSION['cadErro'])) {
         <button class="butCadastro" type="submit">
           <h2>Cadastrar</h2>
         </button>
-      </form>
-
-
-
     </div>
-
-
-
+    <p class="erro_cadastro">
+      <?php
+      //Recuperando o valor da variável global, os erro de login.
+      if (isset($_SESSION['cadErro'])) {
+        echo $_SESSION['cadErro'];
+        unset($_SESSION['cadErro']);
+      } ?>
+    </p>
+    </form>
   </div>
 
   <!-- botões -->
