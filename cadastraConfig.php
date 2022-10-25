@@ -14,7 +14,7 @@ $situacao = $_POST['situacao'];
 $user = $_POST['tipo_acesso'];
 $senha = md5($senha);
 
-echo $result = "INSERT INTO usuarios(nome,num_matricula,cpf, email, curso,bibioteca,situacao, niveis_acesso_id,user, senha) 
+$result = "INSERT INTO usuarios(nome,num_matricula,cpf, email, curso, biblioteca,situacao, niveis_acesso_id,user, senha) 
                 VALUES('$nome','$matricula','$cpf','$email', '$curso','$biblioteca', '$situacao','$acesso','$user', '$senha')";
 
 //verifica se os campos de 
@@ -38,7 +38,7 @@ if (null == ([$matricula] || [$cpf])) {
 
     //verifica se não há usuários com a mesma matrícula ou cpf
     if (($buscaMatricula || $buscaCpf) == '0') {
-        $result = "INSERT INTO usuarios(num_matricula, email, bibioteca, niveis_acesso_id, senha, nome, cpf, curso, situacao, user) 
+        $result = "INSERT INTO usuarios(num_matricula, email, biblioteca, niveis_acesso_id, senha, nome, cpf, curso, situacao, user) 
         VALUES('$matricula','$email', '$biblioteca', '$acesso', '$senha', '$nome', '$cpf', '$curso', '$situacao', '$user')";
 
         //insere os dados na tabela se não haver cpf ou matrícula iguais

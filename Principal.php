@@ -10,6 +10,7 @@ if (!isset($_SESSION["idUsuario"]) || !isset($_SESSION["nomeUsuario"])) {
   exit;
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -36,13 +37,6 @@ if (!isset($_SESSION["idUsuario"]) || !isset($_SESSION["nomeUsuario"])) {
       <div class="dropdownContent">
 
         <a onclick="sairAlert()">LogOff</a>
-        <button onclick="sairAlert()">Sair</button>
-        <script>  
-          function sairAlert() {
-            location.href = "./sair.php";
-            alert("Deslogado com sucesso!")
-          }
-        </script>
 
       </div>
     </div>
@@ -74,3 +68,9 @@ if (!isset($_SESSION["idUsuario"]) || !isset($_SESSION["nomeUsuario"])) {
 </footer>
 
 </html>
+<script>
+  function sairAlert() {
+    location.href = "./sair.php";
+    alert("Deslogado com sucesso!")
+  }
+</script>
