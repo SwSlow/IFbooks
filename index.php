@@ -35,9 +35,9 @@ session_start();
         <div class="form">
             <form method="post" action="validaLogin.php">
                 <h1>Matrícula</h1>
-                <input type="text" minlength="7" maxlength="10" name="num_matricula" required>
+                <input type="text" minlength="7" maxlength="10" name="num_matricula" placeholder="0123456789" required>
                 <h1>Senha</h1>
-                <input type="password" name="senha" required>
+                <input type="password" name="senha" placeholder="********" required>
                 <br><br>
                 <button type="submit">
                     <h2>Entrar</h2>

@@ -23,7 +23,7 @@ session_start()
     <div class="form">
       <form method="post" action="cadastraConfig.php">
         <h1>Nome completo</h1>
-        <input type="text" name="nome" id="nome"required>
+        <input type="text" name="nome" id="nome" placeholder="Seu nome" required>
 
         <h1>Número matrícula </h1>
         <input type="text" minlength="7" maxlength="10" name="num_matricula" id="num_matricula" placeholder="0123456789" required>
@@ -35,7 +35,7 @@ session_start()
         <input type="email" name="email" id="email" placeholder="seuemail@email.com">
 
         <h1>Senha</h1>
-        <input type="password" name="senha" id="senha">
+        <input type="password" name="senha" id="senha" placeholder="********">
 
         <h1 class="positionCurso">Curso</h1>
 

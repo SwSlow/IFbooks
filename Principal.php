@@ -35,9 +35,8 @@ if (!isset($_SESSION["idUsuario"]) || !isset($_SESSION["nomeUsuario"])) {
       <img class="UserBib" src="imagens/User.png">
 
       <div class="dropdownContent">
-
         <a onclick="sairAlert()">LogOff</a>
-
+        <a onclick="addLivroPag()">Adicionar livro</a>
       </div>
     </div>
     <div class="search-box">
@@ -72,5 +71,9 @@ if (!isset($_SESSION["idUsuario"]) || !isset($_SESSION["nomeUsuario"])) {
   function sairAlert() {
     location.href = "./sair.php";
     alert("Deslogado com sucesso!")
+  }
+
+  function addLivroPag(){
+    location.href = "/adicionarLivro.php";
   }
 </script>
