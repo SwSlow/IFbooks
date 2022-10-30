@@ -1,14 +1,14 @@
 <?php
-session_start();
+//session_start();
 
 //verifica se há algum usuário logado 
-if (!isset($_SESSION["idUsuario"]) || !isset($_SESSION["nomeUsuario"])) {
+//if (!isset($_SESSION["idUsuario"]) || !isset($_SESSION["nomeUsuario"])) {
   // Usuário não logado! Redireciona para a página de login
-  header("Location: ./index.php");
+//  header("Location: ./index.php");
   // Notifica o usuário que não há nenhuma sessão iniciada
-  $_SESSION['loginErro'] = "<script>alert('Faça login para acessar a página!');</script>";
-  exit;
-}
+//  $_SESSION['loginErro'] = "<script>alert('Faça login para acessar a página!');</script>";
+//  exit;
+//}
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +17,10 @@ if (!isset($_SESSION["idUsuario"]) || !isset($_SESSION["nomeUsuario"])) {
 <head>
   <link rel="stylesheet" href="css/stylePrincipal.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+<!-- swiper link -->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
 
 
 </head>
@@ -59,6 +63,44 @@ if (!isset($_SESSION["idUsuario"]) || !isset($_SESSION["nomeUsuario"])) {
     </div>
   </header>
 
+  <br><br><br><br><br><br>
+
+<section class="swiper-container">
+
+   <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide">Slide 8</div>
+        <div class="swiper-slide">Slide 9</div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+
+    </section>
+
+    <!-- swiper script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 4,
+        spaceBetween: 35,
+        centeredSlides: true,
+        loop: true,
+
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    </script>
 
 </body>
 
