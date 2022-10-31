@@ -15,14 +15,14 @@
         
         //Encontrado um usuario na tabela usuário com os mesmos dados digitado no formulário
         if(isset($resultado)){
-            $_SESSION['idUsuario'] = $resultado['id'];
+            $_SESSION['idUsuario'] = $resultado['id_usuario'];
             $_SESSION['nomeUsuario'] = $resultado['nome'];
-            $_SESSION['usuarioNiveisAcessoId'] = $resultado['niveis_acesso_id'];
+            $_SESSION['usuarioNiveisAcessoId'] = $resultado['tipo_usuario'];
             $_SESSION['num_matricula'] = $resultado['num_matricula'];
             $_SESSION['usuarioEmail'] = $resultado['email'];
             $_SESSION['curso'] = $resultado['curso'];
             $_SESSION['bibioteca'] = $resultado['bibioteca'];
-            $_SESSION['situação'] = $resultado['situação'];
+            $_SESSION['situação'] = $resultado['situacao'];
 
 
             if($_SESSION['usuarioNiveisAcessoId'] == "1"){
