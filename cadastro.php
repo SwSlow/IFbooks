@@ -82,9 +82,9 @@ session_start()
         <h1 class="positionCampus">Categoria de usuário</h1>
 
         <div class="formUser" id="user">
-          <input class="raioUser" type="radio" id="servidor" name="tipo_acesso" value="1">
+          <input class="raioUser" type="radio" id="servidor" name="tipo_usuario" value="1">
           <label class="labelUser" for="servidor">Servidor</label>
-          <input class="raioUser1" type="radio" id="estudante" name="tipo_acesso" value="2">
+          <input class="raioUser1" type="radio" id="estudante" name="tipo_usuario" value="2">
           <label class="labelUser1" for="estudante">Estudante</label>
         </div>
         <br><br>

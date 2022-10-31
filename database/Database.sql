@@ -1,20 +1,13 @@
-CREATE TABLE IF NOT EXISTS `usuarios` (
-    `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `usuarios` (
+    `id_usuario` int NOT NULL AUTO_INCREMENT,
     `nome` varchar(220) NOT NULL,
-    `num_matricula` int(11) NOT NULL,
-    `cpf` int(11) NOT NULL,
-    `email` varchar(520) NOT NULL,
-    `curso` varchar(520) NOT NULL,
-    `biblioteca` varchar (520) NOT NULL,
-    `situacao` varchar (32) NOT NULL,
-    `niveis_acesso_id` int(11) NOT NULL,
-    `user` varchar(32) NOT NULL,
+    `num_matricula` varchar(11) NOT NULL,
+    `num_cpf` varchar(11) NOT NULL,
+    `email` varchar(100) NOT NULL,
+    `curso` varchar(100) NOT NULL,
+    `biblioteca` varchar (100) NOT NULL,
+    `situacao` varchar (10) NOT NULL,
+    `tipo_usuario` int NOT NULL,
     `senha` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id_usuario`)
 );
-
-  CREATE TABLE IF NOT EXISTS `niveis_acessos` (
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `nome` varchar(50) NOT NULL,
-    PRIMARY KEY (`id`)
-  )
