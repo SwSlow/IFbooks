@@ -35,7 +35,7 @@ session_start();
         <div class="form">
             <form method="post" action="validaLogin.php">
                 <h1>Matrícula</h1>
-                <input type="text" minlength="7" maxlength="10" name="num_matricula" placeholder="0123456789" required>
+                <input type="text" minlength="7" maxlength="10" name="registro" placeholder="0123456789" required>
                 <h1>Senha</h1>
                 <input type="password" name="senha" placeholder="********" required>
                 <br><br>
@@ -72,8 +72,8 @@ session_start();
         <h2>Entrar</h2>
     </button>
 </body>
-
 <footer>
+    hello
     <img src="imagens/ondaas.PNG" width="100%" height="50%">
 </footer>
 

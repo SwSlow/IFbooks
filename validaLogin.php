@@ -3,13 +3,13 @@
         //Incluindo a conexão com banco de dados   
     include_once("config.php");    
     //O campo usuário e senha preenchido entra no if para validar
-    if((isset($_POST['num_matricula'])) && (isset($_POST['senha']))){
-        $usuario = mysqli_real_escape_string($conn, $_POST['num_matricula']); //Escapar de caracteres especiais, como aspas, prevenindo SQL injection
+    if((isset($_POST['registro'])) && (isset($_POST['senha']))){
+        $usuario = mysqli_real_escape_string($conn, $_POST['registro']); //Escapar de caracteres especiais, como aspas, prevenindo SQL injection
         $senha = mysqli_real_escape_string($conn, $_POST['senha']);
         $senha = md5($senha);
             
         //Buscar na tabela usuario o usuário que corresponde com os dados digitado no formulário
-        $result_usuario = "SELECT * FROM usuarios WHERE num_matricula = '$usuario' && senha = '$senha' LIMIT 1";
+        $result_usuario = "SELECT * FROM usuarios WHERE registro = '$usuario' && senha = '$senha' LIMIT 1";
         $resultado_usuario = mysqli_query($conn, $result_usuario);
         $resultado = mysqli_fetch_assoc($resultado_usuario);
         
@@ -18,7 +18,7 @@
             $_SESSION['idUsuario'] = $resultado['id_usuario'];
             $_SESSION['nomeUsuario'] = $resultado['nome'];
             $_SESSION['usuarioNiveisAcessoId'] = $resultado['tipo_usuario'];
-            $_SESSION['num_matricula'] = $resultado['num_matricula'];
+            $_SESSION['registro'] = $resultado['registro'];
             $_SESSION['usuarioEmail'] = $resultado['email'];
             $_SESSION['curso'] = $resultado['curso'];
             $_SESSION['bibioteca'] = $resultado['bibioteca'];

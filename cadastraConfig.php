@@ -2,43 +2,43 @@
 include("config.php");
 session_start();
 
-$matricula = $_POST['num_matricula'];
+$registration = $_POST['registration'];
 $email = $_POST['email'];
-$biblioteca = $_POST['biblioteca'];
-$tipo_usuario = $_POST['tipo_usuario'];
-$senha = $_POST['senha'];
-$nome = $_POST['nome'];
-$cpf = $_POST['num_cpf'];
-$curso = $_POST['curso'];
+$campus = $_POST['campus'];
+$permissionLevel = $_POST['permissionLevel'];
+$password = $_POST['password'];
+$name = $_POST['name'];
+$cpf = $_POST['cpf'];
+$course = $_POST['course'];
 $situacao = $_POST['situacao'];
-$senha = md5($senha);
+$password = md5($password);
 
-$result = "INSERT INTO usuarios(nome, num_matricula, num_cpf, email, curso, biblioteca, situacao, tipo_usuario, senha) 
-VALUES('$nome','$matricula','$cpf','$email', '$curso','$biblioteca', '$situacao','$tipo_usuario', '$senha')";   
+$result = "INSERT INTO usuarios(nome, registro, cpf, email, curso, biblioteca, situacao, tipo_usuario, senha) 
+VALUES('$nome','$registro','$cpf','$email', '$curso','$biblioteca', '$situacao','$tipo_usuario', '$senha')";   
 
 //verifica se os campos de 
-if (null == ([$matricula] || [$cpf])) {
+if (null == ([$registro] || [$cpf])) {
     header("location: cadastro.php");
     $_SESSION['cadErro'] = "<scri>alert('Preencha os campos corretamente');</script>";
     exit;
 } else {
 
-    "SELECT * FROM usuarios WHERE num_matricula = '$matricula' && cpf = '$cpf'";
+    "SELECT * FROM usuarios WHERE registro = '$registro' && cpf = '$cpf'";
 
     //obtém a matrícuça dos usuários
-    $sqlMatricula = "SELECT * FROM usuarios WHERE num_matricula='$matricula'";
-    $queryMatricula = mysqli_query($conn, $sqlMatricula);
-    $buscaMatricula = mysqli_num_rows($queryMatricula);
+    $sqlRegistro = "SELECT * FROM usuarios WHERE registro='$registro'";
+    $queryRegistro = mysqli_query($conn, $sqlRegistro);
+    $buscaRegistro = mysqli_num_rows($queryRegistro);
 
     //obtém o cpf dos usuários
-    $sqlCpf = "SELECT * FROM usuarios WHERE num_cpf='$cpf'";
+    $sqlCpf = "SELECT * FROM usuarios WHERE cpf='$cpf'";
     $queryCpf = mysqli_query($conn, $sqlCpf);
     $buscaCpf = mysqli_num_rows($queryCpf);
 
     //verifica se não há usuários com a mesma matrícula ou cpf
-    if (($buscaMatricula || $buscaCpf) == '0') {
-        $result = "INSERT INTO usuarios(nome, num_matricula, num_cpf, email, curso, biblioteca, situacao, tipo_usuario, senha) 
-        VALUES('$nome','$matricula','$cpf','$email', '$curso','$biblioteca', '$situacao','$tipo_usuario', '$senha')";
+    if (($buscaRegistro || $buscaCpf) == '0') {
+        $result = "INSERT INTO usuarios(nome, registro, cpf, email, curso, biblioteca, situacao, tipo_usuario, senha)
+        VALUES('$nome','$registro','$cpf','$email', '$curso','$biblioteca', '$situacao','$tipo_usuario', '$senha')";
 
         //insere os dados na tabela se não haver cpf ou matrícula iguais
         $insert = mysqli_query($conn, $result) or die(" O sistema não foi capaz de realizar a operação!");    //pois se foi 0, não encontrou nenhum registro igual
@@ -58,7 +58,7 @@ if (null == ([$matricula] || [$cpf])) {
     <title>| Usuário cadastrado</title>
     <link rel="stylesheet" href="css/style.css" />
 
-    <meta http-equiv="refresh" content="3; URL='./index.php'" />
+    <meta http-equiv="refresh" content="2; URL='./index.php'" />
 </head>
 <meta charset="utf-8">
 
