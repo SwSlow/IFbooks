@@ -1,15 +1,21 @@
-CREATE TABLE `usuarios` (
-    `id_usuario` int NOT NULL AUTO_INCREMENT,
-    `nome` varchar(220) NOT NULL,
-    `num_matricula` varchar(11) NOT NULL,
-    `num_cpf` varchar(11) NOT NULL,
-    `email` varchar(100) NOT NULL,
-    `curso` varchar(100) NOT NULL,
-    `biblioteca` varchar (100) NOT NULL,
-    `situacao` varchar (10) NOT NULL,
-    `tipo_usuario` int NOT NULL,
-    `senha` varchar(50) NOT NULL,
-  PRIMARY KEY (`id_usuario`)
+CREATE DATABASE IF NOT EXISTS IFbooks;
+
+use IFbooks;
+
+CREATE TABLE IF NOT EXISTS user (
+    userID INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(250),
+    registration VARCHAR(250),
+    cpf varchar(11),
+    email VARCHAR(250),
+    password VARCHAR(255),
+    type int,
+    course VARCHAR(250),
+    campus VARCHAR(250),
+    situation int,
+    permissionLevel ENUM('admin', 'employee', 'moderator', 'reader') DEFAULT 'reader',
+
+    PRIMARY KEY(userID)
 );
 
 CREATE TABLE IF NOT EXISTS collection (
@@ -37,35 +43,90 @@ CREATE TABLE IF NOT EXISTS item (
     classification VARCHAR(250),
     isDigital BOOLEAN,
     link VARCHAR(500),
-    number VARCHAR(100) cover VARCHAR(250),
-    
+    number VARCHAR(100),
+    cover VARCHAR(250),
     collectionID INT NOT NULL,
-    -- AUTHORS
-    -- TRANSLATORS
-    -- TAGS
-    
+
     PRIMARY KEY(itemID),
-    FOREIGN KEY (collectionID) REFERENCES Persons(collectionID)
+    FOREIGN KEY (collectionID) REFERENCES collection (collectionID)
+);
+
+CREATE TABLE IF NOT EXISTS author (
+    authorID INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(250),
+
+    PRIMARY KEY(authorID)
+);
+
+CREATE TABLE IF NOT EXISTS translator (
+    translatorID INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(250),
+
+    PRIMARY KEY(translatorID)
+);
+
+CREATE TABLE IF NOT EXISTS itemAutor (
+    authorID INT NOT NULL,
+    itemID INT NOT NULL,
+
+    PRIMARY KEY (authorID, itemID),
+    FOREIGN KEY (authorID) REFERENCES author(authorID),
+    FOREIGN KEY (itemID) REFERENCES item(itemID)
+);
+
+CREATE TABLE IF NOT EXISTS itemTranslator (
+    translatorID INT NOT NULL,
+    itemID INT NOT NULL,
+
+    PRIMARY KEY (translatorID, itemID),
+    FOREIGN KEY (translatorID) REFERENCES translator(translatorID),
+    FOREIGN KEY (itemID) REFERENCES item(itemID)
+);
+
+CREATE TABLE IF NOT EXISTS tag (
+    tagID INT NOT NULL AUTO_INCREMENT,
+    value varchar(100),
+
+    PRIMARY KEY(tagID)
+);
+
+CREATE TABLE IF NOT EXISTS itemTag (
+    tagID INT NOT NULL,
+    itemID INT NOT NULL,
+
+    PRIMARY KEY (tagID, itemID),
+    FOREIGN KEY (tagID) REFERENCES tag(tagID),
+    FOREIGN KEY (itemID) REFERENCES item(itemID)
 );
 
 CREATE TABLE IF NOT EXISTS comment (
     commentID INT NOT NULL AUTO_INCREMENT,
-    userID INT NOT NULL,
+    personID INT NOT NULL,
     itemID INT NOT NULL,
     content VARCHAR(2000),
+    replyTo INT,
 
     PRIMARY KEY(commentID),
-    FOREIGN KEY (userID) REFERENCES Persons(userID),    
-    FOREIGN KEY (itemID) REFERENCES Persons(itemID)
+    FOREIGN KEY (personID) REFERENCES person(personID),
+    FOREIGN KEY (itemID) REFERENCES item(itemID),
+    FOREIGN KEY (replyTo) REFERENCES comment(commentID)
 );
 
 CREATE TABLE IF NOT EXISTS evaluation (
-    evaluationID INT NOT NULL AUTO_INCREMENT,
-    userID INT NOT NULL,
+    personID INT NOT NULL,
     itemID INT NOT NULL,
     value INT,
+    
+    PRIMARY KEY(personID, itemID),
+    FOREIGN KEY (personID) REFERENCES person(personID),
+    FOREIGN KEY (itemID) REFERENCES item(itemID)
+);
 
-    PRIMARY KEY(evaluationID),
-    FOREIGN KEY (userID) REFERENCES Persons(userID),
-    FOREIGN KEY (itemID) REFERENCES Persons(itemID)
+CREATE TABLE IF NOT EXISTS itemPerson (
+    personID INT NOT NULL,
+    itemID INT NOT NULL,
+
+    PRIMARY KEY (personID, itemID),
+    FOREIGN KEY (personID) REFERENCES person(personID),
+    FOREIGN KEY (itemID) REFERENCES item(itemID)
 );

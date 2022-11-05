@@ -1,80 +1,121 @@
 <?php
-//Inicializado primeira a sessão para posteriormente recuperar valores das variáveis globais. 
 session_start();
+
+// verifica se há algum usuário logado 
+if (!isset($_SESSION["userID"])) {
+  // Usuário não logado! Redireciona para a página de login
+ header("Location: ./login.php");
+  // Notifica o usuário que não há nenhuma sessão iniciada
+ $_SESSION['loginErro'] = "<script>alert('Faça login para acessar a página!');</script>";
+ exit;
+}
 ?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
-    <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/stylePrincipal.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+<!-- swiper link -->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
 
 </head>
 <meta charset="utf-8">
 
-<title>| Login</title>
+<title>| Bem-Vindo!</title>
+
+
 
 <body>
-    <img class="fundos" src="imagens/fundo.png">
-    <img class="logoIff" src="imagens/IFF.png">
+  <header class="cabecalho">
+    <img class="logoBib" src="imagens/Logo.png">
 
-    <div class="bem_vindo">
-        <img class="linha" src="imagens/linha.png">
-        <h4>Bem vindo!</h4>
-        <img class="linha2" src="imagens/linha.png">
+    <div class="dropDownIMG">
+
+      <img class="UserBib" src="imagens/User.png">
+
+      <div class="dropdownContent">
+        <a onclick="sairAlert()">LogOff</a>
+        <a onclick="addLivroPag()">Adicionar livro</a>
+      </div>
+    </div>
+    <div class="search-box">
+      <input class="search-txt" type="text" name="" placeholder="Digite sua pesquisa">
+      <a class="search-btn" href="#">
+        <i class="fas fa-search"></i>
+      </a>
     </div>
 
-    <!-- painel login -->
-
-    <div class="div_login">
-
-        <br>
-
-        <img class="logo" src="imagens/Vector.png">
-        <br><br><br><br>
-        <!-- Criado o formulário para o usuário colocar os dados de acesso.  -->
-        <div class="form">
-            <form method="post" action="validaLogin.php">
-                <h1>Matrícula</h1>
-                <input type="text" minlength="7" maxlength="10" name="num_matricula" placeholder="0123456789" required>
-                <h1>Senha</h1>
-                <input type="password" name="senha" placeholder="********" required>
-                <br><br>
-                <button type="submit">
-                    <h2>Entrar</h2>
-                </button>
-                <h3>Esqueçeu sua senha?</h3>
-            </form>
-        </div>
-        <br><br>
-        <p>
-            <?php
-            //Recuperando o valor da variável global, os erro de login.
-            if (isset($_SESSION['loginErro'])) {
-                echo $_SESSION['loginErro'];
-                unset($_SESSION['loginErro']);
-            } ?>
-
-            <?php
-            //Recuperando o valor da variável global, deslogado com sucesso.
-            if (isset($_SESSION['logindeslogado'])) {
-                unset($_SESSION['logindeslogado']);
-            }
-            ?>
-        </p>
+    <div class="dropdown">
+      <button class="dropbtn">Categorias</button>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
     </div>
 
-    <!-- botões  -->
 
-    <button class="cadastrar1" onclick="window.location.href = 'cadastro.php'">
-        <h2>Cadastrar</h2>
-    </button>
-    <button class="entrar1">
-        <h2>Entrar</h2>
-    </button>
+    </div>
+  </header>
+
+  <br><br><br><br><br><br>
+
+<section class="swiper-container">
+
+   <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide">Slide 8</div>
+        <div class="swiper-slide">Slide 9</div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+
+    </section>
+
+    <!-- swiper script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 4,
+        spaceBetween: 35,
+        centeredSlides: true,
+        loop: true,
+
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    </script>
+
 </body>
 
 <footer>
-    <img src="imagens/ondaas.PNG" width="100%" height="50%">
+  <img src="imagens/ondaas.PNG" width="100%" height="50%">
 </footer>
 
 </html>
+<script>
+  function sairAlert() {
+    location.href = "./sair.php";
+    alert("Deslogado com sucesso!")
+  }
+
+  function addLivroPag(){
+    location.href = "/adicionarLivro.php";
+  }
+</script>
