@@ -2,7 +2,7 @@
     $servidor = "localhost";
     $usuario = "root";
     $senha = "";
-    $dbname = "biblioteca";  
+    $dbname = "IFbooks";  
 
     //Criar a conexao
     $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);

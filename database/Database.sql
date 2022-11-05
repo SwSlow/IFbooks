@@ -2,8 +2,8 @@ CREATE DATABASE IF NOT EXISTS IFbooks;
 
 use IFbooks;
 
-CREATE TABLE IF NOT EXISTS person (
-    personID INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS user (
+    userID INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(250),
     registration VARCHAR(250),
     cpf varchar(11),
@@ -13,10 +13,9 @@ CREATE TABLE IF NOT EXISTS person (
     course VARCHAR(250),
     campus VARCHAR(250),
     situation int,
-    permissionLevel int,
     permissionLevel ENUM('admin', 'employee', 'moderator', 'reader') DEFAULT 'reader',
 
-    PRIMARY KEY(personID)
+    PRIMARY KEY(userID)
 );
 
 CREATE TABLE IF NOT EXISTS collection (

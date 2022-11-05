@@ -21,18 +21,18 @@ session_start()
   <div class="div_cadastro">
 
     <div class="form">
-      <form method="post" action="cadastraConfig.php">
+      <form method="post" action="cadastroConfig.php">
         <h1>Nome completo</h1>
         <input type="text" name="name" id="name" placeholder="Seu nome" required>
 
-        <h1>Número matrícula </h1>
+        <h1>Matrícula/CIAP</h1>
         <input type="text" minlength="7" maxlength="10" name="registration" id="registration" placeholder="0123456789" required>
 
         <h1>CPF</h1>
-        <input type="text" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" name="cpf" id="cpf" placeholder="000.000.000-00" required>
+        <input type="text" pattern="([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})" name="cpf" id="cpf" placeholder="000.000.000-00" required>
 
         <h1>Email Institucional</h1>
-        <input type="email" name="email" id="email" placeholder="seuemail@email.com">
+        <input type="email" name="email" id="email" placeholder="seuemail@aluno.iffar.edu.br" pattern=".*@(?:iffar|aluno\.iffar|iffarroupilha)\.edu\.br">
 
         <h1>Senha</h1>
         <input type="password" name="password" id="password" placeholder="********">
@@ -55,7 +55,7 @@ session_start()
         <h1 class="positionUserC">Curso</h1>
 
         <div class="BibVinc" id="campus">
-          <select name="biblioteca" id="biblioteca" required>
+          <select name="campus" id="campus" required>
             <option selected disabled class="opNon">Indique seu campus</option>
             <option value="Campus Frederico Westphalen">Campus Frederico Westphalen</option>
             <option value="Campus Alegrete">Campus Alegrete</option>
@@ -70,7 +70,7 @@ session_start()
           </select>
         </div>
 
-        <h1 class="positionSituacao">situation</h1>
+        <h1 class="positionSituacao">situação</h1>
 
         <div class="formSituacao" id="situation">
         <input class="raioUser1" type="radio" id="regular" name="situation" value="1">
@@ -106,7 +106,7 @@ session_start()
 
   <!-- botões -->
 
-  <button class="entrar2" onclick="window.location.href = 'index.php'">
+  <button class="entrar2" onclick="window.location.href = 'login.php'">
     <h2>Entrar</h2>
   </button>
   <button class="cadastrar2">
@@ -115,8 +115,6 @@ session_start()
 
 </body>
 
-<footer>
   <img src="imagens/ondaas.PNG" width="100%" height="50%">
-</footer>
 
 </html>
