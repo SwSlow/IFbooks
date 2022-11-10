@@ -18,6 +18,9 @@ CREATE TABLE IF NOT EXISTS user (
     PRIMARY KEY(userID)
 );
 
+INSERT INTO user (name, email, password, permissionLevel) 
+VALUES('admin','biblioteca@iffar.edu.br', 'lgav3002', 'admin');
+
 CREATE TABLE IF NOT EXISTS collection (
     collectionID INT NOT NULL AUTO_INCREMENT,
     type VARCHAR(250),
