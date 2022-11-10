@@ -41,12 +41,6 @@ body {
 
 
 
-img {
-  position: absolute;
-  bottom: 50%;
-  top: 50%;
-  left: 0%;
-}
 
 .cabecalho {
   position: absolute;
@@ -58,9 +52,14 @@ img {
 }
 
 .fundos{
-  position:static;
-  bottom: 100%;
-  z-index: -10;
+   position: absolute;
+   width:100%;
+   height:80%;
+   z-index: -100000;
+   bottom: 50%;
+   top: 50%;
+   left: 0%;
+   padding-top: 250px;
 }
 
 
@@ -195,7 +194,7 @@ h4 {
   position: absolute;
   background-color: #1e1e1e;
   min-width: 159px;
-  min-height: 147px;
+  min-height: 390px;
 
   box-shadow: 0px 109px 337px rgba(0, 0, 0, 0.0815322),
     0px 45.5376px 140.791px rgba(0, 0, 0, 0.117129),
@@ -291,6 +290,7 @@ h4 {
 
 .swiper-container{
   width: 100% !important;
+  
  }
 
 
@@ -324,7 +324,7 @@ width: 100%;
 height: 250px;
 margin: 0;
 padding: 0;
-z-index: -100;
+z-index: 1000;
 padding-top: 10px !important;
 padding-bottom: 10px !important;
 
@@ -354,7 +354,7 @@ padding-bottom: 10px !important;
    -webkit-align-items: center;
    align-items: center;
    overflow: visible !important;
-   z-index: -100;
+   z-index: 100;
 
  }
 

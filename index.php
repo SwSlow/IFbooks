@@ -53,9 +53,14 @@ if (!isset($_SESSION["userID"])) {
     <div class="dropdown">
       <button class="dropbtn">Categorias</button>
       <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+        <a href="#ebooksLink">Ebooks</a>
+        <a href="#educacionaisLink">Educacionais</a>
+        <a href="#romanceLink">Romance</a>
+        <a href="#aventuraLink">Aventura</a>
+        <a href="#suspenseLink">Suspense</a>
+        <a href="#terrorLink">Terror</a>
+        <a href="#biografiaLink">Biografia</a>
+        <a href="#contosLink">Contos</a>
       </div>
     </div>
 
@@ -129,12 +134,7 @@ if (!isset($_SESSION["userID"])) {
   </div>
 
 
-   <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  
-  
-  
-
-  <br><BR>
+   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><BR>
 
   <h4 class="swiper-title">Recomendações</h4>
 
@@ -185,14 +185,438 @@ if (!isset($_SESSION["userID"])) {
       </div>
     </div>
 
-    </section>
+    <br><br><br><br>
 
-      <!-- <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-       -->
+    <a id="ebooksLink"></a>
+
+    <h4 class="swiper-title">Ebooks</h4>
+
+<div  class="form">
+
+<section" class="swiper-container">
+
+
+   <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+
+
+        <div class="swiper-slide"><img src="imagens/example.PNG">
+        <h6>Call of Cthulu</h6>
+      </div>
+
+        <div class="swiper-slide"><img src="imagens/example.PNG">
+        <h6>Call of Cthulu</h6>
+      </div>
+
+        <div class="swiper-slide"><img src="imagens/example.PNG">
+        <h6>Call of Cthulu</h6>
+      </div>
+
+        <div class="swiper-slide"><img src="imagens/example.PNG">
+        <h6>Call of Cthulu</h6>
+      </div>
+
+        <div class="swiper-slide"><img src="imagens/example.PNG">
+        <h6>Call of Cthulu</h6>
+      </div>
+
+        <div class="swiper-slide"><img src="imagens/example.PNG">
+        <h6>Call of Cthulu</h6>
+      </div>
+
+        <div class="swiper-slide"><img src="imagens/example.PNG">
+        <h6>Call of Cthulu</h6>
+      </div>
+
+        <div class="swiper-slide"><img src="imagens/example.PNG">
+        <h6>Call of Cthulu</h6>
+      </div>
+        <div class="swiper-slide"><img src="imagens/example.PNG">
+        <h6>Call of Cthulu</h6>
+
+      </div>
+
+      </div>
     </div>
-   
+
+    <br><br><br><br>
+  
+<a id="educacionaisLink"></a>
+
+<h4 class="swiper-title">Educacionais</h4>
+
+
+
+<div class="form">
+
+<section class="swiper-container">
+
+ <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+
+    </div>
+
+    </div>
   </div>
+
+  <br><br><br><br>
+
+  <a id="romanceLink"></a>
+
+<h4 class="swiper-title">Romançe</h4>
+
+<div class="form">
+
+<section class="swiper-container">
+
+ <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+
+    </div>
+
+    </div>
+  </div>
+
+  <br><br><br><br>
+
+  <a id="aventuraLink"></a>
+
+
+<h4 class="swiper-title">Aventura</h4>
+
+<div class="form">
+
+<section class="swiper-container">
+
+ <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+
+    </div>
+
+    </div>
+  </div>
+
+  <br><br><br><br>
+
+  <a id="suspenseLink"></a>
+
+<h4 class="swiper-title">Suspense</h4>
+
+<div class="form">
+
+<section class="swiper-container">
+
+ <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+
+    </div>
+
+    </div>
+  </div>
+
+
+  <br><br><br><br>
+
+  <a id="terrorLink"></a>
+
+<h4 class="swiper-title">Terror</h4>
+
+<div class="form">
+
+<section class="swiper-container">
+
+ <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+
+    </div>
+
+    </div>
+  </div>
+
+
+  <br><br><br><br>
+
+  <a id="biografiaLink"></a>
+
+<h4 class="swiper-title">Biografia</h4>
+
+<div class="form">
+
+<section class="swiper-container">
+
+ <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+
+    </div>
+
+    </div>
+  </div>
+
+  <br><br><br><br>
+
+  <a id="contosLink"></a>
+
+<h4 class="swiper-title">Contos</h4>
+
+<div class="form">
+
+<section class="swiper-container">
+
+ <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+    </div>
+      <div class="swiper-slide"><img src="imagens/example.PNG">
+      <h6>Call of Cthulu</h6>
+
+    </div>
+
+    </div>
+  </div>
+
+
+
 
 
     <!-- swiper script -->
@@ -268,8 +692,11 @@ if (!isset($_SESSION["userID"])) {
 
 </body>
 
+
+
+
 <footer>
-  <img class="fundos" src="imagens/ondaas.PNG" width="100%" height="50%"> 
+  <img class="fundos" src="imagens/ondaas.PNG"> 
 </footer>
 
 
