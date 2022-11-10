@@ -55,7 +55,7 @@ if (null == [$registration]) {
     <title>| Usuário cadastrado</title>
     <link rel="stylesheet" href="css/style.css" />
 
-    <meta http-equiv="refresh" content="2; URL='./login.php'" />
+    <meta http-equiv="refresh" content="2; URL='../login.php'" />
 </head>
 <meta charset="utf-8">
 
