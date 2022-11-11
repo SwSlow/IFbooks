@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS user (
 );
 
 INSERT INTO user (name, email, password, permissionLevel) 
-VALUES('admin','biblioteca@iffar.edu.br', 'lgav3002', 'admin');
+VALUES('admin','biblioteca@iffar.edu.br', '202cb962ac59075b964b07152d234b70', 'admin');
 
 CREATE TABLE IF NOT EXISTS collection (
     collectionID INT NOT NULL AUTO_INCREMENT,
