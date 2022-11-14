@@ -22,6 +22,8 @@
   src: url(fontes/Poppins-ExtraLight.ttf);
 }
 
+html {scroll-behavior: smooth;}
+
 body {
   font-family: Poppins, PoppinsEscuro, PoppinsClaro;
   background-color: #1e1e1e;
@@ -112,7 +114,7 @@ h4 {
 .swiper-title{
   position: relative !important;
   left: 5% !important;
-  bottom: 10% !important;
+  bottom: -1% !important;
 
 
 }
@@ -275,16 +277,6 @@ h4 {
 /* swiper */
 
 
-.swiper-button-next {
-   color: #eb5e28 !important; 
-   top: 50% !important; 
-  }
-.swiper-button-prev { 
-  color: #eb5e28 !important;
-  top: 50% !important; 
-
- }
-
 
 
 
@@ -395,10 +387,17 @@ padding-bottom: 10px !important;
 
 
  .swiper-button-next {
-  left: 97% !important; 
- }
+    left: 98% !important; 
+    color: #eb5e28 !important; 
+    top: 57% !important; 
+   }
+ 
  .swiper-button-prev {
-  left: 1% !important; 
+  left: 2% !important; 
+  color: #eb5e28 !important; 
+  top: 57% !important; 
+
+
  }
 
  .swiper-button-next:hover {

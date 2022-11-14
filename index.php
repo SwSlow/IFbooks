@@ -1,14 +1,14 @@
 <?php
-session_start();
+// session_start();
 
-// verifica se há algum usuário logado 
-if (!isset($_SESSION["userID"])) {
-  // Usuário não logado! Redireciona para a página de login
- header("Location: ./login.php");
-  // Notifica o usuário que não há nenhuma sessão iniciada
- $_SESSION['loginErro'] = "<script>alert('Faça login para acessar a página!');</script>";
- exit;
-}
+// // verifica se há algum usuário logado 
+// if (!isset($_SESSION["userID"])) {
+//   // Usuário não logado! Redireciona para a página de login
+//  header("Location: ./login.php");
+//   // Notifica o usuário que não há nenhuma sessão iniciada
+//  $_SESSION['loginErro'] = "<script>alert('Faça login para acessar a página!');</script>";
+//  exit;
+// }
 ?>
 
 <!DOCTYPE html>
@@ -73,6 +73,8 @@ if (!isset($_SESSION["userID"])) {
 
  
   
+<!-- <h4 class="swiper-title">Sua lista</h4> -->
+
 <h4 class="swiper-title">Sua lista</h4>
 
 <div class="form">
@@ -117,24 +119,20 @@ if (!isset($_SESSION["userID"])) {
         <div class="swiper-slide"><img src="imagens/example.PNG">
         <h6>Call of Cthulu</h6>
 
-      </div>
-
-      </div>
     </div>
+    </div>
+    
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
 
 
+    </div>
     </section>
 
 
-    <!-- <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-       -->
-    </div>
-   
-  </div>
+    <br><br><br><br>
 
-
-   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><BR>
+      <!-- slide -->
 
   <h4 class="swiper-title">Recomendações</h4>
 
@@ -180,12 +178,21 @@ if (!isset($_SESSION["userID"])) {
         <div class="swiper-slide"><img src="imagens/example.PNG">
         <h6>Call of Cthulu</h6>
 
-      </div>
-
-      </div>
     </div>
+    </div>
+    
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+
+    </div>
+    </section>
+
 
     <br><br><br><br>
+
+      <!-- slide -->
+
 
     <a id="ebooksLink"></a>
 
@@ -235,11 +242,19 @@ if (!isset($_SESSION["userID"])) {
         <h6>Call of Cthulu</h6>
 
       </div>
-
       </div>
+      
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
     </div>
+    </section>
+
 
     <br><br><br><br>
+
+      <!-- slide -->
+
   
 <a id="educacionaisLink"></a>
 
@@ -289,12 +304,20 @@ if (!isset($_SESSION["userID"])) {
       <div class="swiper-slide"><img src="imagens/example.PNG">
       <h6>Call of Cthulu</h6>
 
-    </div>
-
-    </div>
   </div>
+  </div>
+  
+  <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+  </div>
+  </section>
+
 
   <br><br><br><br>
+
+    <!-- slide -->
+
 
   <a id="romanceLink"></a>
 
@@ -342,12 +365,20 @@ if (!isset($_SESSION["userID"])) {
       <div class="swiper-slide"><img src="imagens/example.PNG">
       <h6>Call of Cthulu</h6>
 
-    </div>
-
-    </div>
   </div>
+  </div>
+  
+  <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+  </div>
+  </section>
+
 
   <br><br><br><br>
+
+    <!-- slide -->
+
 
   <a id="aventuraLink"></a>
 
@@ -397,11 +428,19 @@ if (!isset($_SESSION["userID"])) {
       <h6>Call of Cthulu</h6>
 
     </div>
+    </div>
+    
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
 
     </div>
-  </div>
+    </section>
+
 
   <br><br><br><br>
+
+    <!-- slide -->
+
 
   <a id="suspenseLink"></a>
 
@@ -452,10 +491,19 @@ if (!isset($_SESSION["userID"])) {
     </div>
 
     </div>
+    
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
   </div>
+
+  </section>
 
 
   <br><br><br><br>
+
+    <!-- slide -->
+
 
   <a id="terrorLink"></a>
 
@@ -506,10 +554,19 @@ if (!isset($_SESSION["userID"])) {
     </div>
 
     </div>
+    
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
   </div>
+
+  </section>
 
 
   <br><br><br><br>
+
+    <!-- slide -->
+
 
   <a id="biografiaLink"></a>
 
@@ -560,9 +617,19 @@ if (!isset($_SESSION["userID"])) {
     </div>
 
     </div>
+    
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
   </div>
 
+  </section>
+
+
   <br><br><br><br>
+
+    <!-- slide -->
+
 
   <a id="contosLink"></a>
 
@@ -613,6 +680,10 @@ if (!isset($_SESSION["userID"])) {
     </div>
 
     </div>
+    
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
   </div>
 
 
@@ -631,13 +702,11 @@ if (!isset($_SESSION["userID"])) {
         spaceBetween: 70,
         centeredSlides: true,
         loop: true,
-        longSwipes: false,
         setWrapperSize: true,
         followFinger: true,
         setWrapperSize: true,
         slidesPerGroup: 3,
         speed: 800,
-        grabCursor: true,
 
         keyboard: {
     enabled: true,
@@ -647,30 +716,30 @@ if (!isset($_SESSION["userID"])) {
         breakpoints: {
     320: {
       slidesPerView: 2,
-      spaceBetween: 20
+      spaceBetween: 15
     },
    600: {
       slidesPerView: 3,
-      spaceBetween: 30
+      spaceBetween: 25
     },
     900: {
       slidesPerView: 4,
-      spaceBetween: 40
+      spaceBetween: 35
     },
 
     1300: {
       slidesPerView: 6,
-      spaceBetween: 70
+      spaceBetween: 65
     },
 
     1500: {
-      slidesPerView: 7,
-      spaceBetween: 70
+      slidesPerView: 6,
+      spaceBetween: 65
     },
 
     1800: {
-      slidesPerView: 8,
-      spaceBetween: 75
+      slidesPerView: 6,
+      spaceBetween: 70
     },
    
     
