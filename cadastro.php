@@ -21,7 +21,7 @@ session_start()
   <div class="div_cadastro">
 
     <div class="form">
-      <form method="post" action="cadastroConfig.php">
+      <form method="post" action="auth/cadastroConfig.php">
         <h1>Nome completo</h1>
         <input type="text" name="name" id="name" placeholder="Seu nome" required>
 
