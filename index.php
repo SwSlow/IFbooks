@@ -1,14 +1,14 @@
 <?php
-// session_start();
+session_start();
 
-// // verifica se há algum usuário logado 
-// if (!isset($_SESSION["userID"])) {
-//   // Usuário não logado! Redireciona para a página de login
-//  header("Location: ./login.php");
-//   // Notifica o usuário que não há nenhuma sessão iniciada
-//  $_SESSION['loginErro'] = "<script>alert('Faça login para acessar a página!');</script>";
-//  exit;
-// }
+// verifica se há algum usuário logado 
+if (!isset($_SESSION["userID"])) {
+  // Usuário não logado! Redireciona para a página de login
+ header("Location: ./login.php");
+  // Notifica o usuário que não há nenhuma sessão iniciada
+ $_SESSION['loginErro'] = "<script>alert('Faça login para acessar a página!');</script>";
+ exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -778,5 +778,5 @@
 
   function addLivroPag(){
     location.href = "/adicionarLivro.php";
-  }
+  }
 </script>
