@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS user (
 );
 
 INSERT INTO user (name, email, password, permissionLevel) 
-VALUES('admin','biblioteca@iffar.edu.br', 'lgav3002', 'admin');
+VALUES('admin','biblioteca@iffar.edu.br', '202cb962ac59075b964b07152d234b70', 'admin');
 
 CREATE TABLE IF NOT EXISTS collection (
     collectionID INT NOT NULL AUTO_INCREMENT,
@@ -104,32 +104,34 @@ CREATE TABLE IF NOT EXISTS itemTag (
 
 CREATE TABLE IF NOT EXISTS comment (
     commentID INT NOT NULL AUTO_INCREMENT,
-    personID INT NOT NULL,
+    userID INT NOT NULL,
     itemID INT NOT NULL,
     content VARCHAR(2000),
     replyTo INT,
 
     PRIMARY KEY(commentID),
-    FOREIGN KEY (personID) REFERENCES person(personID),
-    FOREIGN KEY (itemID) REFERENCES item(itemID),
-    FOREIGN KEY (replyTo) REFERENCES comment(commentID)
+    FOREIGN KEY (userID) REFERENCES user(userID),
+    FOREIGN KEY (itemID) REFERENCES item(itemID)
 );
 
 CREATE TABLE IF NOT EXISTS evaluation (
-    personID INT NOT NULL,
+    userID INT NOT NULL,
     itemID INT NOT NULL,
     value INT,
     
-    PRIMARY KEY(personID, itemID),
-    FOREIGN KEY (personID) REFERENCES person(personID),
+    PRIMARY KEY(userID, itemID),
+    FOREIGN KEY (userID) REFERENCES user(userID),
     FOREIGN KEY (itemID) REFERENCES item(itemID)
 );
 
-CREATE TABLE IF NOT EXISTS itemPerson (
-    personID INT NOT NULL,
+CREATE TABLE IF NOT EXISTS itemUser (
+    userID INT NOT NULL,
     itemID INT NOT NULL,
 
-    PRIMARY KEY (personID, itemID),
-    FOREIGN KEY (personID) REFERENCES person(personID),
+    PRIMARY KEY (userID, itemID),
+    FOREIGN KEY (userID) REFERENCES user(userID),
     FOREIGN KEY (itemID) REFERENCES item(itemID)
 );
+
+alter TABLE comment
+ADD FOREIGN KEY (replyTo) REFERENCES Comment(commentID);

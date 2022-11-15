@@ -34,7 +34,7 @@ session_start();
         <!-- Criado o formulário para o usuário colocar os dados de acesso.  -->
         <div class="form">
             <form method="post" action="auth/validaLogin.php">
-                <h1>Matrícula</h1>
+                <h1>Matrícula/CIAP</h1>
                 <input type="text" minlength="7" maxlength="10" name="registration" placeholder="0123456789" required>
                 <h1>Senha</h1>
                 <input type="password" name="password" placeholder="********" required>
