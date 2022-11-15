@@ -1,14 +1,14 @@
 <?php
-session_start();
+// session_start();
 
-// verifica se há algum usuário logado 
-if (!isset($_SESSION["userID"])) {
-  // Usuário não logado! Redireciona para a página de login
- header("Location: ./login.php");
-  // Notifica o usuário que não há nenhuma sessão iniciada
- $_SESSION['loginErro'] = "<script>alert('Faça login para acessar a página!');</script>";
- exit;
-}
+// // verifica se há algum usuário logado 
+// if (!isset($_SESSION["userID"])) {
+//   // Usuário não logado! Redireciona para a página de login
+//  header("Location: ./login.php");
+//   // Notifica o usuário que não há nenhuma sessão iniciada
+//  $_SESSION['loginErro'] = "<script>alert('Faça login para acessar a página!');</script>";
+//  exit;
+// }
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +31,7 @@ if (!isset($_SESSION["userID"])) {
 
 
 <body>
-  <header class="cabecalho">
+  <header class="nav-down">
     <img class="logoBib" src="imagens/Logo.png">
 
     <div class="dropDownIMG">
@@ -68,12 +68,9 @@ if (!isset($_SESSION["userID"])) {
     </div>
   </header>
 
+
   <br><br><br><br>
 
-
- 
-  
-<!-- <h4 class="swiper-title">Sua lista</h4> -->
 
 <h4 class="swiper-title">Sua lista</h4>
 
@@ -687,8 +684,47 @@ if (!isset($_SESSION["userID"])) {
   </div>
 
 
+  <!-- cabeçalho interativo -->
 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
+  <script>
+
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    
+    if (st > lastScrollTop && st > navbarHeight){
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+
+  </script>
 
     <!-- swiper script -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
