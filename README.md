@@ -8,9 +8,7 @@ IFbooks 📚 | Prática Profissional Integrada - 34 TI/2022
 ### 🤌🏽 Frontend
 * HTML
 * CSS
-* JavaScript
 
 ### ⚙️ Backend
 * PHP
 * MySQL
-* JS
