@@ -40,7 +40,7 @@
 
       <div class="dropdownContent">
         <a onclick="sairAlert()">LogOff</a>
-        <a onclick="addLivroPag()">Painel de Controle</a>
+        <a href="PainelControle.php" onclick="addLivroPag()">Painel de Controle</a>
       </div>
     </div>
     <div class="search-box">
