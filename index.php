@@ -56,7 +56,7 @@ if (!isset($_SESSION["userID"])) {
 
       <div class="dropdownContent">
         <a onclick="sairAlert()">LogOff</a>
-        <a onclick="controlPanel()">Painel de Controle</a>
+        <a onclick="addLivroPag()">Painel de Controle</a>
       </div>
     </div>
     <div class="search-box">
