@@ -16,21 +16,8 @@
         //Encontrado um usuario na tabela usuário com os mesmos dados digitado no formulário
         if(isset($result)){
             $_SESSION['userID'] = $result['userID'];
+            $_SESSION['type'] = $result['type'];
             $_SESSION['permissionLevel'] = $result['permissionLevel'];
-
-            switch ($user['permissionLevel']) {
-                case 'admin':
-                    $_SESSION['permission'] = 'Administrador';
-                    break;
-                case 'employee':
-                    $_SESSION['permission'] = 'Funcionário';
-                    break;
-                case 'moderator':
-                    $_SESSION['permission'] = 'Moderador';
-                    break;
-                default:
-                    $_SESSION['permission'] = 'Leitor';
-            }
 
             header("Location: ../index.php");
 

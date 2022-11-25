@@ -43,7 +43,7 @@ if (null == [$registration]) {
 
         //erro caso ja exista um cpf ou matrícula igual
         $_SESSION['cadErro'] = "Usuário ja cadastrado!";
-        header("location: cadastro.php");
+        header("location: ../cadastro.php");
     }
 }
 ?>
