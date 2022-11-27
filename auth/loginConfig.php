@@ -1,11 +1,11 @@
     <?php
     session_start(); 
-        //Incluindo a conexão com banco de dados   
-    include_once("config.php");    
+    include("./db/config.php"); 
+       
     //O campo usuário e senha preenchido entra no if para validar
     if((isset($_POST['registration'])) && (isset($_POST['password']))){
-        $user = mysqli_real_escape_string($conn, $_POST['registration']); //Escapar de caracteres especiais, como aspas, prevenindo SQL injection
-        $password = mysqli_real_escape_string($conn, $_POST['password']);
+        $user = mysqli_real_escape_string($mysqli, $_POST['registration']); //Escapar de caracteres especiais, como aspas, prevenindo SQL injection
+        $password = mysqli_real_escape_string($mysqli, $_POST['password']);
         $password = md5($password);
             
         //Buscar na tabela usuario o usuário que corresponde com os dados digitado no formulário
