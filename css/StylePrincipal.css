@@ -107,11 +107,61 @@ h1 {
   color: #ffffff;
 }
 
+h2 {
+  position: relative;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 100;
+  font-size: 20px;
+  line-height: 10px;
+  color: #ffffff;
+  top: -15%;
+}
+
+h3 {
+  position: relative;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 100;
+  font-size: 20px;
+  line-height: 10px;
+  color: #ffffff;
+  top: -45%;
+}
+
+h5{
+  position: relative;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 100;
+  font-size: 20px;
+  line-height: 10px;
+  color: #ffffff;
+  top: -35%;
+}
+
+.com{
+  line-height: 40px;
+  top: -40%;
+}
+
 h6 {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
   font-size: 25px;
+
+  color: #ffffff;
+}
+
+h9 {
+  position: absolute;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  left: 17.5%;
+  z-index: 1000;
 
   color: #ffffff;
 }
@@ -199,6 +249,8 @@ h4 {
 
   font-size: 20px;
   color: #ffffff;
+
+
 }
 
 .dropdown {
@@ -451,4 +503,233 @@ backdrop-filter: blur(3.5px);
 border: 1px solid rgba(64, 61, 57, 0.23);
 
 
+}
+
+/* painel controle */
+
+.divPainel {
+  background-color: #333333;
+
+  position:absolute;
+  width: 395px;
+  height: 140px;
+  left: 17%;
+
+  box-shadow: 0px 109px 337px rgba(0, 0, 0, 0.0815322),
+    0px 45.5376px 140.791px rgba(0, 0, 0, 0.117129),
+    0px 24.3466px 75.2734px rgba(0, 0, 0, 0.145),
+    0px 13.6485px 42.1976px rgba(0, 0, 0, 0.172871),
+    0px 7.24861px 22.4108px rgba(0, 0, 0, 0.208468),
+    0px 3.01631px 9.32565px rgba(0, 0, 0, 0.29);
+
+  padding-left: 10px;
+  border-radius: 20px;
+  z-index: 1000;
+}
+
+
+.flex-parent-element {
+  display: flex;
+  width: 60%;
+  padding-left: 280px;
+}
+
+.flex-child-element {
+
+  background-color: #333333;
+
+  width: 425px;
+  height: 140px;
+
+  box-shadow: 0px 109px 337px rgba(0, 0, 0, 0.0815322),
+    0px 45.5376px 140.791px rgba(0, 0, 0, 0.117129),
+    0px 24.3466px 75.2734px rgba(0, 0, 0, 0.145),
+    0px 13.6485px 42.1976px rgba(0, 0, 0, 0.172871),
+    0px 7.24861px 22.4108px rgba(0, 0, 0, 0.208468),
+    0px 3.01631px 9.32565px rgba(0, 0, 0, 0.29);
+
+  padding-left: 10px;
+  border-radius: 20px;
+  z-index: 1000;
+  display: inline-block;
+
+}
+
+.flex-child-element:first-child {
+  margin-right: 25px;
+  
+}
+
+h10{
+    position: relative;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 68px;
+    top: -58px; 
+    
+    color: #ffffff;
+}
+
+.voltar {
+  background: #eb5e28;
+  box-shadow: 3px 5px 7px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  padding-bottom: 2px !important;
+  border: none;
+  width: 11%;
+  cursor: pointer;
+  position: absolute;
+  top: 4%;
+  left: 87%;
+}
+
+/* botão voltar */
+
+.voltar {
+  background: #eb5e28;
+  box-shadow: 3px 5px 7px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  padding-bottom: 4px;
+  padding-left: 37px;
+  padding-right: 37px;
+  border: none;
+  cursor: pointer;
+  display: block;
+
+  position: absolute;
+  color: #ffffff;
+
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.voltar:hover {
+  transform: scale(1.1);
+  transition: all 0.3s;
+}
+
+.voltar:after {
+  content: "";
+  background: #f5a180;
+  display: block;
+  border-radius: 20px;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -40px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.9s;
+}
+
+.voltar:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
+/* imgs e labels */
+
+.userImg {
+  max-width: 100%;
+  position: absolute;
+  top: 22px;
+  left: 385px;
+  width: 50px;
+  height: 38px;
+
+}
+
+.acervoImg{
+  max-width: 100%;
+  position: relative;
+  top: -53px;
+  left: -1px;
+  width: 45px;
+  height: 45px;
+}
+
+.equipeImg {
+  max-width: 100%;
+  position: relative;
+  top: -53px;
+  left: 2px;
+  width: 50px;
+  height: 50px;
+
+}
+
+.forumImg {
+  max-width: 100%;
+  position: relative;
+  top: -53px;
+  left: 5px;
+  width: 53px;
+  height: 53px;
+}
+
+.avaliacoesImg {
+  max-width: 100%;
+  position: relative;
+  top: -52px;
+  left: 2px;
+  width: 45px;
+  height: 45px;
+}
+
+.comentariosImg {
+  max-width: 100%;
+  position: relative;
+  top: -50px;
+  left: 2px;
+  width: 42px;
+  height: 42px;
+}
+
+/* labels */
+
+.forumLabel{
+ top: -68px;
+}
+
+.avaliacoesLabel{
+  top: -61px;
+}
+
+.equipeLabel{
+  top: -65px;
+}
+
+.usuarioLabel{
+  top: -58px;
+}
+
+.acervoLabel{
+  top: -59px;
+}
+
+.comentariosLabel{
+  top: -57px;
+}
+
+
+/* botao div */
+
+.flex-child-element:hover {
+  box-shadow: 8px 8px #eb5e28;
+  transition: .3s;
+  cursor: pointer;
+  
+}
+
+
+
+a{
+  text-decoration: none;
 }
