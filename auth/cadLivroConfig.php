@@ -5,13 +5,12 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-if (!isset($_SESSION['id'])) {
-    if (!$_SESSION['permission'] == 'Administrador') {
-        header('Location: ./index.php');
-    }
-}
+// if (!isset($_SESSION['id'])) {
+//     if (!$_SESSION['permission'] == 'Administrador') {
+//         header('Location: ../index.php');
+//     }
+// }
 
-if (isset($_POST['submit'])) {
     $title = $mysqli->real_escape_string($_POST['title']);
     $subtitle = $mysqli->real_escape_string($_POST['subtitle']);
     $collection = $mysqli->real_escape_string($_POST['collection']);
@@ -24,7 +23,6 @@ if (isset($_POST['submit'])) {
     $tags = $mysqli->real_escape_string($_POST['tags']);
     $authors = $mysqli->real_escape_string($_POST['authors']);
     $translators = $mysqli->real_escape_string($_POST['translators']);
-
 
     $library = $mysqli->real_escape_string($_POST['library']);
     $section = $mysqli->real_escape_string($_POST['section']);
@@ -41,9 +39,9 @@ if (isset($_POST['submit'])) {
         $ext = $path['extension'];
         $temp_name = $_FILES['cover']['tmp_name'];
         $permanent_name = uniqid() . "." . $ext;
-        $store_at = getcwd() . '/../db/uploads/covers/' . $permanent_name;
+        $store_at = getcwd() . '/../db/uploads/covers' . $permanent_name;
         move_uploaded_file($temp_name, $store_at);
-        $cover = './db/uploads/covers/' . $permanent_name;
+        $cover = '../db/uploads/covers' . $permanent_name;
         return $cover;
     }
 
@@ -77,7 +75,7 @@ if (isset($_POST['submit'])) {
 
 
     // Create Item
-    $sqlCode = "INSERT INTO `item`(`isbn`, `title`, `subtitle`, `edition`, `publisher`, `year`, `section`, `synthesis`, `place`, `inventory`, `library`, `physicalDescription`, `classification`, `isDigital`, `url`, `number`, `cover`, `collectionID`) VALUES ('$isbn','$title','$subtitle','$edition','$publisher','$year','$section','$synthesis','$place','$inventory','$library','$physicalDescription','$classification','$isDigital','$url','$number','$cover',$collection)";
+    $sqlCode = "INSERT INTO `item`(`isbn`, `title`, `subtitle`, `edition`, `publisher`, `year`, `section`, `synthesis`, `place`, `inventory`, `library`, `physicalDescription`, `classification`, `isDigital`, `url`, `number`, `cover`, `collectionID`) VALUES ('$isbn','$title','$subtitle','$edition','$publisher','$year','$section','$synthesis','$place','$inventory','$library','$physicalDescription','$classification','$isDigital','$url','$number','$cover','$collection')";
 
     $mysqli->query($sqlCode) or die("Falha na execução do código SQL: " . $mysqli);
     $sql_query = $mysqli->query("SELECT LAST_INSERT_ID()") or die("Falha na execução do código SQL: " . $mysqli);
@@ -89,13 +87,13 @@ if (isset($_POST['submit'])) {
     $entityType = "";
     function createTagIfNotExists($entity)
     {
-        include('../db/connection.php');
+        include('../db/config.php');
         global $entityType;
 
         $entity = ucwords(trim($entity));
         $entityID = $entityType . "ID";
 
-        $sqlCode = "SELECT `$entityID` from $entityType WHERE name='$entity'";
+        $sqlCode = "SELECT `$entityID` from `$entityType` WHERE name='$entity'";
         $sql_query = $mysqli->query($sqlCode) or die("Falha na execução do código SQL: " . $mysqli);
         $rows = $sql_query->num_rows;
 
@@ -115,7 +113,7 @@ if (isset($_POST['submit'])) {
 
     function relateItemEntity($entity, $item)
     {
-        include('../db/connection.php');
+        include('../db/config.php');
         global $entityType;
 
         $tableName = "Item" . ucfirst($entityType);
@@ -152,16 +150,15 @@ if (isset($_POST['submit'])) {
         relateItemEntity($translator, $createdItem);
     }
 
-    header("Location: ./");
-}
+    header("Location: ../index.php");
+
 ?>
-<!-- página de sucesso -->
 <html>
 
 <head>
     <meta charset="utf-8" />
     <title>| Acervo cadastrado</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
 
     <meta http-equiv="refresh" content="2; URL='../login.php'" />
 </head>

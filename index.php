@@ -27,6 +27,9 @@ if (!isset($_SESSION["userID"])) {
       $_SESSION['permission'] = 'Leitor';
   }
 }
+
+include('./db/config.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -97,42 +100,46 @@ if (!isset($_SESSION["userID"])) {
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
 
+          <?php
+          include('./db/config.php');
 
-          <div class="swiper-slide"><img src="imagens/example.PNG">
-            <h6>Call of Cthulu</h6>
-          </div>
+          $sqlCode = "SELECT * FROM item ORDER BY itemID DESC LIMIT 18";
+          $sql_query = $mysqli->query($sqlCode) or die("Falha na execução do código SQL: " . $mysqli);
 
-          <div class="swiper-slide"><img src="imagens/example.PNG">
-            <h6>Call of Cthulu</h6>
-          </div>
+          while ($item = $sql_query->fetch_assoc()) {
+            $id = $item["itemID"];
+            $cover = $item["cover"];
+            $title = $item["title"];
+            $authors = [];
 
-          <div class="swiper-slide"><img src="imagens/example.PNG">
-            <h6>Call of Cthulu</h6>
-          </div>
+            $sqlCode = "SELECT * FROM itemAutor WHERE itemID=$id";
+            $sql_query_authors = $mysqli->query($sqlCode) or die("Falha na execução do código SQL: " . $mysqli);
 
-          <div class="swiper-slide"><img src="imagens/example.PNG">
-            <h6>Call of Cthulu</h6>
-          </div>
+            while ($itemAuthor = $sql_query_authors->fetch_assoc()) {
+              $auhtorID = $itemAuthor["authorID"];
 
-          <div class="swiper-slide"><img src="imagens/example.PNG">
-            <h6>Call of Cthulu</h6>
-          </div>
+              $sqlCode = "SELECT name FROM author WHERE authorID=$auhtorID";
+              $sql_query_authors_name = $mysqli->query($sqlCode) or die("Falha na execução do código SQL: " . $mysqli);
+              $authorName = $sql_query_authors_name->fetch_assoc();
+              array_push($authors, $authorName["name"]);
+            }
 
-          <div class="swiper-slide"><img src="imagens/example.PNG">
-            <h6>Call of Cthulu</h6>
-          </div>
+            $authors = implode(", ", $authors);
 
-          <div class="swiper-slide"><img src="imagens/example.PNG">
-            <h6>Call of Cthulu</h6>
-          </div>
+            $itemArticle = "
+            <div class=\"swiper-slide\"><img src=\"$cover\" >
+            <h6>$title</h6>
+            <h2>$authors</h2>
+            <a href=\"./item/?item=$id\" class=\"flex items-center justify-center gap-2 hover:gap-3 hover:bg-emerald-100 font-medium py-2 bg-emerald-50 text-emerald-600 border-t\">
+                                            Visitar obra 
+                                            <img src=\"./static/assets/icons/arrow-right.svg\" alt=\"Visitar\">
+                                        </a>
+            </div> ";
 
-          <div class="swiper-slide"><img src="imagens/example.PNG">
-            <h6>Call of Cthulu</h6>
-          </div>
-          <div class="swiper-slide"><img src="imagens/example.PNG">
-            <h6>Call of Cthulu</h6>
+            echo ($itemArticle);
+          }
+          ?>
 
-          </div>
         </div>
 
         <div class="swiper-button-next"></div>

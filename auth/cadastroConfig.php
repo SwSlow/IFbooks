@@ -1,16 +1,16 @@
 <?php
-include("config.php");
+include("../db/config.php");
 session_start();
 
-$registration = $_POST['registration'];
-$email = $_POST['email'];
-$campus = $_POST['campus'];
-$type = $_POST['type'];
-$password = $_POST['password'];
-$name = $_POST['name'];
-$cpf = $_POST['cpf'];
-$course = $_POST['course'];
-$situation = $_POST['situation'];
+$registration = $mysqli->real_escape_string($_POST['registration']);
+$email = $mysqli->real_escape_string($_POST['email']);
+$campus = $mysqli->real_escape_string($_POST['campus']);
+$type = $mysqli->real_escape_string($_POST['type']);
+$password = $mysqli->real_escape_string($_POST['password']);
+$name = $mysqli->real_escape_string($_POST['name']);
+$cpf = $mysqli->real_escape_string($_POST['cpf']);
+$course = $mysqli->real_escape_string($_POST['course']);
+$situation = $mysqli->real_escape_string($_POST['situation']);
 $password = md5($password);
 
 //verifica se os campos de 
@@ -24,21 +24,14 @@ if (null == [$registration]) {
 
     //obtém a matrícuça dos usuários
     $sqlRegistration = "SELECT * FROM user WHERE registration = '$registration'";
-    $queryRegistration = mysqli_query($conn, $sqlRegistration);
+    $queryRegistration = mysqli_query($mysqli, $sqlRegistration);
     $searchRegistration = mysqli_num_rows($queryRegistration);
-
-    // //obtém o cpf dos usuários
-    // $sqlCpf = "SELECT * FROM user WHERE cpf = '$cpf'";
-    // $queryCpf = mysqli_query($conn, $sqlCpf);
-    // $searchCpf = mysqli_num_rows($queryCpf);
 
     //verifica se não há usuários com a mesma matrícula ou cpf
     if ($searchRegistration == '0') {
-        $result = "INSERT INTO user (name, registration, cpf, email, password, course, campus, situation, type) 
-        VALUES('$name','$registration','$cpf','$email', '$password', '$course','$campus', '$situation','$type')";
+        $sqlCode = "INSERT INTO `user` (`name`, `registration`, `cpf`, `email`, `password`, `course`, `campus`, `situation`, `type`)  VALUES('$name','$registration','$cpf','$email', '$password', '$course','$campus', '$situation','$type')";
+        $sql_query = $mysqli->query($sqlCode) or die("Falha na execução do código SQL: " . $mysqli);
 
-        //insere os dados na tabela se não haver cpf ou matrícula iguais
-        $insert = mysqli_query($conn, $result) or die(" O sistema não foi capaz de realizar a operação!");    //pois se foi 0, não encontrou nenhum registro igual
     } else {
 
         //erro caso ja exista um cpf ou matrícula igual
@@ -53,7 +46,7 @@ if (null == [$registration]) {
 <head>
     <meta charset="utf-8" />
     <title>| Usuário cadastrado</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
 
     <meta http-equiv="refresh" content="2; URL='../login.php'" />
 </head>
