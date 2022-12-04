@@ -299,6 +299,8 @@ input:focus {
   border-radius: 20px;
 }
 
+
+
 .butCadastro {
   top: 80%;
 }
@@ -346,6 +348,20 @@ input:focus {
   color: #ffffff;
 }
 
+.labelType {
+  width: 234px;
+  height: 38px;
+
+  font-family: "PoppinsClaro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 38px;
+  padding-left: 9px;
+
+  color: #ffffff;
+}
+
 .raioUser {
   width: 20px;
   height: 20px;
@@ -363,6 +379,13 @@ input:focus {
   top: 2px;
   left: 10px;
   position: relative;
+  accent-color: #eb5e28;
+}
+
+.raioType {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
   accent-color: #eb5e28;
 }
 
@@ -708,7 +731,7 @@ button:active:after {
 
   position: absolute;
   width: 350px;
-  height: 2080px;
+  height: 2430px;
   top: 8%;
   left: 35%;
   padding-top: 5px;
@@ -760,9 +783,12 @@ textarea {
 
 /* input imagem */
 
-input[type="file"] {
+/* input[type="file"] {
   display: none;
-}
+} */
+
+
+
 
 .custom-file-upload {
   position: absolute;
