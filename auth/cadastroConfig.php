@@ -48,27 +48,27 @@ if (null == [$registration]) {
     <title>| Usuário cadastrado</title>
     <link rel="stylesheet" href="../css/style.css" />
 
-    <meta http-equiv="refresh" content="2; URL='../login.php'" />
+    <!-- <meta http-equiv="refresh" content="2; URL='../login.php'" /> -->
 </head>
 <meta charset="utf-8">
 
 <title>| Sucesso</title>
 
 <body>
-    <img class="fundos" src="imagens/fundo.png">
-    <img class="logoIff" src="imagens/IFF.png">
+    <img class="fundos" src="../imagens/fundo.png">
+    <img class="logoIff" src="../imagens/IFF.png">
 
     <div class="div_cadastro_sucess">
-        <h5>Usuário Cadastrado com sucesso!</h5>
+        <h5>Usuário cadastrado com sucesso!</h5>
 
-        <img class="imgCheck" src="imagens/check.png">
+        <img class="imgCheck" src="../imagens/check.png">
         <br><br><br><br>
     </div>
 
 </body>
 
 <footer>
-    <img src="imagens/ondaas.PNG" width="100%" height="50%">
+    <img src="../imagens/ondaas.PNG" width="100%" height="50%">
 </footer>
 
 </html>

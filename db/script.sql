@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS IFbooks;
+CREATE DATABASE IFbooks;
 use IFbooks;
 CREATE TABLE IF NOT EXISTS user (
     userID INT NOT NULL AUTO_INCREMENT,
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS translator (
     name VARCHAR(250),
     PRIMARY KEY(translatorID)
 );
-CREATE TABLE IF NOT EXISTS itemAutor (
+CREATE TABLE IF NOT EXISTS itemAuthor (
     authorID INT NOT NULL,
     itemID INT NOT NULL,
     PRIMARY KEY (authorID, itemID),
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS itemTranslator (
 );
 CREATE TABLE IF NOT EXISTS tag (
     tagID INT NOT NULL AUTO_INCREMENT,
-    value varchar(100),
+    name varchar(100),
     PRIMARY KEY(tagID)
 );
 CREATE TABLE IF NOT EXISTS itemTag (

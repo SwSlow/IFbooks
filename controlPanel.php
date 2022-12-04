@@ -6,7 +6,7 @@ session_start();
 <html>
 
 <head>
-    <link rel="stylesheet" href="css/stylePrincipal.css"  />
+    <link rel="stylesheet" href="./css/StylePrincipal.css"  />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
 
