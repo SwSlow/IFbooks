@@ -79,8 +79,8 @@
 
       <h1>Capa</h1>
       <div>
-        <input type="file" name="cover" id="cover" class="hidden" required  >
-        <label for="cover" class="">Escolher arquivo</label>
+        <label class="coverLabel"  for="cover"></label>
+        <input type="file" name="cover" id="cover">
       </div>
 
       <h1>Biblioteca Pertencente</h1>
@@ -135,9 +135,6 @@
       <br> <br>
 
       
-
-<input type="file" class="custom-file-input">
-
 
 
       <button class="butCadastroLivro" type="submit">

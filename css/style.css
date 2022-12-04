@@ -731,7 +731,7 @@ button:active:after {
 
   position: absolute;
   width: 350px;
-  height: 2430px;
+  height: 2440px;
   top: 8%;
   left: 35%;
   padding-top: 5px;
@@ -783,44 +783,16 @@ textarea {
 
 /* input imagem */
 
-/* input[type="file"] {
-  display: none;
-} */
-
-
-
-
-.custom-file-upload {
-  position: absolute;
-  border: 0.1px solid rgba(255, 255, 255, 0.18);
-  display: inline-block;
-  cursor: pointer;
-  left: 33px;
-
-  width: 290px;
-  height: 35px;
-
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 7px 32px 0 rgba(37, 8, 8, 0.185);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-radius: 20px;
-  padding-left: 20px;
-
-  color: rgba(255, 252, 242, 0.589);
-  font-size: 17px;
-}
-
-.custom-file-upload:hover {
-  transform: scale(1.025);
-  transition: all 0.3s;
-}
-
-.custom-file-input:hover::before {
-  border-color: black;
-}
-.custom-file-input:active::before {
-  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+input::file-selector-button {
+  padding-right: 10px;
+  padding-top: 6.8px;
+  padding-bottom: 6.8px;
+  font-weight: bold;
+  color:  #2c2727;;
+  border:none;
+  border-radius: 5px;
+  width: 110px;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 h8 {
