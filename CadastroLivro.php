@@ -1,7 +1,7 @@
 <?php
-session_start();
-include('./db/config.php');
-?>
+// session_start();
+// include('./db/config.php');
+// ?>
 
 <!DOCTYPE html>
 <html>
@@ -85,7 +85,6 @@ include('./db/config.php');
 
       <h1>Biblioteca Pertencente</h1>
 
-      <br>
       <div class="TipoAcervo" id="Biblioteca Pertencente">
         <select name="library" id="library" required>
           <option selected disabled class="opNon">Campus pertencente</option>
@@ -102,15 +101,20 @@ include('./db/config.php');
         </select>
       </div>
 
+     <br><br>
+
       <h1>Seção</h1>
+
+       
+
       <input type="text" maxlength="50" name="section" id="section" placeholder="Localização da Obra" required>
 
       <h1>Categoria</h1>
-      <div>
-        <input type="radio" name="isDigital" id="digital" value="true" checked>
-        <label for="digital">Obra digital</label>
-        <input type="radio" name="isDigital" id="physical" value="false">
-        <label for="physical">Obra Física</label>
+      <div id="type">
+        <input class="raioType" type="radio" name="isDigital" id="digital" value="true" checked>
+        <label class="labelType" for="digital">Obra digital</label>
+        <input class="raioType" type="radio" name="isDigital" id="physical" value="false">
+        <label class="labelType" for="physical">Obra Física</label>
       </div>
 
       <h1>URL</h1>
@@ -129,6 +133,12 @@ include('./db/config.php');
       <input type="text" maxlength="300" name="physicalDescription" id="physicalDescription" placeholder="Descrição Física" required>
 
       <br> <br>
+
+      
+
+<input type="file" class="custom-file-input">
+
+
 
       <button class="butCadastroLivro" type="submit">
         <h2>Cadastrar Acervo</h2>
