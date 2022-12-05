@@ -41,7 +41,7 @@ if (!isset($_SESSION)) {
         $permanent_name = uniqid() . "." . $ext;
         $store_at = getcwd() . '/../db/uploads/covers' . $permanent_name;
         move_uploaded_file($temp_name, $store_at);
-        $cover = '../db/uploads/covers' . $permanent_name;
+        $cover = './db/uploads/covers' . $permanent_name;
         return $cover;
     }
 
@@ -167,8 +167,8 @@ if (!isset($_SESSION)) {
 <title>| Sucesso</title>
 
 <body>
-    <img class="fundos" src="imagens/fundo.png">
-    <img class="logoIff" src="imagens/IFF.png">
+    <img class="fundos" src="../imagens/fundo.png">
+    <img class="logoIff" src="../imagens/IFF.png">
 
     <div class="div_cadastro_sucess">
         <h5>Acervo cadastrado com sucesso!</h5>
@@ -180,7 +180,7 @@ if (!isset($_SESSION)) {
 </body>
 
 <footer>
-    <img src="imagens/ondaas.PNG" width="100%" height="50%">
+    <img src="../imagens/ondaas.PNG" width="100%" height="50%">
 </footer>
 
 </html>

@@ -6,7 +6,7 @@ session_start();
 <html>
 
 <head>
-    <link rel="stylesheet" href="css/stylePrincipal.css"  />
+    <link rel="stylesheet" href="./css/StylePrincipal.css"  />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
 
@@ -18,7 +18,7 @@ session_start();
 <body>
 
 <button class="voltar" onclick="window.location.href = 'index.php'">
-        <h2>Voltar</h2>
+        <h11>Voltar</h11>
     </button>
 
     <br><br><br>
@@ -54,12 +54,10 @@ session_start();
 
 <div class="flex-parent-element">
   <div class="flex-child-element slide"><h10 class="comentariosLabel">Comentários</h10> <img class="comentariosImg" src="imagens/comentarios1.PNG"> 
-  <h2 class="com">432 Comenatários aprovados
-    5 Comentários pendentes
-  </h2>
+  <h5 class="com">432 Comenatários aprovados</h5>
 </div>
-  <div class="flex-child-element slide2"><h10 class="forumLabel">Fórum</h10> <img class="forumImg" src="imagens/comentarios2.PNG"> 
-  <h5>4 Discussões</h5>
+  <div class="flex-child-element slide2"><h10 class="forumLabel">Comentários</h10> <img class="forumImg" src="imagens/comentarios2.PNG"> 
+  <h5>5 Comentários pendentes</h5>
 </div>
 </div>
 

@@ -110,42 +110,23 @@ include('./db/config.php');
             $id = $item["itemID"];
             $cover = $item["cover"];
             $title = $item["title"];
-            $authors = [];
-
-            $sqlCode = "SELECT * FROM itemAutor WHERE itemID=$id";
-            $sql_query_authors = $mysqli->query($sqlCode) or die("Falha na execução do código SQL: " . $mysqli);
-
-            while ($itemAuthor = $sql_query_authors->fetch_assoc()) {
-              $auhtorID = $itemAuthor["authorID"];
-
-              $sqlCode = "SELECT name FROM author WHERE authorID=$auhtorID";
-              $sql_query_authors_name = $mysqli->query($sqlCode) or die("Falha na execução do código SQL: " . $mysqli);
-              $authorName = $sql_query_authors_name->fetch_assoc();
-              array_push($authors, $authorName["name"]);
-            }
-
-            $authors = implode(", ", $authors);
 
             $itemArticle = "
-            <div class=\"swiper-slide\"><img src=\"$cover\" >
+            <div class=\"swiper-slide\">
+            <a href=\"./item/?item=$id\" class=\"\"><img src=\"$cover\" alt=\"Capa:$title\"></a>
             <h6>$title</h6>
-            <h2>$authors</h2>
-            <a href=\"./item/?item=$id\" class=\"flex items-center justify-center gap-2 hover:gap-3 hover:bg-emerald-100 font-medium py-2 bg-emerald-50 text-emerald-600 border-t\">
-                                            Visitar obra 
-                                            <img src=\"./static/assets/icons/arrow-right.svg\" alt=\"Visitar\">
-                                        </a>
-            </div> ";
+            </div>";
 
             echo ($itemArticle);
           }
+          if ($itemArticle == 0){
+              echo("Sem livros em sua lista!");
+          };
           ?>
 
         </div>
-
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
-
-
       </div>
     </section>
 
@@ -162,7 +143,6 @@ include('./db/config.php');
 
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
-
 
             <div class="swiper-slide"><img src="imagens/example.PNG">
               <h6>Call of Cthulu</h6>
