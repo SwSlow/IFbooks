@@ -1004,7 +1004,7 @@ input:hover{
 }
 
 textarea:hover{
-  transform: scale(1.01);
+  transform: scale(1.02);
   transition: all 0.5s;
 
 }
