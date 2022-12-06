@@ -37,8 +37,8 @@ global $item;
 <html>
 
 <head>
-    <link rel="stylesheet" href="../css/StylePrincipal.css"  />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/StylePrincipal.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
 
 </head>
@@ -48,7 +48,7 @@ global $item;
 
 <body>
 
-<header class="nav-down">
+  <header class="nav-down">
     <img class="logoBib" src="../imagens/Logo.png">
 
     <div class="dropDownIMG">
@@ -69,141 +69,137 @@ global $item;
 
     <div class="dropdown">
       <button onclick="window.location.href = 'index.php'" class="dropbtn">Voltar</button>
-     
+
     </div>
   </header>
   <br><br><br><br><br>
 
   <div class="DivLivro">
 
-  <img class="cover" src="../imagens/example.PNG">
+    <img class="cover" src="../imagens/example.PNG">
 
-  <br>
+    <br>
 
-<i id="thumbsU" class="fa-solid fa-thumbs-up fa-3x"></i>
-<button class="likeC" id="like" onclick="liked(event)">
+    <i id="thumbsU" class="fa-solid fa-thumbs-up fa-3x"></i>
+    <button class="likeC" id="like" onclick="liked(event)">
 
-<h100>like</h100>
+      <h100>like</h100>
 
-</button> 
+    </button>
 
-<i id="thumbsD" class="fa-solid fa-thumbs-down fa-3x"></i> 
-<button class="dislikeC" id="dislike" onclick="liked(event)">
+    <i id="thumbsD" class="fa-solid fa-thumbs-down fa-3x"></i>
+    <button class="dislikeC" id="dislike" onclick="liked(event)">
 
-<h100>dislike</h100>
+      <h100>dislike</h100>
 
-</button>
+    </button>
 
-<br>
+    <br>
 
-<h12>Rating do livro: </h12><h12 id="counter">0</h12>
+    <h12>Rating do livro: </h12>
+    <h12 id="counter">0</h12>
 
-<br>
+    <br>
 
 
 
-<script>
+    <script>
+      let like_flag = false;
+      let dislike_flag = false;
 
-let like_flag = false;
-let dislike_flag = false;
-function liked(event) {
-  let counter = parseFloat(document.getElementById('counter').innerHTML);
-  var button = event.target.innerText;
-  switch(button){
-    case 'like':
-        if (like_flag==false && dislike_flag==false) {
-        counter++;
-        like_flag=true;
-      } else if (like_flag==false && dislike_flag==true) {
-        counter = counter + 1; //changed this to 1 instead of 2
-        like_flag=true;
-        dislike_flag=false;
-      } else {
-        counter--;
-        like_flag=false;
+      function liked(event) {
+        let counter = parseFloat(document.getElementById('counter').innerHTML);
+        var button = event.target.innerText;
+        switch (button) {
+          case 'like':
+            if (like_flag == false && dislike_flag == false) {
+              counter++;
+              like_flag = true;
+            } else if (like_flag == false && dislike_flag == true) {
+              counter = counter + 1; //changed this to 1 instead of 2
+              like_flag = true;
+              dislike_flag = false;
+            } else {
+              counter--;
+              like_flag = false;
+            }
+            break;
+          case 'dislike':
+            if (dislike_flag == false && like_flag == false) {
+              counter--;
+              dislike_flag = true;
+            } else if (dislike_flag == false && like_flag == true) {
+              counter = counter - 1; //changed this to 1 instead of 2
+              dislike_flag = true;
+              like_flag = false;
+            } else {
+              counter++;
+              dislike_flag = false;
+            }
+            break;
+        }
+        console.log('the button ' + button + ' was pressed');
+
+        document.getElementById('counter').innerHTML = counter;
+
       }
-    break;
-    case 'dislike':
-        if (dislike_flag==false && like_flag==false) {
-        counter--;
-        dislike_flag=true;
-      } else if (dislike_flag==false && like_flag==true) {
-        counter = counter - 1; //changed this to 1 instead of 2
-        dislike_flag=true;
-        like_flag=false;
-      } else {
-        counter++;
-        dislike_flag=false;
-      }
-    break;
-  }
-  console.log('the button '+button+' was pressed');
-  
-  document.getElementById('counter').innerHTML = counter;
 
-}
+      // like
+      const likeIcon = document.getElementById('thumbsU');
 
-// like
+      like.addEventListener('click', () => {
+        like.classList.toggle('active')
+        thumbsU.classList.toggle('active')
 
+      });
 
-like.addEventListener('click', function onClick() {
+      // dislike
+      const dislikeIcon = document.getElementById('thumbsD');
 
-like.style.backgroundColor = '#302d2a';
+      dislike.addEventListener('click', () => {
+        dislike.classList.toggle('active')
+        thumbsD.classList.toggle('active')
 
-const likeIcon = document.getElementById('thumbsU');
+      });
+    </script>
 
-thumbsU.style.color = '#eb5e28';
+    <!-- area de informações -->
 
-});
+    <div class="DivInformations">
+      <!-- titulo -->
+      <h7>Call of Cthulu</h7>
+      <!-- autor -->
+      <h8>H.P Lovecraft</h8>
+      <br>
+      <!-- keywords -->
+      <h13>Categorias: </h13>
+      <h8>Terror</h8>
+      <br>
+      <!-- sinópse -->
+      <h14>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non augue non est rutrum vestibulum. Morbi nec dolor faucibus, laoreet justo et, lobortis leo. Phasellus tempor nisl ac sapien tempus scelerisque. Etiam fermentum volutpat viverra. Morbi molestie mattis leo. Nunc porta leo commodo sapien scelerisque elementum. Sed et sem tristique, volutpat lacus quis, ullamcorper libero. Cras sit amet bibendum neque. Pellentesque nisi elit, dignissim quis maximus non, sollicitudin nec risus. Nullam sed euismod nibh. Suspendisse varius elit eget metus tempus, porta viverra est interdum. </h14>
+      <br><br><br>
 
-// dislike
+      <!-- quantidades/status -->
 
+      <h13>Status: </h13>
+      <h8>Disponivel</h8>
+      <br>
+      <h13>Quantidade: </h13>
+      <h8>3</h8>
 
-dislike.addEventListener('click', function onClick() {
+      <button class="EbookBaixar">
+        <i class="fa-solid fa-download fa-2x"></i>
+        <h15>Leia agora</h15>
+      </button>
 
-  dislike.style.backgroundColor = '#302d2a';
-
-  const dislikeIcon = document.getElementById('thumbsD');
-
-  thumbsD.style.color = '#eb5e28';
-
-});
-
-</script>
-
-<!-- area de informações -->
-
-  <div class="DivInformations">
-    <!-- titulo -->
-  <h7>Call of Cthulu</h7>
-   <!-- autor -->
-  <h8>H.P Lovecraft</h8>
-  <br>
-  <!-- keywords -->
-  <h13>Categorias:  </h13><h8>Terror</h8>
-  <br>
-  <!-- sinópse -->
-  <h14>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non augue non est rutrum vestibulum. Morbi nec dolor faucibus, laoreet justo et, lobortis leo. Phasellus tempor nisl ac sapien tempus scelerisque. Etiam fermentum volutpat viverra. Morbi molestie mattis leo. Nunc porta leo commodo sapien scelerisque elementum. Sed et sem tristique, volutpat lacus quis, ullamcorper libero. Cras sit amet bibendum neque. Pellentesque nisi elit, dignissim quis maximus non, sollicitudin nec risus. Nullam sed euismod nibh. Suspendisse varius elit eget metus tempus, porta viverra est interdum. </h14>
-  <br><br><br>
-
-  <!-- quantidades/status -->
-
-  <h13>Status: </h13> <h8>Disponivel</h8> 
-  <br>
-  <h13>Quantidade: </h13><h8>3</h8>
-
-  <button class="EbookBaixar">
-  <i class="fa-solid fa-download fa-2x"></i> <h15>Leia agora</h15>
-  </button>
-
-  </div>
+    </div>
   </div>
 
   <br>
   <br>
 
-<!-- comentários -->
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <!-- comentários -->
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
   <h16>Comentários</h16>
 
@@ -211,35 +207,42 @@ dislike.addEventListener('click', function onClick() {
 
   <div class="coms" id="respond">
 
-<form action="post_comment.php" method="post" id="commentform">
+    <form action="post_comment.php" method="post" id="commentform">
 
-  <label for="comment_author" class="required"><h14>Seu nome</h14></label>
-  <br><br>
-  <input type="text" name="comment_author" id="comment_author" value="" tabindex="1" required="required">
+      <label for="comment_author" class="required">
+        <h14>Seu nome</h14>
+      </label>
+      <br><br>
+      <input class="inputA" type="text" name="comment_author" id="comment_author" value="" tabindex="1" required="required">
 
-  <br><br>
+      <br><br>
 
-  <label for="email" class="required"><h14>Seu Email</h14></label>
-  <br><br>
+      <label for="email" class="required">
+        <h14>Seu Email</h14>
+      </label>
+      <br><br>
 
-    <input type="email" name="email" id="email" value="" tabindex="2" required="required">
+      <input class="inputA" type="email" name="email" id="email" value="" tabindex="2" required="required">
 
-  <br><br>
+      <br><br>
 
 
-  <label for="comment" class="required"><h14>Sua mensagem</h14></label>
-  <br><br>
-  <textarea name="comment" id="comment" rows="10" tabindex="4"  required="required"></textarea>
+      <label for="comment" class="required">
+        <h14>Sua mensagem</h14>
+      </label>
+      <br><br>
+      <textarea name="comment" id="comment" rows="10" tabindex="4" required="required"></textarea>
 
-  <br><br><br> <br><br><br> <br><br><br>
+      <br><br><br> <br><br><br> <br><br><br>
 
-   <!-- comment_post_ID value hard-coded as 1  -->
-  <input type="hidden" name="comment_post_ID" value="1" id="comment_post_ID" />
-  <input class="submitCom" name="submit" type="submit" value="Submit comment" />
+      <!-- comment_post_ID value hard-coded as 1  -->
+      <input class="inputA" type="hidden" name="comment_post_ID" value="1" id="comment_post_ID" />
+      <input class="submitCom inputA" name="submit" type="submit" value="Submit comment" />
 
-</form>
+    </form>
 
-</div>
+  </div>
 
 </body>
+
 </html>

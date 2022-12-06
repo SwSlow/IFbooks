@@ -809,16 +809,22 @@ h12{
   box-shadow: 0px 109px 337px rgba(0, 0, 0, 0.0815322), 0px 45.5376px 140.791px rgba(0, 0, 0, 0.117129), 0px 24.3466px 75.2734px rgba(0, 0, 0, 0.145), 0px 13.6485px 42.1976px rgba(0, 0, 0, 0.172871), 0px 7.24861px 22.4108px rgba(0, 0, 0, 0.208468), 0px 3.01631px 9.32565px rgba(0, 0, 0, 0.29);
 }
 
+.likeC.active {
+  background-color: #302d2a;
+}
+
+.dislikeC.active {
+  background-color: #302d2a;
+}
 
 .fa-thumbs-up{
   left: 40px;
   bottom: 38px;
   position: absolute;
   color: #ffffff;
-  z-index: 1000;
+  z-index: 10;
   transition: all 0.8s; 
   pointer-events: none;
-
 
 }
 
@@ -827,10 +833,16 @@ h12{
   bottom: 38px;
   position: absolute;
   color: #ffffff;
-  z-index: 1000;
+  z-index: 10;
   transition: all 0.8s; 
   pointer-events: none;
+}
 
+.fa-thumbs-down.active{
+  color: #eb5e28;
+}
+.fa-thumbs-up.active{
+  color: #eb5e28;
 }
 
 .fa-download{
@@ -954,7 +966,7 @@ h16{
   line-height: 1.4em;
 }
 
-input{
+.inputA{
   width: 290px;
   height: 35px;
 

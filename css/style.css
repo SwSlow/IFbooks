@@ -838,3 +838,15 @@ h8 {
   transform: scale(1.04);
   transition:0.5s;
 }
+
+.labelForm {
+
+  padding-left: 340px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-size: 35px;
+  color: #eb5e28;
+  font-size: 35px;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.7);
+}
