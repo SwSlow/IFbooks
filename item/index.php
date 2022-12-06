@@ -1,12 +1,43 @@
 <?php
 //Inicializado primeira a sessão para posteriormente recuperar valores das variáveis globais. 
 session_start();
+include("../db/config.php");
+
+$id = $mysqli->real_escape_string($_GET['item']);
+
+$sql_code = "SELECT * FROM item WHERE itemID=$id";
+$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli);
+$item = $sql_query->fetch_assoc();
+
+$sql_code = "SELECT * FROM tag INNER JOIN itemtag ON itemTag.tagID=tag.tagID WHERE itemtag.itemID=$id;";
+$sql_query_tag = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli);
+$item["tags"] = $sql_query_tag;
+
+$sql_code = "SELECT * FROM author INNER JOIN itemAuthor ON itemAuthor.authorID=author.authorID WHERE itemAuthor.itemID=$id";
+$sql_query_author = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli);
+$item["authors"] = $sql_query_author;
+
+$sql_code = "SELECT * FROM comment WHERE itemID=$id";
+$sql_query_comment = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli);
+$item["comments"] = $sql_query_comment;
+
+$sql_code = "SELECT COUNT(value), AVG(value) FROM evaluation WHERE itemID=$id";
+$sql_query_evaluation = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli);
+$item["evaluation"] = $sql_query_evaluation->fetch_assoc();
+
+$userID = $_SESSION["userID"];
+$sql_code = "SELECT * FROM itemUser WHERE itemID=$id AND userID=$userID;";
+$sql_query_favorites = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli);
+$item["isFavorite"] = $sql_query_favorites->num_rows == 1 ? true : false;
+
+
+global $item;
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <link rel="stylesheet" href="css/stylePrincipal.css"  />
+    <link rel="stylesheet" href="../css/StylePrincipal.css"  />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
 
@@ -18,11 +49,11 @@ session_start();
 <body>
 
 <header class="nav-down">
-    <img class="logoBib" src="imagens/Logo.png">
+    <img class="logoBib" src="../imagens/Logo.png">
 
     <div class="dropDownIMG">
 
-      <img class="UserBib" src="imagens/User.png">
+      <img class="UserBib" src="../imagens/User.png">
 
       <div class="dropdownContent">
         <a onclick="sairAlert()">LogOff</a>
@@ -45,7 +76,7 @@ session_start();
 
   <div class="DivLivro">
 
-  <img class="cover" src="imagens/example.PNG">
+  <img class="cover" src="../imagens/example.PNG">
 
   <br>
 

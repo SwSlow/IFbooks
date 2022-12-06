@@ -47,7 +47,6 @@ function saveCover()
 
 $cover = saveCover();
 
-
 // Handle Collection
 if ($collection == '+') {
     $newCollection = $mysqli->real_escape_string($_POST['newCollection']);
@@ -73,7 +72,13 @@ if ($isDigital) {
     $inventory = $mysqli->real_escape_string($_POST['inventory']);
 }
 
+// Create Item
+$sqlCode = "INSERT INTO `item`(`isbn`, `title`, `subtitle`, `edition`, `publisher`, `year`, `section`, `synthesis`, `place`, `inventory`, `library`, `physicalDescription`, `classification`, `isDigital`, `url`, `number`, `cover`, `collectionID`) VALUES ('$isbn','$title','$subtitle','$edition','$publisher','$year','$section','$synthesis','$place','$inventory','$library','$physicalDescription','$classification','$isDigital','$url','$number','$cover',$collection)";
 
+$mysqli->query($sqlCode) or die("Falha na execução do código SQL: " . $mysqli);
+$sql_query = $mysqli->query("SELECT LAST_INSERT_ID()") or die("Falha na execução do código SQL: " . $mysqli);
+$createdItem = $sql_query->fetch_assoc();
+$createdItem = $createdItem["LAST_INSERT_ID()"];
 
 // Handle n:n Relationships
 $entityType = "";
@@ -141,14 +146,6 @@ $translators = array_unique($translators);
 foreach ($translators as $translator) {
     relateItemEntity($translator, $createdItem);
 }
-
-// Create Item
-$sqlCode = "INSERT INTO `item`(`isbn`, `title`, `subtitle`, `edition`, `publisher`, `year`, `section`, `synthesis`, `place`, `inventory`, `library`, `physicalDescription`, `classification`, `isDigital`, `url`, `number`, `cover`, `collectionID`, `itemtag`) VALUES ('$isbn','$title','$subtitle','$edition','$publisher','$year','$section','$synthesis','$place','$inventory','$library','$physicalDescription','$classification','$isDigital','$url','$number','$cover','$collection' '')";
-
-$mysqli->query($sqlCode) or die("Falha na execução do código SQL: " . $mysqli);
-$sql_query = $mysqli->query("SELECT LAST_INSERT_ID()") or die("Falha na execução do código SQL: " . $mysqli);
-$createdItem = $sql_query->fetch_assoc();
-$createdItem = $createdItem["LAST_INSERT_ID()"];
 ?>
 <html>
 
