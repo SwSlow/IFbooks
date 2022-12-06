@@ -74,12 +74,12 @@ global $item;
 
   <div class="DivLivro">
 
-    <img src="<?$cover?>" alt="Capa do Livro">
+  <img class="cover" src="../imagens/example.PNG">
 
-  <br>
+    <br>
 
-<i id=" thumbsU" class="fa-solid fa-thumbs-up fa-3x"></i>
-    <button class="likeC" id="like" onclick="liked(event)">
+<i id="thumbsU" class="fa-solid fa-thumbs-up fa-3x"></i>
+<button class="likeC" id="like" onclick="liked(event)">
 
       <h100>like</h100>
 
@@ -140,7 +140,7 @@ global $item;
 
         document.getElementById('counter').innerHTML = counter;
 
-      }
+}
 
       // like
 
@@ -166,76 +166,40 @@ global $item;
 
         thumbsD.style.color = '#eb5e28';
 
-      });
-    </script>
+});
+
+</script>
 
     <!-- area de informações -->
 
     <div class="DivInformations">
       <!-- titulo -->
-      <h7><?= $item["title"] ?></h7>
+      <h7>Call of Cthulu</h7>
       <!-- autor -->
-      <?php
-      $authors = [];
-      while ($author = $item["authors"]->fetch_assoc()) {
-        $name = $author["name"];
-      }
-
-      echo ("<h8>$name</h8>");
-      ?>
-
+      <h8>H.P Lovecraft</h8>
       <br>
       <!-- keywords -->
       <h13>Categorias: </h13>
-      <?php
-      while ($tag = $item["tags"]->fetch_assoc()) {
-        $name = $tag["name"];
-        $link = "<h8>$name</h8>";
-        echo ($link);
-      }
-      ?>
-      <!-- <h8>Terror</h8> -->
+      <h8>Terror</h8>
       <br>
       <!-- sinópse -->
-      <h14><?= $item["synthesis"] ?></h14>
+      <h14>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non augue non est rutrum vestibulum. Morbi nec dolor faucibus, laoreet justo et, lobortis leo. Phasellus tempor nisl ac sapien tempus scelerisque. Etiam fermentum volutpat viverra. Morbi molestie mattis leo. Nunc porta leo commodo sapien scelerisque elementum. Sed et sem tristique, volutpat lacus quis, ullamcorper libero. Cras sit amet bibendum neque. Pellentesque nisi elit, dignissim quis maximus non, sollicitudin nec risus. Nullam sed euismod nibh. Suspendisse varius elit eget metus tempus, porta viverra est interdum. </h14>
       <br><br><br>
 
       <!-- quantidades/status -->
-      <?php
 
-      $buttons = "";
-
-      if ($item['isDigital']) {
-        $url = $item["url"];
-        $buttons = "
-        <button class=\"EbookBaixar\">
-          <i class=\"fa-solid fa-download fa-2x\"></i>
-          <h15>Leia agora</h15>
-        </button>";
-      } else {
-        if ($item['inventory'] >= 1) {
-
-          $qntd = $item['inventory'];
-
-          $buttons = "
-          <h13>Status: </h13>
-          <h8>Disponivel</h8>
-          <br>
-          <h13>Quantidade: </h13>
-          <h8>$qntd </h8>";
-        }
-      }
-
-      echo ($buttons);
-
-      ?>
+      <h13>Status: </h13>
+      <h8>Disponivel</h8>
+      <br>
+      <h13>Quantidade: </h13>
+      <h8>3</h8>
 
       <button class="EbookBaixar">
         <i class="fa-solid fa-download fa-2x"></i>
         <h15>Leia agora</h15>
       </button>
 
-    </div>
+  </div>
   </div>
 
   <br>
@@ -252,11 +216,9 @@ global $item;
 
     <form action="post_comment.php" method="post" id="commentform">
 
-      <label for="comment_author" class="required">
-        <h14>Seu nome</h14>
-      </label>
-      <br><br>
-      <input type="text" name="comment_author" id="comment_author" value="" tabindex="1" required="required">
+  <label for="comment_author" class="required"><h14>Seu nome</h14></label>
+  <br><br>
+  <input type="text" name="comment_author" id="comment_author" value="" tabindex="1" required="required">
 
       <br><br>
 
@@ -265,7 +227,7 @@ global $item;
       </label>
       <br><br>
 
-      <input type="email" name="email" id="email" value="" tabindex="2" required="required">
+    <input type="email" name="email" id="email" value="" tabindex="2" required="required">
 
       <br><br>
 
@@ -278,9 +240,9 @@ global $item;
 
       <br><br><br> <br><br><br> <br><br><br>
 
-      <!-- comment_post_ID value hard-coded as 1  -->
-      <input type="hidden" name="comment_post_ID" value="1" id="comment_post_ID" />
-      <input class="submitCom" name="submit" type="submit" value="Submit comment" />
+   <!-- comment_post_ID value hard-coded as 1  -->
+  <input type="hidden" name="comment_post_ID" value="1" id="comment_post_ID" />
+  <input class="submitCom" name="submit" type="submit" value="Submit comment" />
 
     </form>
 
