@@ -1,7 +1,6 @@
 <?php
-// session_start();
-// include('./db/config.php');
-// ?>
+session_start();
+?>
 
 <!DOCTYPE html>
 <html>
@@ -64,7 +63,7 @@
       <input type="text" maxlength="50" name="edition" id="edition" placeholder="Edição da Obra" required>
 
       <h1>Ano de Publicação</h1>
-      <input type="number" name="year" id="year" required>
+      <input type="number" name="year" id="year" placeholder="Ano da Publicação"  required>
 
       <h1>Local</h1>
       <input type="text" name="place" id="place" placeholder="São Paulo, Brasil" required>
