@@ -739,3 +739,174 @@ h10{
 a{
   text-decoration: none;
 }
+
+
+/* página do livro */
+
+.DivLivro{
+  position: absolute;
+  left: 5%;
+}
+
+.DivInformations{
+
+  position: absolute;
+  top: -1%;
+  left: 104%;
+  background-color: #333333;
+  width: 950px;
+  height: 420px;
+  box-shadow: 0px 109px 337px rgba(0, 0, 0, 0.0815322), 0px 45.5376px 140.791px rgba(0, 0, 0, 0.117129), 0px 24.3466px 75.2734px rgba(0, 0, 0, 0.145), 0px 13.6485px 42.1976px rgba(0, 0, 0, 0.172871), 0px 7.24861px 22.4108px rgba(0, 0, 0, 0.208468), 0px 3.01631px 9.32565px rgba(0, 0, 0, 0.29);
+  padding-left: 20px;
+  border-radius: 20px;
+  
+  }
+
+.cover{
+width: 250px;
+height: 350px;
+box-shadow: 0px 109px 337px rgba(0, 0, 0, 0.0815322), 0px 45.5376px 140.791px rgba(0, 0, 0, 0.117129), 0px 24.3466px 75.2734px rgba(0, 0, 0, 0.145), 0px 13.6485px 42.1976px rgba(0, 0, 0, 0.172871), 0px 7.24861px 22.4108px rgba(0, 0, 0, 0.208468), 0px 3.01631px 9.32565px rgba(0, 0, 0, 0.29);
+border-radius: 7px;
+}
+
+
+h7{
+  font-family: "Poppins";
+  font-style: normal;
+  font-size: 35px;
+  color: #eb5e28;
+  font-size: 40px;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.7);
+}
+
+h8{
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+
+  color: #ffffff;
+}
+
+
+h12{
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+
+  color: #ffffff;
+}
+
+/* like dislike */
+
+
+.likeC, .dislikeC{
+  width: 122px;
+  height: 60px;
+  background-color: #403d39;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 109px 337px rgba(0, 0, 0, 0.0815322), 0px 45.5376px 140.791px rgba(0, 0, 0, 0.117129), 0px 24.3466px 75.2734px rgba(0, 0, 0, 0.145), 0px 13.6485px 42.1976px rgba(0, 0, 0, 0.172871), 0px 7.24861px 22.4108px rgba(0, 0, 0, 0.208468), 0px 3.01631px 9.32565px rgba(0, 0, 0, 0.29);
+}
+
+
+.fa-thumbs-up{
+  left: 40px;
+  bottom: 38px;
+  position: absolute;
+  color: #ffffff;
+  z-index: 1000;
+  transition: all 0.8s; 
+  pointer-events: none;
+
+
+}
+
+.fa-thumbs-down{
+  left: 160px;
+  bottom: 38px;
+  position: absolute;
+  color: #ffffff;
+  z-index: 1000;
+  transition: all 0.8s; 
+  pointer-events: none;
+
+}
+
+.fa-download{
+  color: #1e1e1e;
+}
+
+
+.likeC:hover {
+ cursor: pointer;
+ transform: scale(1.12);
+  transition: all 0.3s; 
+  box-shadow: 4.5px 4.5px #eb5e28;
+}
+
+
+
+.dislikeC:hover {
+  cursor: pointer;
+  transform: scale(1.12);
+   transition: all 0.3s; 
+   box-shadow: 4.5px 4.5px #eb5e28;
+
+ }
+
+h100{
+  color: #403d39;
+}
+
+h13{
+  font-family: "Poppins";
+  font-style: normal;
+  font-size: 35px;
+  color: #eb5e28;
+  font-size: 25px;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.7);
+}
+
+h14{
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  padding-right: 13px;
+
+  color: #ffffff;
+}
+
+h15{
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+
+  color: #ffffff;
+}
+
+.EbookBaixar{
+  padding-top: 5px;
+  position: absolute;
+  left: 91%;
+  top: 78%;
+  width: 70px;
+  height: 80px;
+  background-color: #eb5e28;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 109px 337px rgba(0, 0, 0, 0.0815322), 0px 45.5376px 140.791px rgba(0, 0, 0, 0.117129), 0px 24.3466px 75.2734px rgba(0, 0, 0, 0.145), 0px 13.6485px 42.1976px rgba(0, 0, 0, 0.172871), 0px 7.24861px 22.4108px rgba(0, 0, 0, 0.208468), 0px 3.01631px 9.32565px rgba(0, 0, 0, 0.29);
+}
+
+.EbookBaixar:hover{
+
+  cursor: pointer;
+  transform: scale(1.07);
+   transition: all 0.2s; 
+   box-shadow: 4.5px 4.5px #1e1e1e;
+}
