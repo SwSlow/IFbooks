@@ -162,11 +162,53 @@ dislike.addEventListener('click', function onClick() {
   <h13>Quantidade: </h13><h8>3</h8>
 
   <button class="EbookBaixar">
-  <i class="fa-solid fa-download fa-2x"></i> <h15>Baixar Ebook</h15>
+  <i class="fa-solid fa-download fa-2x"></i> <h15>Leia agora</h15>
   </button>
 
   </div>
   </div>
+
+  <br>
+  <br>
+
+<!-- comentários -->
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+  <h16>Comentários</h16>
+
+
+
+  <div class="coms" id="respond">
+
+<form action="post_comment.php" method="post" id="commentform">
+
+  <label for="comment_author" class="required"><h14>Seu nome</h14></label>
+  <br><br>
+  <input type="text" name="comment_author" id="comment_author" value="" tabindex="1" required="required">
+
+  <br><br>
+
+  <label for="email" class="required"><h14>Seu Email</h14></label>
+  <br><br>
+
+    <input type="email" name="email" id="email" value="" tabindex="2" required="required">
+
+  <br><br>
+
+
+  <label for="comment" class="required"><h14>Sua mensagem</h14></label>
+  <br><br>
+  <textarea name="comment" id="comment" rows="10" tabindex="4"  required="required"></textarea>
+
+  <br><br><br> <br><br><br> <br><br><br>
+
+   <!-- comment_post_ID value hard-coded as 1  -->
+  <input type="hidden" name="comment_post_ID" value="1" id="comment_post_ID" />
+  <input class="submitCom" name="submit" type="submit" value="Submit comment" />
+
+</form>
+
+</div>
 
 </body>
 </html>

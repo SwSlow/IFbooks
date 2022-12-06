@@ -816,7 +816,7 @@ h12{
   bottom: 38px;
   position: absolute;
   color: #ffffff;
-  z-index: 1000;
+  z-index: 1;
   transition: all 0.8s; 
   pointer-events: none;
 
@@ -828,7 +828,7 @@ h12{
   bottom: 38px;
   position: absolute;
   color: #ffffff;
-  z-index: 1000;
+  z-index: 1;
   transition: all 0.8s; 
   pointer-events: none;
 
@@ -909,3 +909,92 @@ h15{
    transition: all 0.2s; 
    box-shadow: 4.5px 4.5px #1e1e1e;
 }
+
+h16{  
+  padding-left: 70px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-size: 35px;
+  color: #eb5e28;
+  font-size: 35px;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* comentários */
+
+#respond {
+  margin-top: 20px;
+}
+
+#respond input[type='text'],
+#respond input[type='email'],
+#respond textarea {
+  position: absolute;
+  left: 45px;
+  margin-bottom: 10px;
+  display: block;
+  width: 90%;
+  padding-left: 45px;
+  margin-left: 20px;
+
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 7px 32px 0 rgba(37, 8, 8, 0.185);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 20px;
+  border: 0.1px solid rgba(255, 255, 255, 0.18);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+
+  line-height: 1.4em;
+}
+
+input{
+  width: 290px;
+  height: 35px;
+
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 7px 32px 0 rgba(37, 8, 8, 0.185);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 20px;
+  border: 0.1px solid rgba(255, 255, 255, 0.18);
+
+  padding-left: 5px;
+
+  color: rgba(255, 252, 242, 0.589);
+  font-size: 17px;
+}
+
+label{
+  margin-left: 70px;
+  left: 53px;
+}
+
+.submitCom{
+  width: 200px;
+  padding-left: 1px;
+  margin-left: 65px;
+}
+
+.submitCom:hover{
+  transform: scale(1.05);
+  transition: all 0.5s;
+}
+input:hover{
+  transform: scale(1.02);
+  transition: all 0.5s;
+}
+
+textarea:hover{
+  transform: scale(1.01);
+  transition: all 0.5s;
+
+}
+
+
