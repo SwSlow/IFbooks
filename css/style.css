@@ -22,6 +22,9 @@
 }
 
 body {
+  scrollbar-width: thin;          /* "auto" or "thin" */
+  scrollbar-color: blue orange;   /* scroll thumb and track */
+
   font-family: Poppins, PoppinsEscuro, PoppinsClaro;
   background-color: #1e1e1e;
 

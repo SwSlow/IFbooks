@@ -108,3 +108,6 @@ CREATE TABLE IF NOT EXISTS itemUser (
 );
 alter TABLE comment
 ADD FOREIGN KEY (replyTo) REFERENCES Comment(commentID);
+
+ALTER TABLE item
+ADD FOREIGN KEY (itemtag) REFERENCES itemtag (tagID);
