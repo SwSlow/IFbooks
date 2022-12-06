@@ -8,3 +8,4 @@ if (!isset($_SESSION['userID'])) {
     $_SESSION['loginErro'] = "<script>alert('Faça login para acessar a página!');</script>";
     exit;
 }
+?>

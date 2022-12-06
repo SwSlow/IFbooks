@@ -3,6 +3,12 @@ session_start();
 include('./db/config.php');
 include('./auth/protect.php');
 
+if ($_SESSION['permissionLevel'] != "admin"){
+  header("Location: ./index.php");
+  $_SESSION['loginErro'] = "<script>alert('Você não ter permissão está página!');</script>";
+  exit;
+}
+
 ?>
 <!DOCTYPE html>
 <html>

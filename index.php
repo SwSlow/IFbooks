@@ -1,7 +1,8 @@
 <?php
 session_start();
 include('./db/config.php');
-include('./auth/protect.php')
+include('./auth/protect.php');
+
 
 ?>
 <!DOCTYPE html>
@@ -112,17 +113,6 @@ include('./auth/protect.php')
       $idTag = $item["tagID"];
       $tagName = $item["name"];
 
-      $sqlCodeTag = "SELECT * FROM itemtag";
-      $sql_query_tag = $mysqli->query($sqlCodeTag) or die("Falha na execução do código SQL: " . $mysqli);
-
-      $sqlCodeItem = "SELECT * FROM item WHERE itemtag = 1 ";
-      $sql_query_item = $mysqli->query($sqlCodeItem) or die("Falha na execução do código SQL: " . $mysqli);
-
-      while ($item = $sql_query_item->fetch_assoc()) {
-        $cover = $item["cover"];
-        $title = $item["title"];
-        $id = $item["itemID"];
-      }
       $book = "
             <div class=\"swiper-slide\">
             <a href=\"./item/?item=$id\" class=\"\"><img src=\"$cover\" alt=\"Capa:$title\"></a>
