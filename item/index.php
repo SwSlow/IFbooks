@@ -3,6 +3,9 @@
 session_start();
 include("../db/config.php");
 
+$path = '.';
+global $path;
+
 $id = $mysqli->real_escape_string($_GET['item']);
 
 $sql_code = "SELECT * FROM item WHERE itemID=$id";
@@ -20,15 +23,6 @@ $item["authors"] = $sql_query_author;
 $sql_code = "SELECT * FROM comment WHERE itemID=$id";
 $sql_query_comment = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli);
 $item["comments"] = $sql_query_comment;
-
-$sql_code = "SELECT COUNT(value), AVG(value) FROM evaluation WHERE itemID=$id";
-$sql_query_evaluation = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli);
-$item["evaluation"] = $sql_query_evaluation->fetch_assoc();
-
-$userID = $_SESSION["userID"];
-$sql_code = "SELECT * FROM itemUser WHERE itemID=$id AND userID=$userID;";
-$sql_query_favorites = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli);
-$item["isFavorite"] = $sql_query_favorites->num_rows == 1 ? true : false;
 
 
 global $item;
@@ -76,7 +70,7 @@ global $item;
 
   <div class="DivLivro">
 
-    <img class="cover" src="../imagens/example.PNG">
+    <img src="<?= $path . $item["cover"] ?>" alt="Capa do Livro">
 
     <br>
 
@@ -145,20 +139,28 @@ global $item;
       }
 
       // like
-      const likeIcon = document.getElementById('thumbsU');
 
-      like.addEventListener('click', () => {
-        like.classList.toggle('active')
-        thumbsU.classList.toggle('active')
+
+      like.addEventListener('click', function onClick() {
+
+        like.style.backgroundColor = '#302d2a';
+
+        const likeIcon = document.getElementById('thumbsU');
+
+        thumbsU.style.color = '#eb5e28';
 
       });
 
       // dislike
-      const dislikeIcon = document.getElementById('thumbsD');
 
-      dislike.addEventListener('click', () => {
-        dislike.classList.toggle('active')
-        thumbsD.classList.toggle('active')
+
+      dislike.addEventListener('click', function onClick() {
+
+        dislike.style.backgroundColor = '#302d2a';
+
+        const dislikeIcon = document.getElementById('thumbsD');
+
+        thumbsD.style.color = '#eb5e28';
 
       });
     </script>
@@ -167,30 +169,65 @@ global $item;
 
     <div class="DivInformations">
       <!-- titulo -->
-      <h7>Call of Cthulu</h7>
+      <h7><?= $item["title"] ?></h7>
       <!-- autor -->
-      <h8>H.P Lovecraft</h8>
+      <?php
+      $authors = [];
+      while ($author = $item["authors"]->fetch_assoc()) {
+        $name = $author["name"];
+      }
+
+      echo ("<h8>$name</h8>");
+      ?>
       <br>
       <!-- keywords -->
       <h13>Categorias: </h13>
-      <h8>Terror</h8>
+      <?php
+      while ($tag = $item["tags"]->fetch_assoc()) {
+        $name = $tag["name"];
+        $link = "<h8>$name</h8>";
+        echo ($link);
+      }
+      ?>
       <br>
       <!-- sinópse -->
-      <h14>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non augue non est rutrum vestibulum. Morbi nec dolor faucibus, laoreet justo et, lobortis leo. Phasellus tempor nisl ac sapien tempus scelerisque. Etiam fermentum volutpat viverra. Morbi molestie mattis leo. Nunc porta leo commodo sapien scelerisque elementum. Sed et sem tristique, volutpat lacus quis, ullamcorper libero. Cras sit amet bibendum neque. Pellentesque nisi elit, dignissim quis maximus non, sollicitudin nec risus. Nullam sed euismod nibh. Suspendisse varius elit eget metus tempus, porta viverra est interdum. </h14>
+      <h14><?= $item["synthesis"] ?></h14>
       <br><br><br>
 
       <!-- quantidades/status -->
+      <?php
 
-      <h13>Status: </h13>
-      <h8>Disponivel</h8>
-      <br>
-      <h13>Quantidade: </h13>
-      <h8>3</h8>
+      $buttons = "";
 
-      <button class="EbookBaixar">
-        <i class="fa-solid fa-download fa-2x"></i>
-        <h15>Leia agora</h15>
-      </button>
+      if ($item['isDigital']) {
+        $url = $item["url"];
+        $buttons = "
+  <button class=\"EbookBaixar\">
+    <i class=\"fa-solid fa-download fa-2x\"></i>
+    <h15>Leia agora</h15>
+  </button>";
+      } else {
+        if ($item['inventory'] >= 1) {
+
+          $qntd = $item['inventory'];
+
+          $buttons = "
+    <h13>Status: </h13>
+    <h8>Disponivel</h8>
+    <br>
+    <h13>Quantidade: </h13>
+    <h8> $qntd </h8>";
+        } else {
+          $buttons = "
+          <h13>Status: </h13>
+          <h8>Indisponível</h8>
+          <br>";
+        }
+      }
+
+      echo ($buttons);
+
+      ?>
 
     </div>
   </div>
@@ -213,7 +250,7 @@ global $item;
         <h14>Seu nome</h14>
       </label>
       <br><br>
-      <input class="inputA" type="text" name="comment_author" id="comment_author" value="" tabindex="1" required="required">
+      <input type="text" name="comment_author" id="comment_author" value="" tabindex="1" required="required">
 
       <br><br>
 
@@ -222,7 +259,7 @@ global $item;
       </label>
       <br><br>
 
-      <input class="inputA" type="email" name="email" id="email" value="" tabindex="2" required="required">
+      <input type="email" name="email" id="email" value="" tabindex="2" required="required">
 
       <br><br>
 
@@ -236,8 +273,8 @@ global $item;
       <br><br><br> <br><br><br> <br><br><br>
 
       <!-- comment_post_ID value hard-coded as 1  -->
-      <input class="inputA" type="hidden" name="comment_post_ID" value="1" id="comment_post_ID" />
-      <input class="submitCom inputA" name="submit" type="submit" value="Submit comment" />
+      <input type="hidden" name="comment_post_ID" value="1" id="comment_post_ID" />
+      <input class="submitCom" name="submit" type="submit" value="Submit comment" />
 
     </form>
 
@@ -246,3 +283,14 @@ global $item;
 </body>
 
 </html>
+
+<script>
+  function sairAlert() {
+    location.href = "../auth/logout.php";
+    alert("Deslogado com sucesso!")
+  }
+
+  function controlPanel() {
+    location.href = "../controlPanel.php";
+  }
+</script>

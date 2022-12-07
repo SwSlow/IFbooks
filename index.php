@@ -3,10 +3,20 @@ session_start();
 include('./db/config.php');
 include('./auth/protect.php');
 
-
 ?>
 <!DOCTYPE html>
 <html>
+
+<script>
+  function sairAlert() {
+    location.href = "./auth/logout.php";
+    alert("Deslogado com sucesso!")
+  }
+
+  function controlPanel() {
+    location.href = "./controlPanel.php";
+  }
+</script>
 
 <head>
   <link rel="stylesheet" href="css/stylePrincipal.css" />
@@ -112,6 +122,11 @@ include('./auth/protect.php');
     while ($item = $sql_query->fetch_assoc()) {
       $idTag = $item["tagID"];
       $tagName = $item["name"];
+
+      // $sqlCodeBook = "SELECT * FROM itemtag 
+      // INNER JOIN tag ON tag.tagID = itemtag.tagID
+      // INNER JOIN item ON itemID = itemtag.itemID = item.itemID";
+      // $sql_query_book = $mysqli->query($sqlCodeBook) or die("Falha na execução do código SQL: " . $mysqli);
 
       $book = "
             <div class=\"swiper-slide\">
@@ -256,13 +271,3 @@ include('./auth/protect.php');
 
 
 </html>
-<script>
-  function sairAlert() {
-    location.href = "auth/logout.php";
-    alert("Deslogado com sucesso!")
-  }
-
-  function controlPanel() {
-    location.href = "./controlPanel.php";
-  }
-</script>
