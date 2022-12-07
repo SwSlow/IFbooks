@@ -40,10 +40,24 @@ include('./auth/protect.php');
 
       <img class="UserBib" src="imagens/User.png">
 
-      <div class="dropdownContent">
-        <a onclick="sairAlert()">LogOff</a>
-        <a onclick="controlPanel()">Painel de Controle</a>
-      </div>
+      <?php
+      if ($_SESSION['permissionLevel'] == 'admin') {
+
+        $dropMenu = "
+        <div class=\"dropdownContent\">
+        <a onclick=\"sairAlert()\">LogOff</a>
+        <a onclick=\"controlPanel()\">Painel de Controle</a>
+        </div>";
+      } else {
+        $dropMenu = "
+        <div class=\"dropdownContent\">
+        <a onclick=\"sairAlert()\">LogOff</a>
+        </div>";
+      }
+
+      echo ($dropMenu)
+      ?>
+
     </div>
     <div class="search-box">
       <input class="search-txt" type="text" name="" placeholder="Digite sua pesquisa">

@@ -6,7 +6,7 @@ session_start();
 <html>
 
 <head>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="../css/Style.css" />
 </head>
 <meta charset="utf-8">
 
@@ -24,11 +24,11 @@ session_start();
   </script>
 
 
-  <button class="voltar" onclick="window.location.href = 'index.php'">
+  <button class="voltar" onclick="window.location.href = '../index.php'">
     <h2>Voltar</h2>
   </button>
 
-  <img class="logoIff" src="imagens/IFF.png">
+  <img class="logoIff" src="../imagens/IFF.png">
 
   <div class="UserPermissions">
 
@@ -49,7 +49,7 @@ session_start();
       </tr>
 
       <?php
-      include('./db/config.php');
+      include('../db/config.php');
 
       $sqlCode = "SELECT * FROM user ORDER BY userID DESC LIMIT 18";
       $sql_query = $mysqli->query($sqlCode) or die("Falha na execução do código SQL: " . $mysqli);
