@@ -82,7 +82,7 @@ function onlyOne(checkbox) {
 
   </div>
 
-  <button href="cadastro.php" class="NewUser"><h15>Criar novo usuário</h15></button>
+  <button onclick="window.location.href = 'cadastro.php'" class="NewUser"><h15>Criar novo usuário</h15></button>
 
 </body>
 
