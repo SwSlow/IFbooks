@@ -3,13 +3,14 @@ session_start();
 include('./db/config.php');
 include('./auth/protect.php');
 
+$id = $_SESSION['userID'];
+
 ?>
 <!DOCTYPE html>
 <html>
 
 <script>
   function sairAlert() {
-    location.href = "./auth/logout.php";
     alert("Deslogado com sucesso!")
   }
 
@@ -45,13 +46,14 @@ include('./auth/protect.php');
 
         $dropMenu = "
         <div class=\"dropdownContent\">
-        <a onclick=\"sairAlert()\">LogOff</a>
-        <a onclick=\"controlPanel()\">Painel de Controle</a>
+        <a href = \"./controlPanel.php\">Painel de Controle</a>
+        <a href = \"./auth/logout.php\" onclick=\"sairAlert()\">LogOff</a>
         </div>";
       } else {
         $dropMenu = "
         <div class=\"dropdownContent\">
-        <a onclick=\"sairAlert()\">LogOff</a>
+        <a href=\"./user/?user=$id\">Perfil</a>
+        <a href = \"./auth/logout.php\" onclick=\"sairAlert()\">LogOff</a>
         </div>";
       }
 
@@ -273,6 +275,20 @@ include('./auth/protect.php');
 
       });
     </script>
+
+    <?php
+    //Recuperando o valor da variável global, os erro de login.
+    if (isset($_SESSION['loginErro'])) {
+      echo $_SESSION['loginErro'];
+      unset($_SESSION['loginErro']);
+    } ?>
+
+    <?php
+    //Recuperando o valor da variável global, deslogado com sucesso.
+    if (isset($_SESSION['logindeslogado'])) {
+      unset($_SESSION['logindeslogado']);
+    }
+    ?>
 
 
 

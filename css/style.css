@@ -302,16 +302,34 @@ input:focus {
   border-radius: 20px;
 }
 
-
-
 .butCadastro {
   top: 80%;
+}
+
+.butAlter{
+  left: 53%;
+  top:  84%;
 }
 
 .formSituacao {
   position: absolute;
   left: 53%;
   top: 65.1%;
+  border-color: #1e1e1e;
+  margin: 2px;
+
+  border: 2px solid #1f1b1b;
+  padding-left: 15px;
+  padding-right: 20px;
+  padding-bottom: 0.5px;
+  padding-top: 0.5px;
+  border-radius: 20px;
+}
+
+.formSituacao2 {
+  position: absolute;
+  left: 53%;
+  top: 29%;
   border-color: #1e1e1e;
   margin: 2px;
 
@@ -477,6 +495,35 @@ select::-ms-expand {
   color: #eb5e28;
 }
 
+.permissionVinc {
+  position: absolute;
+  left: 53%;
+  top: 10%;
+
+  display: flex;
+  width: 290px;
+  height: 42px;
+  line-height: 3;
+  box-shadow: 0 7px 32px 0 rgba(37, 8, 8, 0.185);
+  backdrop-filter: blur(14px);
+  overflow: hidden;
+  border-radius: 25px;
+}
+.permissionVinc::after {
+  content: "\25BC";
+  position: absolute;
+  top: -2px;
+  right: 0;
+  padding: 0 1em;
+  background: #333333;
+  cursor: pointer;
+  pointer-events: none;
+  transition: 0.25s all ease;
+}
+.permissionVinc:hover::after {
+  color: #eb5e28;
+}
+
 /* posição dos titulos */
 
 .positionCurso {
@@ -508,6 +555,18 @@ input[type="number"] {
   left: 53%;
 }
 
+.positionSituacao2 {
+  position: absolute;
+  top: 19%;
+  left: 53%;
+}
+
+.positionPermission {
+  position: absolute;
+  left: 53%;
+  top: 1%;
+}
+
 /* painel login */
 
 .div_login {
@@ -532,6 +591,29 @@ input[type="number"] {
 }
 
 .div_cadastro {
+  background-color: #333333;
+
+  position: absolute;
+  width: 700px;
+  height: 550px;
+  top: 8%;
+  left: 23%;
+  padding-top: 5px;
+
+  box-shadow: 0px 109px 337px rgba(0, 0, 0, 0.0815322),
+    0px 45.5376px 140.791px rgba(0, 0, 0, 0.117129),
+    0px 24.3466px 75.2734px rgba(0, 0, 0, 0.145),
+    0px 13.6485px 42.1976px rgba(0, 0, 0, 0.172871),
+    0px 7.24861px 22.4108px rgba(0, 0, 0, 0.208468),
+    0px 3.01631px 9.32565px rgba(0, 0, 0, 0.29);
+
+  padding-left: 30px;
+  border-radius: 20px;
+  z-index: 1000;
+}
+
+
+.div_alter {
   background-color: #333333;
 
   position: absolute;
@@ -913,14 +995,14 @@ h14{
   }
 
   .Confirm{
-    width: 90px;
+    width: 85px;
     height: 30px;
     background-color: #eb5e28;
     border: none;
-    border-radius: 5px;
-    padding-left: 5px;
-    margin-left: 350px;
-    margin-top: -30px;
+    border-radius: 10px;
+    padding-left: 21px;
+    margin-left: 60px;
+    margin-top: -15px;
     box-shadow: 0px 109px 337px rgba(0, 0, 0, 0.0815322), 0px 45.5376px 140.791px rgba(0, 0, 0, 0.117129), 0px 24.3466px 75.2734px rgba(0, 0, 0, 0.145), 0px 13.6485px 42.1976px rgba(0, 0, 0, 0.172871), 0px 7.24861px 22.4108px rgba(0, 0, 0, 0.208468), 0px 3.01631px 9.32565px rgba(0, 0, 0, 0.29);
   }
 

@@ -3,7 +3,7 @@ session_start();
 include('./db/config.php');
 include('./auth/protect.php');
 
-if ($_SESSION['permissionLevel'] != "admin"){
+if ($_SESSION['permissionLevel'] != "admin") {
   header("Location: ./index.php");
   $_SESSION['loginErro'] = "<script>alert('Você não ter permissão está página!');</script>";
   exit;
@@ -33,9 +33,8 @@ if ($_SESSION['permissionLevel'] != "admin"){
 
 
   <div class="flex-parent-element">
-
-    <div class="flex-child-element slide">
-      <h10 class="usuarioLabel">Usuários</h10> <img class="userImg" src="imagens/2pessoas.PNG">
+    <a href="users.php" class="flex-child-element slide">
+      <h10 href="users.php" class="usuarioLabel">Usuários</h10> <img class="userImg" src="imagens/2pessoas.PNG">
 
       <h2>
         <?php
@@ -50,13 +49,33 @@ if ($_SESSION['permissionLevel'] != "admin"){
         echo ($total . " Usuários Cadastrados")
         ?>
       </h2>
-
-    </div>
+    </a>
     <div class="flex-child-element slide2">
       <h10 class="equipeLabel">Equipe</h10> <img class="equipeImg" src="imagens/equipe.PNG">
-      <h3>2 Administradores</h3>
-      <h3>1 Funcionário</h3>
-      <h3>1 Bibliotecário</h3>
+      <?php
+      include('./db/config.php');
+
+      $totalAdmin = 0;
+      $sql = "SELECT COUNT(userID) AS user FROM user WHERE permissionLevel = 'admin'";
+      $sql = $mysqli->query($sql);
+      $sql = $sql->fetch_assoc();
+      $totalAdmin = $sql['user'];
+
+      $totalModerator = 0;
+      $sql = "SELECT COUNT(userID) AS user FROM user WHERE permissionLevel = 'moderator'";
+      $sql = $mysqli->query($sql);
+      $sql = $sql->fetch_assoc();
+      $totalModerator = $sql['user'];
+
+      $admins = "<h3>$totalAdmin Bibliotecários</h3>";
+      $moderators = "<h3>$totalModerator Moderadores</h3>";
+
+
+      echo ($admins);
+      echo ($moderators);
+      echo ($usersEmployee);
+      ?>
+
 
     </div>
   </div>
