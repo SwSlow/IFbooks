@@ -78,7 +78,11 @@ function onlyOne(checkbox) {
     </tr>
 </table>
  
+
+
   </div>
+
+  <button href="cadastro.php" class="NewUser"><h15>Criar novo usuário</h15></button>
 
 </body>
 
