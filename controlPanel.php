@@ -33,8 +33,9 @@ if ($_SESSION['permissionLevel'] != "admin") {
 
 
   <div class="flex-parent-element">
-    <a href="users.php" class="flex-child-element slide">
-      <h10 href="users.php" class="usuarioLabel">Usuários</h10> <img class="userImg" src="imagens/2pessoas.PNG">
+
+    <div class="flex-child-element slide">
+      <h10 class="usuarioLabel">Usuários</h10> <img class="userImg" src="imagens/2pessoas.PNG">
 
       <h2>
         <?php
@@ -49,7 +50,8 @@ if ($_SESSION['permissionLevel'] != "admin") {
         echo ($total . " Usuários Cadastrados")
         ?>
       </h2>
-    </a>
+
+    </div>
     <div class="flex-child-element slide2">
       <h10 class="equipeLabel">Equipe</h10> <img class="equipeImg" src="imagens/equipe.PNG">
       <?php
@@ -83,7 +85,8 @@ if ($_SESSION['permissionLevel'] != "admin") {
   <br><br>
   <p style="margin:10px;"></p>
 
-  <div class="flex-parent-element">
+  <div  class="flex-parent-element">
+    
     <a href="CadastroLivro.php" class="flex-child-element slide">
       <h10 class="acervoLabel">Acervo</h10> <img class="acervoImg" src="imagens/acervo.PNG">
       <h2>
