@@ -872,7 +872,8 @@ h8 {
 
   padding-left: 30px;
   border-radius: 20px;
-  z-index: -1;
+  
+  z-index: -1; 
 }
 
 h13{
@@ -936,5 +937,5 @@ h14{
     font-weight: 700;
     font-size: 15px;
   
-    color: #ffffff;
-  }
+    color:#ffffff;
+}
