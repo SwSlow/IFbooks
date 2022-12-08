@@ -91,7 +91,7 @@ if ($_SESSION['permissionLevel'] != "admin") {
 
   <div class="flex-parent-element">
 
-    <a href="CadastroLivro.php" class="flex-child-element slide">
+    <a href="books.php" class="flex-child-element slide">
       <h10 class="acervoLabel">Acervo</h10> <img class="acervoImg" src="imagens/acervo.PNG">
       <h2>
         <?php

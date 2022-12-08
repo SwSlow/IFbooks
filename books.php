@@ -17,7 +17,7 @@ if ($_SESSION['permissionLevel'] != "admin") {
 </head>
 <meta charset="utf-8">
 
-<title>Usuários</title>
+<title>Acervo</title>
 
 <body>
 
@@ -35,48 +35,41 @@ if ($_SESSION['permissionLevel'] != "admin") {
           <h13>ID<h13>
         </td>
         <td>
-          <h13>Nome De Usuário<h13>
+          <h13>Nome do Livro<h13>
         </td>
         <td>
-          <h13>Matrícula/CIAP<h13>
+          <h13>Seção<h13>
         </td>
         <td>
-          <h13>Permissão<h13>
+          <h13>ISBN<h13>
         </td>
       </tr>
 
       <?php
       include('./db/config.php');
 
-      $sqlCode = "SELECT * FROM user ORDER BY userID DESC LIMIT 18";
+      $sqlCode = "SELECT * FROM item ORDER BY itemID DESC LIMIT 18";
       $sql_query = $mysqli->query($sqlCode) or die("Falha na execução do código SQL: " . $mysqli);
 
       while ($item = $sql_query->fetch_assoc()) {
-        $id = $item["userID"];
-        $name = $item["name"];
-        $registration = $item["registration"];
-
-        if ($item["permissionLevel"] == 'admin') {
-          $permission = 'Administrador';
-        };
-        if ($item["permissionLevel"] == 'employee') {
-          $permission = 'Funcionário';
-        };
-        if ($item["permissionLevel"] == 'moderator') {
-          $permission = 'Moderador';
-        };
-        if ($item["permissionLevel"] == 'reader') {
-          $permission = 'Leitor';
+        $id = $item["itemID"];
+        $name = $item["title"];
+        $isbn = $item["isbn"];
+        if($item['isDigital'] == 0){
+          $section = $item["section"];
+        }else{
+          $url = $item["url"];
+          $section ="<a href=\"\">LINK</a>";
         };
 
         $itemArticle = "
         <tr>
         <td><h14>$id<h14></td>
         <td><h14>$name<h14></td>
-        <td><h14>$registration<h14></td>
-        <td><h14>$permission<h14></td>
-        <td><a href=\"./user/?user=$id\"><button class=\"Confirm\"><h15>Editar</h15></button></a></td>
-        <td><a href=\"./deleteUser/?user=$id\"><button class=\"butDelete\"><h15>Deletar</h15></button></a></td>
+        <td><h14>$section<h14></td>
+        <td><h14>$isbn<h14></td>
+        <td><a href=\"./user/?user=$id\"><button class=\"Confirm2\"><h15>Editar</h15></button></a></td>
+        <td><a href=\"./deleteBook/?item=$id\"><button class=\"butDelete2\"><h15>Deletar</h15></button></a></td>
         </tr>";
 
         echo ($itemArticle);
@@ -86,7 +79,7 @@ if ($_SESSION['permissionLevel'] != "admin") {
     </table>
 
   </div>
-  <button onclick="window.location.href = './cadastro.php'" class="addUserPanel">
+  <button onclick="window.location.href = './CadastroLivro.php'" class="addUserPanel">
     <img class = "imgPlus" src="./imagens/plus.png" alt="">
   </button>
 </body>

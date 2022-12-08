@@ -37,7 +37,7 @@ session_start()
         <h1>Senha</h1>
         <input type="password" name="password" id="password" placeholder="********">
 
-        <h1 class="positionCurso">Curso</h1>
+        <h1 class="positionCurso">Campus</h1>
 
         <div class="cursos">
           <select name="course" id="course">

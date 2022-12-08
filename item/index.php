@@ -108,13 +108,14 @@ if (isset($_POST['qntd'])) {
 
   <div class="DivLivro">
 
-    <img src="<?= $path . $item["cover"] ?>" alt="Capa do Livro">
+    <img class="IMGlivro" src="<?= $path . $item["cover"] ?>" alt="Capa do Livro">
 
     <br>
 
     <i id="thumbsU" class="fa-solid fa-thumbs-up fa-3x"></i>
     <button class="likeC" id="like" onclick="liked(event)">
 
+      
       <h100>like</h100>
 
     </button>
@@ -170,6 +171,7 @@ if (isset($_POST['qntd'])) {
             }
             break;
         }
+
         console.log('the button ' + button + ' was pressed');
 
         document.getElementById('counter').innerHTML = counter;
@@ -179,26 +181,21 @@ if (isset($_POST['qntd'])) {
       // like
 
 
-      like.addEventListener('click', function onClick() {
+      const likeIcon = document.getElementById('thumbsU');
+      like.addEventListener('click', () => {
+        like.classList.toggle('active')
+        thumbsU.classList.toggle('active')
 
-        like.style.backgroundColor = '#302d2a';
-
-        const likeIcon = document.getElementById('thumbsU');
-
-        thumbsU.style.color = '#eb5e28';
+        
 
       });
 
-      // dislike
 
-
-      dislike.addEventListener('click', function onClick() {
-
-        dislike.style.backgroundColor = '#302d2a';
-
-        const dislikeIcon = document.getElementById('thumbsD');
-
-        thumbsD.style.color = '#eb5e28';
+      const dislikeIcon = document.getElementById('thumbsD');
+     
+      dislike.addEventListener('click', () => {
+        dislike.classList.toggle('active')
+        thumbsD.classList.toggle('active')
 
       });
     </script>
@@ -311,7 +308,7 @@ if (isset($_POST['qntd'])) {
   <br>
 
   <!-- comentários -->
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
   <h16>Comentários</h16>
 

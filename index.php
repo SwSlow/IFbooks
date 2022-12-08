@@ -87,7 +87,7 @@ $id = $_SESSION['userID'];
 
   <br><br><br><br>
 
-  <h4 class="swiper-title">Sua lista</h4>
+  <h4 class="swiper-title">Acervo</h4>
 
   <div class="form">
 
@@ -129,29 +129,32 @@ $id = $_SESSION['userID'];
     <?php
     include('./db/config.php');
 
-    $sqlCode = "SELECT * FROM tag ORDER BY tagID DESC LIMIT 18";
-    $sql_query = $mysqli->query($sqlCode) or die("Falha na execução do código SQL: " . $mysqli);
+    $sqlCodeTag = "SELECT * FROM itemtag 
+    INNER JOIN tag ON tag.tagID = itemtag.tagID
+    INNER JOIN item ON item.itemID = itemtag.itemID";
+    $sql_query_tag = $mysqli->query($sqlCodeTag) or die("Falha na execução do código SQL: " . $mysqli);
 
     while ($item = $sql_query->fetch_assoc()) {
       $idTag = $item["tagID"];
       $tagName = $item["name"];
 
-      $sqlCode = "SELECT * FROM item ORDER BY itemID DESC LIMIT 18";
+      $sqlCode = "SELECT * FROM item
+      INNER JOIN itemTag ON item.itemID = itemTag.itemID
+      INNER JOIN tag ON itemTag.tagID = tag.tagID WHERE tag.name='$tagName'";
       $sql_query = $mysqli->query($sqlCode) or die("Falha na execução do código SQL: " . $mysqli);
 
       while ($item = $sql_query->fetch_assoc()) {
         $id = $item["itemID"];
         $cover = $item["cover"];
         $title = $item["title"];
-        
 
-      $book = "
+        $book = "
             <div class=\"swiper-slide\">
             <a href=\"./item/?item=$id\" class=\"\"><img src=\"$cover\" alt=\"Capa:$title\"></a>
             <h6>$title</h6>
             </div>";
 
-      $itemArticle = "
+        $itemArticle = "
       <h4 class=\"swiper-title\">$tagName</h4>
       <div class=\"form\">
 
@@ -171,9 +174,9 @@ $id = $_SESSION['userID'];
         </section>
         <br><br><br><br><br><br>";
 
-      echo ($itemArticle);
+        echo ($itemArticle);
+      }
     }
-  }
     ?>
 
     <!-- cabeçalho interativo -->

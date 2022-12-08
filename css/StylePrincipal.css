@@ -1005,3 +1005,23 @@ textarea:hover {
   color: #ffffff;
 
 }
+
+.IMGlivro {
+  width: 275px;
+  height: 420px;
+}
+
+.likeC.active {
+  background-color: #302d2a;
+}
+
+.dislikeC.active {
+  background-color: #302d2a;
+}
+
+.fa-thumbs-down.active{
+  color: #eb5e28;
+}
+.fa-thumbs-up.active{
+  color: #eb5e28;
+}
