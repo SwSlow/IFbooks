@@ -86,8 +86,7 @@ if ($_SESSION['permissionLevel'] != "admin") {
         <td><h14>$registration<h14></td>
         <td><h14>$permission<h14></td>
         <td><a href=\"./user/?user=$id\"><button class=\"Confirm\"><h15>Editar</h15></button></a></td>
-
-  
+        <td><a href=\"./deleteUser/?user=$id\"><button class=\"butDelete\"><h15>Deletar</h15></button></a></td>
         </tr>";
 
         echo ($itemArticle);
@@ -97,7 +96,9 @@ if ($_SESSION['permissionLevel'] != "admin") {
     </table>
 
   </div>
-
+  <button onclick="window.location.href = './cadastro.php'" class="addUserPanel">
+    <img class = "imgPlus" src="./imagens/plus.png" alt="">
+  </button>
 </body>
 
 

@@ -114,9 +114,6 @@ $id = $_SESSION['userID'];
             </div>";
 
             echo ($itemArticle);
-          }
-          if ($itemArticle == 0) {
-            echo ("Sem livros em sua lista!");
           };
           ?>
 
@@ -139,10 +136,14 @@ $id = $_SESSION['userID'];
       $idTag = $item["tagID"];
       $tagName = $item["name"];
 
-      // $sqlCodeBook = "SELECT * FROM itemtag 
-      // INNER JOIN tag ON tag.tagID = itemtag.tagID
-      // INNER JOIN item ON itemID = itemtag.itemID = item.itemID";
-      // $sql_query_book = $mysqli->query($sqlCodeBook) or die("Falha na execução do código SQL: " . $mysqli);
+      $sqlCode = "SELECT * FROM item ORDER BY itemID DESC LIMIT 18";
+      $sql_query = $mysqli->query($sqlCode) or die("Falha na execução do código SQL: " . $mysqli);
+
+      while ($item = $sql_query->fetch_assoc()) {
+        $id = $item["itemID"];
+        $cover = $item["cover"];
+        $title = $item["title"];
+        
 
       $book = "
             <div class=\"swiper-slide\">
@@ -172,6 +173,7 @@ $id = $_SESSION['userID'];
 
       echo ($itemArticle);
     }
+  }
     ?>
 
     <!-- cabeçalho interativo -->

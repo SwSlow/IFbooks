@@ -40,7 +40,7 @@ session_start();
       <input type="text" maxlength="300" name="authors" id="authors" placeholder="Nome do autor ou autores" required>
 
       <h1>Tradutores</h1>
-      <input type="text" maxlength="300" name="translators" id="translators" placeholder="Nome do autor ou autores" required>
+      <input type="text" maxlength="300" name="translators" id="translators" placeholder="Nome do tradutor ou tradutores" required>
 
       <h1>Tipo acervo</h1>
       <div class="TipoAcervo" id="Acervo">

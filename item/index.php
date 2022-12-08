@@ -2,6 +2,7 @@
 //Inicializado primeira a sessão para posteriormente recuperar valores das variáveis globais. 
 session_start();
 include("../db/config.php");
+include("../auth/protect.php");
 
 $path = '.';
 global $path;
@@ -28,13 +29,14 @@ global $item;
 
 
 if (isset($_POST['qntd'])) {
+  
   $qntd = $mysqli->real_escape_string($_POST['qntd']);
 
   $sqlCode = "UPDATE item
   SET inventory = '$qntd'
   WHERE itemID = '$id'";
   $sql_query = $mysqli->query($sqlCode) or die("Falha na execução do código SQL: " . $mysqli);
- 
+
   header("Refresh:0");
 }
 ?>
@@ -71,10 +73,25 @@ if (isset($_POST['qntd'])) {
 
       <img class="UserBib" src="../imagens/User.png">
 
-      <div class="dropdownContent">
-        <a onclick="sairAlert()">LogOff</a>
-        <a onclick="controlPanel()">Painel de Controle</a>
-      </div>
+      <?php
+      if ($_SESSION['permissionLevel'] == 'admin') {
+
+        $dropMenu = "
+        <div class=\"dropdownContent\">
+        <a href = \"../controlPanel.php\">Painel de Controle</a>
+        <a href = \"../auth/logout.php\" onclick=\"sairAlert()\">LogOff</a>
+        </div>";
+      } else {
+        $dropMenu = "
+        <div class=\"dropdownContent\">
+        <a href=\"../user/?user=$id\">Perfil</a>
+        <a href = \"../auth/logout.php\" onclick=\"sairAlert()\">LogOff</a>
+        </div>";
+      }
+
+      echo ($dropMenu)
+      ?>
+      
     </div>
     <div class="search-box">
       <input class="search-txt" type="text" name="" placeholder="Digite sua pesquisa">
@@ -84,8 +101,7 @@ if (isset($_POST['qntd'])) {
     </div>
 
     <div class="dropdown">
-      <button onclick="window.location.href = 'index.php'" class="dropbtn">Voltar</button>
-
+      <button onclick="window.location.href = '../index.php'" class="dropbtn">Voltar</button>
     </div>
   </header>
   <br><br><br><br><br>
@@ -197,9 +213,14 @@ if (isset($_POST['qntd'])) {
       $authors = [];
       while ($author = $item["authors"]->fetch_assoc()) {
         $name = $author["name"];
+        $link = "$name";
+        array_push($authors, $link);
       }
 
-      echo ("<h8>$name</h8>");
+      $authors = implode(", ", $authors);
+
+
+      echo ("<h8>$authors</h8>");
       ?>
       <br>
       <!-- keywords -->
@@ -207,7 +228,7 @@ if (isset($_POST['qntd'])) {
       <?php
       while ($tag = $item["tags"]->fetch_assoc()) {
         $name = $tag["name"];
-        $link = "<h8>$name</h8>";
+        $link = "<h8>$name, </h8>";
         echo ($link);
       }
       ?>
@@ -241,9 +262,9 @@ if (isset($_POST['qntd'])) {
             <h13>Quantidade: </h13>
             <h8> $qntd </h8>
             <form method=\"post\">
-            <input id=\"qntd\" name=\"qntd\" value=\"$qntd\">
-            <button class=\"butAlter\" type=\"submit\">
-              <h2>Atualizar Informações</h2>
+            <input name=\"qntd\" id=\"qntd\" class=\"alterQntd\" value=\"$qntd\">
+            <button class=\"butCadastroLivro\" type=\"submit\">
+              <h10>Atualizar</h10>
             </button>
             </form>";
           } else {
@@ -251,9 +272,9 @@ if (isset($_POST['qntd'])) {
           <h13>Status: </h13>
           <h8>Indisponível</h8>
           <form method=\"post\">
-          <input id=\"qntd\" name=\"qntd\" value=\"0\">
-          <button class=\"butAlter\" type=\"submit\">
-            <h2>Atualizar Informações</h2>
+          <input name=\"qntd\" id=\"qntd\" class=\"alterQntd\" value=\"0\">
+          <button class=\"butCadastroLivro\" type=\"submit\">
+            <h2>Atualizar</h2>
           </button>
           </form>
           <br>";

@@ -127,7 +127,6 @@ if ($_SESSION['permissionLevel'] != "admin") {
     </div>
   </div>
 
-
 </body>
 
 </html>
