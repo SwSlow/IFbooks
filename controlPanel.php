@@ -33,60 +33,64 @@ if ($_SESSION['permissionLevel'] != "admin") {
 
 
   <div class="flex-parent-element">
+    <a href="users.php" class="flex-child-element slide">
+        <h10 class="usuarioLabel">Usuários</h10> <img class="userImg" src="imagens/2pessoas.PNG">
+        <h2>
+          <?php
+          include('./db/config.php');
 
-    <div class="flex-child-element slide">
-      <h10 class="usuarioLabel">Usuários</h10> <img class="userImg" src="imagens/2pessoas.PNG">
+          $total = 0;
+          $sql = "SELECT COUNT(userID) AS user FROM user";
+          $sql = $mysqli->query($sql);
+          $sql = $sql->fetch_assoc();
+          $total = $sql['user'];
 
-      <h2>
-        <?php
-        include('./db/config.php');
+          echo ($total . " Usuários Cadastrados")
+          ?>
+        </h2>
+    </a>
+  <div class="flex-child-element slide2">
+    <h10 class="equipeLabel">Equipe</h10> <img class="equipeImg" src="imagens/equipe.PNG">
+    <?php
+    include('./db/config.php');
 
-        $total = 0;
-        $sql = "SELECT COUNT(userID) AS user FROM user";
-        $sql = $mysqli->query($sql);
-        $sql = $sql->fetch_assoc();
-        $total = $sql['user'];
+    $totalAdmin = 0;
+    $sql = "SELECT COUNT(userID) AS user FROM user WHERE permissionLevel = 'admin'";
+    $sql = $mysqli->query($sql);
+    $sql = $sql->fetch_assoc();
+    $totalAdmin = $sql['user'];
 
-        echo ($total . " Usuários Cadastrados")
-        ?>
-      </h2>
+    $totalModerator = 0;
+    $sql = "SELECT COUNT(userID) AS user FROM user WHERE permissionLevel = 'moderator'";
+    $sql = $mysqli->query($sql);
+    $sql = $sql->fetch_assoc();
+    $totalModerator = $sql['user'];
 
-    </div>
-    <div class="flex-child-element slide2">
-      <h10 class="equipeLabel">Equipe</h10> <img class="equipeImg" src="imagens/equipe.PNG">
-      <?php
-      include('./db/config.php');
+    $totalEmployee = 0;
+    $sql = "SELECT COUNT(userID) AS user FROM user WHERE permissionLevel = 'Employee'";
+    $sql = $mysqli->query($sql);
+    $sql = $sql->fetch_assoc();
+    $totalEmployee = $sql['user'];
 
-      $totalAdmin = 0;
-      $sql = "SELECT COUNT(userID) AS user FROM user WHERE permissionLevel = 'admin'";
-      $sql = $mysqli->query($sql);
-      $sql = $sql->fetch_assoc();
-      $totalAdmin = $sql['user'];
-
-      $totalModerator = 0;
-      $sql = "SELECT COUNT(userID) AS user FROM user WHERE permissionLevel = 'moderator'";
-      $sql = $mysqli->query($sql);
-      $sql = $sql->fetch_assoc();
-      $totalModerator = $sql['user'];
-
-      $admins = "<h3>$totalAdmin Bibliotecários</h3>";
-      $moderators = "<h3>$totalModerator Moderadores</h3>";
-
-
-      echo ($admins);
-      echo ($moderators);
-      echo ($usersEmployee);
-      ?>
+    $admins = "<h3>$totalAdmin Bibliotecários</h3>";
+    $moderators = "<h3>$totalModerator Moderadores</h3>";
+    $Employees = "<h3>$totalEmployee Funcionários</h3>";
 
 
-    </div>
+    echo ($admins);
+    echo ($moderators);
+    echo ($Employees);
+    ?>
+
+
+  </div>
   </div>
 
   <br><br>
   <p style="margin:10px;"></p>
 
-  <div  class="flex-parent-element">
-    
+  <div class="flex-parent-element">
+
     <a href="CadastroLivro.php" class="flex-child-element slide">
       <h10 class="acervoLabel">Acervo</h10> <img class="acervoImg" src="imagens/acervo.PNG">
       <h2>
