@@ -1,16 +1,23 @@
 <?php
 session_start();
+include('./auth/protect.php');
+
+if ($_SESSION['permissionLevel'] != "admin") {
+  header("Location: ../index.php");
+  $_SESSION['loginErro'] = "<script>alert('Você não ter permissão para acessar está página!');</script>";
+  exit;
+}
 ?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="./css/Style.css" />
 </head>
 <meta charset="utf-8">
 
-<title>Permissões</title>
+<title>Usuários</title>
 
 <body>
 
@@ -24,11 +31,11 @@ session_start();
   </script>
 
 
-  <button class="voltar" onclick="window.location.href = 'index.php'">
+  <button class="voltar" onclick="window.location.href = './index.php'">
     <h2>Voltar</h2>
   </button>
 
-  <img class="logoIff" src="imagens/IFF.png">
+  <img class="logoIff" src="./imagens/IFF.png">
 
   <div class="UserPermissions">
 
@@ -54,41 +61,37 @@ session_start();
       $sqlCode = "SELECT * FROM user ORDER BY userID DESC LIMIT 18";
       $sql_query = $mysqli->query($sqlCode) or die("Falha na execução do código SQL: " . $mysqli);
 
-      while ($user = $sql_query->fetch_assoc()) {
-        $name = $user["name"];
-        $registration = $user["registration"];
-        $id = $user["userID"];
+      while ($item = $sql_query->fetch_assoc()) {
+        $id = $item["userID"];
+        $name = $item["name"];
+        $registration = $item["registration"];
 
-        if ($user['permissionLevel'] == 'admin') {
-          $permission = "Administrador";
-        }
-        if ($user['permissionLevel'] == 'employee') {
-          $permission = "Funcionário";
-        }
-        if ($user['permissionLevel'] == 'moderator') {
-          $permission = "Moderador";
-        }
-        if ($user['permissionLevel'] == 'reader') {
-          $permission = "Leitor";
-        }
-        
-        $users = "      
+        if ($item["permissionLevel"] == 'admin') {
+          $permission = 'Administrador';
+        };
+        if ($item["permissionLevel"] == 'employee') {
+          $permission = 'Funcionário';
+        };
+        if ($item["permissionLevel"] == 'moderator') {
+          $permission = 'Moderador';
+        };
+        if ($item["permissionLevel"] == 'reader') {
+          $permission = 'Leitor';
+        };
+
+        $itemArticle = "
         <tr>
-        <td>
-        <h14>$id<h14>
-      </td>
-        <td>
-          <h14>$name<h14>
-        </td>
-        <td>
-          <h14>$registration<h14>
-        </td>
-        <td>
-          <h14>$permission<h14>
-        </td>
-      </tr>";
-      }
-      echo ($users)
+        <td><h14>$id<h14></td>
+        <td><h14>$name<h14></td>
+        <td><h14>$registration<h14></td>
+        <td><h14>$permission<h14></td>
+        <td><a href=\"./user/?user=$id\"><button class=\"Confirm\"><h15>Editar</h15></button></a></td>
+
+  
+        </tr>";
+
+        echo ($itemArticle);
+      };
       ?>
 
     </table>

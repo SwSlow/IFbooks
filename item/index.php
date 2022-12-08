@@ -24,11 +24,33 @@ $sql_code = "SELECT * FROM comment WHERE itemID=$id";
 $sql_query_comment = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli);
 $item["comments"] = $sql_query_comment;
 
-
 global $item;
+
+
+if (isset($_POST['qntd'])) {
+  $qntd = $mysqli->real_escape_string($_POST['qntd']);
+
+  $sqlCode = "UPDATE item
+  SET inventory = '$qntd'
+  WHERE itemID = '$id'";
+  $sql_query = $mysqli->query($sqlCode) or die("Falha na execução do código SQL: " . $mysqli);
+ 
+  header("Refresh:0");
+}
 ?>
 <!DOCTYPE html>
 <html>
+
+<script>
+  function sairAlert() {
+    location.href = "../auth/logout.php";
+    alert("Deslogado com sucesso!")
+  }
+
+  function controlPanel() {
+    location.href = "../controlPanel.php";
+  }
+</script>
 
 <head>
   <link rel="stylesheet" href="../css/StylePrincipal.css" />
@@ -202,26 +224,58 @@ global $item;
       if ($item['isDigital']) {
         $url = $item["url"];
         $buttons = "
-  <button class=\"EbookBaixar\">
-    <i class=\"fa-solid fa-download fa-2x\"></i>
-    <h15>Leia agora</h15>
-  </button>";
+        <button class=\"EbookBaixar\">
+          <i class=\"fa-solid fa-download fa-2x\"></i>
+          <h15>Leia agora</h15>
+        </button>";
       } else {
-        if ($item['inventory'] >= 1) {
+        if ($_SESSION['permissionLevel'] == 'admin') {
+          if ($item['inventory'] > 0) {
 
-          $qntd = $item['inventory'];
+            $qntd = $item['inventory'];
 
-          $buttons = "
-    <h13>Status: </h13>
-    <h8>Disponivel</h8>
-    <br>
-    <h13>Quantidade: </h13>
-    <h8> $qntd </h8>";
+            $buttons = "
+            <h13>Status: </h13>
+            <h8>Disponivel</h8>
+            <br>
+            <h13>Quantidade: </h13>
+            <h8> $qntd </h8>
+            <form method=\"post\">
+            <input id=\"qntd\" name=\"qntd\" value=\"$qntd\">
+            <button class=\"butAlter\" type=\"submit\">
+              <h2>Atualizar Informações</h2>
+            </button>
+            </form>";
+          } else {
+            $buttons = "
+          <h13>Status: </h13>
+          <h8>Indisponível</h8>
+          <form method=\"post\">
+          <input id=\"qntd\" name=\"qntd\" value=\"0\">
+          <button class=\"butAlter\" type=\"submit\">
+            <h2>Atualizar Informações</h2>
+          </button>
+          </form>
+          <br>";
+          }
         } else {
-          $buttons = "
+          if ($item['inventory'] >= 1) {
+
+            $qntd = $item['inventory'];
+
+            $buttons = "
+            <h13>Status: </h13>
+            <h8>Disponivel</h8>
+            <br>
+            <h13>Quantidade: </h13>
+            <h8> $qntd </h8>
+            ";
+          } else {
+            $buttons = "
           <h13>Status: </h13>
           <h8>Indisponível</h8>
           <br>";
+          }
         }
       }
 
@@ -283,14 +337,3 @@ global $item;
 </body>
 
 </html>
-
-<script>
-  function sairAlert() {
-    location.href = "../auth/logout.php";
-    alert("Deslogado com sucesso!")
-  }
-
-  function controlPanel() {
-    location.href = "../controlPanel.php";
-  }
-</script>
